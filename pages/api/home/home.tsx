@@ -212,7 +212,7 @@ const Home = ({
     var email = "panda@gmail.com";
 
     let data = new URLSearchParams();
-    let api = API_KEY + "/new-session";
+    let api = "http://219.78.93.165:7000/" + "new-session";
     data.append("email", email);
     data.append("sessionID", conversationName);
 
