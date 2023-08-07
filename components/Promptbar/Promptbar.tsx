@@ -18,6 +18,7 @@ import Sidebar from '../Sidebar';
 import PromptbarContext from './PromptBar.context';
 import { PromptbarInitialState, initialState } from './Promptbar.state';
 
+
 import { v4 as uuidv4 } from 'uuid';
 
 const Promptbar = () => {

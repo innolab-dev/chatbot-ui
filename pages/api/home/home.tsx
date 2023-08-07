@@ -181,9 +181,12 @@ const Home = ({
   const handleNewConversation = () => {
     const lastConversation = conversations[conversations.length - 1];
 
+    const now = new Date();
+    const conversationName = now.toLocaleString();
+
     const newConversation: Conversation = {
       id: uuidv4(),
-      name: t('New Conversation'),
+      name: t(conversationName),
       messages: [],
       model: lastConversation?.model || {
         id: OpenAIModels[defaultModelId].id,
@@ -205,6 +208,26 @@ const Home = ({
     saveConversations(updatedConversations);
 
     dispatch({ field: 'loading', value: false });
+    
+    var email = "panda@gmail.com";
+
+    let data = new URLSearchParams();
+    let api = API_KEY + "/new-session";
+    data.append("email", email);
+    data.append("sessionID", conversationName);
+
+    fetch(api, { method: "post", body: data })
+          .then(res => res.text())
+          .then(data => {
+              // console.log(data);
+              // window.alert(data);
+              // if (data.indexOf("Created") != -1) {
+              //       props.setEnd(null);
+              // }
+          })
+          .catch(err => console.log(err));
+
+
   };
 
   const handleUpdateConversation = (
