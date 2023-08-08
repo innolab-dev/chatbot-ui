@@ -82,7 +82,7 @@ const Sidebar = <T,>({
             </button>
 
           </div>
-          <div>
+          <div className='mt-2'>
             {side==='right' && <Menu/>}
           </div>
         </div>

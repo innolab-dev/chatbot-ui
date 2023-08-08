@@ -39,9 +39,9 @@ const Menu: React.FC = (): JSX.Element => {
     };
 
     return (
-        <div className="w-full flex-1 rounded-md border border-neutral-600 bg-[#202123] px-4 py-3 pr-10 text-[14px] leading-4 text-white flex flex-grow-2 flex-shrink-2">
-            <IconMenu2 size={16} className="ml-0"/>
-            <div>                
+        <div className="w-full flex-1 rounded-md border border-neutral-600 bg-[#202123] px-4 py-3 pr-10 text-[14px] leading-4 text-white flex flex-grow-4 flex-shrink-4">
+            <IconMenu2 size={16}  onClick={(): void => toggleDropDown()} className="ml-0 pl-0"/>
+            <div className="ml-2"  onClick={(): void => toggleDropDown()}>                 
                 <div className="announcement">
                     <div>
                     {selectLLMs

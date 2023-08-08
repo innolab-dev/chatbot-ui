@@ -217,7 +217,7 @@ const Home = ({
     data.append("sessionID", conversationName);
 
     fetch(api, { method: "post", body: data })
-          .then(res => res.text())
+          .then(res => {console.log(res.text())})
           .then(data => {
               // console.log(data);
               // window.alert(data);

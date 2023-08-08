@@ -12,6 +12,15 @@ import '@/styles/globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 function App({ Component, pageProps }: AppProps<{}>) {
+
+  // const token = window.sessionStorage.getItem("token");
+  // const userEmail = window.sessionStorage.getItem("userEmail");
+
+  // if (token == null)
+  // {
+  //   window.location.href = "http://localhost:3000/";
+  // }
+
   const queryClient = new QueryClient();
 
   return (
