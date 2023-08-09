@@ -86,8 +86,9 @@ Ans: reset,1
 Prompt: {prompt}
 Ans:
 """
+
 prompt_for_email_content = """
-Can you draft an email body in HTML format based on the following request and background information? Please use an appropriate professional tone.
+Please draft the following email body in HTML format, with appropriate HTML tags for structure and formatting, on behalf of the user.
 
 User request:
 {request}

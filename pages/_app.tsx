@@ -5,18 +5,15 @@ import { appWithTranslation } from 'next-i18next';
 import type { AppProps } from 'next/app';
 import { Inter } from 'next/font/google';
 
-// import { ClientSessionProvider } from 'react-client-session';
-
+import Cookies from "universal-cookie";
 import '@/styles/globals.css';
+import { getToken } from '@/utils/data/cookies';
 
 const inter = Inter({ subsets: ['latin'] });
 
 function App({ Component, pageProps }: AppProps<{}>) {
 
-  // const token = window.sessionStorage.getItem("token");
-  // const userEmail = window.sessionStorage.getItem("userEmail");
-
-  // if (token == null)
+  // if ((getToken() == null) && (typeof window !== 'undefined'))
   // {
   //   window.location.href = "http://localhost:3000/";
   // }
@@ -24,15 +21,24 @@ function App({ Component, pageProps }: AppProps<{}>) {
   const queryClient = new QueryClient();
 
   return (
-    // <ClientSessionProvider session="123">
-      <div className={inter.className}>
-        <Toaster />
-        <QueryClientProvider client={queryClient}>
-          <Component {...pageProps} />
-        </QueryClientProvider>
-      </div>
-    // </ClientSessionProvider>
+    <div className={inter.className}>
+      <Toaster />
+      <QueryClientProvider client={queryClient}>
+        <Component {...pageProps} />
+      </QueryClientProvider>
+    </div>
   );
 }
+
+// App.getInitialProps = async (appContext: AppContext): Promise<AppInitialProps> => {
+//   const appProps = await App.getInitialProps(appContext);
+//   const req = appContext.ctx.req;
+//   if (req) {
+//     // Get cookies from the request object
+//     const cookies = req.headers.cookie;
+//     // Do something with the cookies here
+//   }
+//   return { ...appProps };
+// };
 
 export default appWithTranslation(App);

@@ -1,0 +1,2372 @@
+[33mcommit 740314131e36f8094de13b6b0596806971de7f79[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;32mui[m[33m, [m[1;32mbackend[m[33m)[m
+Author: Panda <projectvpn39@gmail.com>
+Date:   Tue Aug 8 02:58:20 2023 +0000
+
+    Workable Version with completed New Conversation Function
+
+[33mcommit c9adc1f8fc7c03973ae57d80d0b6704fc0ea882a[m
+Author: Panda <projectvpn39@gmail.com>
+Date:   Mon Aug 7 08:04:08 2023 +0000
+
+    Second Commit
+
+[33mcommit d4cd6242381d350c8ee021a48316da23e1d4fac0[m
+Author: Panda <projectvpn39@gmail.com>
+Date:   Mon Aug 7 07:30:35 2023 +0000
+
+    First Commit
+
+[33mcommit fa3f6e93bbe0d1ff9f208ddefae6fc7dfb738dc7[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Anthony Puppo <anthonyosx@gmail.com>
+Date:   Thu Apr 20 10:33:28 2023 -0400
+
+    Add blinking typing cursing (#619)
+
+[33mcommit f849a2e9242351ce3833d2e8d14767be5d15a2c1[m
+Author: kyyhkynen <kimmo.kyyhkynen@gmail.com>
+Date:   Thu Apr 20 17:28:29 2023 +0300
+
+    add Finnish translations (#618)
+
+[33mcommit 063ce50319964bfe5dbd25c077e4d5faef20d459[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Wed Apr 19 15:00:11 2023 -0600
+
+    force update
+
+[33mcommit 718dc6432a1cc1049cea090226766a33bf695ba1[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Wed Apr 19 14:51:35 2023 -0600
+
+    FIX IMPORT
+
+[33mcommit ab9f108a57415e8d2a66e979a3af71cd66259b6a[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Wed Apr 19 14:37:18 2023 -0600
+
+    fix prompt selection
+
+[33mcommit c7be45587febb524f69ac331ca16947772b3f07c[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Wed Apr 19 08:45:50 2023 -0600
+
+    readme update
+
+[33mcommit c959264f9387400e4b6b31ac818e012335ab7e50[m
+Author: Anthony Puppo <anthonyosx@gmail.com>
+Date:   Wed Apr 19 10:39:19 2023 -0400
+
+    Performance (#602)
+
+[33mcommit 24068ea5aa16af04fff1d0b6b53679d60562aedb[m
+Author: TKS <32640296+bigsk1@users.noreply.github.com>
+Date:   Wed Apr 19 07:35:18 2023 -0700
+
+    Create Security.md (#607)
+    
+    basic secuirty policy as the repo didn't have one yet, update as needed.
+
+[33mcommit dcb2810d4692d14d7995672f42f7673d4e0abb66[m
+Author: Shemar Lindie <shemarlindie@gmail.com>
+Date:   Wed Apr 19 10:34:27 2023 -0400
+
+    fix: optimize mobile layout (#606)
+    
+    - conserve space in new convo view
+    - fix overlapping edit and delete chat message icons
+    - fix overlapping copy icon
+
+[33mcommit 2208e4dfc754bcd799a42bfddb51e54a4fc28d16[m
+Author: ryanhex53 <ouyang.em@gmail.com>
+Date:   Wed Apr 19 22:32:29 2023 +0800
+
+    more chinese translation. (#609)
+
+[33mcommit 3685378ab82c0730c75c2d6c249347f73f455e90[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Wed Apr 19 08:31:12 2023 -0600
+
+    change empty msg
+
+[33mcommit 971cde5310836084332552a7e4fec1fc2ad1465b[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Tue Apr 18 16:05:44 2023 -0600
+
+    sort folders alphabetically
+
+[33mcommit 5725024d807da0a71dded041e0d2e5784266ad57[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Tue Apr 18 16:00:20 2023 -0600
+
+    import/export add instead of replace (#601)
+    
+    * change search language
+    
+    * add to import/export
+    
+    * fix log
+
+[33mcommit b964188d0b641c39539aac7ec69efede3e65b4aa[m
+Author: borborborja <borjabalsera@gmail.com>
+Date:   Tue Apr 18 17:10:47 2023 +0200
+
+    add catalan language (#598)
+
+[33mcommit 236b6561483cd1a4cad76ca0049e40dd777296c8[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Tue Apr 18 08:37:45 2023 -0600
+
+    Made the Model Name Bar Sticky at the top of the Chat Window (#597)
+    
+    Co-authored-by: Chris Wall <cwall@wooldata.com>
+
+[33mcommit fda784028d912acee11eaf833b6cc88b97f70c48[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Tue Apr 18 08:35:31 2023 -0600
+
+    Add temp display (#596)
+    
+    * Made the Model Name Bar Sticky at the top of the Chat Window
+    
+    * Added Temp to the top bar display
+    
+    * barliens
+    
+    ---------
+    
+    Co-authored-by: Chris Wall <cwall@wooldata.com>
+
+[33mcommit 2aaebfec3fd1eee8b008f56dee8641564d089805[m
+Author: Shinji Yamada <dotneet@gmail.com>
+Date:   Tue Apr 18 23:32:04 2023 +0900
+
+    chore: improve Japanese language locales (#554)
+
+[33mcommit 1a9a7dcad03d178f6119a44cf8b6aa40ac5326df[m
+Merge: 856ba12 00f6189
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Tue Apr 18 08:29:30 2023 -0600
+
+    Merge branch 'main' of https://github.com/mckaywrigley/chatbot-ui-pro
+
+[33mcommit 856ba12f19725edbaeab5c924fa62f85e71e00d2[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Tue Apr 18 08:29:29 2023 -0600
+
+    readme update
+
+[33mcommit 00f6189a42a7878d8b6aa7ae35e70d173ac180a5[m
+Author: Aldo Santiago <37028475+santi4o@users.noreply.github.com>
+Date:   Tue Apr 18 08:28:19 2023 -0600
+
+    fix: sroll down button overlaping chat input (#564)
+
+[33mcommit 51fa461965cede28788569a9310cd38254d9db7d[m
+Author: Shinji Yamada <dotneet@gmail.com>
+Date:   Tue Apr 18 23:25:28 2023 +0900
+
+    fix: temperature font color (#556)
+
+[33mcommit 03afa007324fbafc35e0e766643d7b66e39d26eb[m
+Author: Shinji Yamada <dotneet@gmail.com>
+Date:   Tue Apr 18 23:24:47 2023 +0900
+
+    chore: use last conversation temperature (#568)
+
+[33mcommit ba1dacb89927eff232a0f8901d34612ad2495886[m
+Author: Shinji Yamada <dotneet@gmail.com>
+Date:   Tue Apr 18 23:23:42 2023 +0900
+
+    feat: settings dialog and moved theme settings to dialog from sidebar (#570)
+    
+    * feat: settings dialog and moved theme settings to dialog from sidebar.
+    
+    * chore(locale): move some labels to settings from sidebar
+
+[33mcommit 836c24680b10e3014ca30c49f5105f796e830864[m
+Author: Shemar Lindie <shemarlindie@gmail.com>
+Date:   Tue Apr 18 10:21:43 2023 -0400
+
+    fix: chat messages disappear on edit (#575)
+    
+    Resolves #574
+
+[33mcommit 5f0d1cb7caaf15b51c420c083ffc31c5b385d92b[m
+Author: mirkan1 <mirkanbaba1@gmail.com>
+Date:   Tue Apr 18 10:18:24 2023 -0400
+
+    Turkish language implementation for i18n (#576)
+    
+    * turkish language support implemented
+    
+    * tr as string in module declaration
+    
+    * missing key Plugin Keys implementation
+    
+    * synonyms is used to get rid of confusion and to avoid repetition. The word “synonym” is derived from the Greek word “syn” meaning “together” and “onym” meaning “name” while in Turkish name and noun can be translated as both "ad" and "isim"
+    
+    * //
+
+[33mcommit 9e4c5ca4ff9b1c6b8eab24a1c7624cd9624f5d83[m
+Author: KhanKudo <37520008+KhanKudo@users.noreply.github.com>
+Date:   Tue Apr 18 16:18:08 2023 +0200
+
+    Fixed: site cannot open if imported json invalid (#579)
+
+[33mcommit 1146f9a86ecfc7fb75ca705ce86ccba8b1a597cd[m
+Author: borborborja <borjabalsera@gmail.com>
+Date:   Tue Apr 18 16:11:39 2023 +0200
+
+    New language, catalan (#587)
+
+[33mcommit 862f74a33246046a44c091aa1ebe3a11a02cbce3[m
+Author: Bryan Lee <38807139+liby@users.noreply.github.com>
+Date:   Tue Apr 18 22:11:13 2023 +0800
+
+    Fix message input not updating on chat list switch (#590)
+
+[33mcommit cb922d9dc6d3d51bad0d6af34a9773e9b6a87cf9[m
+Author: Jay Johnson <JayJohnson38@gmail.com>
+Date:   Tue Apr 18 10:10:12 2023 -0400
+
+    Fix search box disappearing in Sidebar component (#592)
+    
+    Co-authored-by: Jamal Johnson <you@example.com>
+
+[33mcommit 4f672b926ac3ab862ca2959c8f28c7f2ba66f9a0[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Tue Apr 18 08:06:40 2023 -0600
+
+    update readme
+
+[33mcommit 7c259b98cbad3624ca75895fddbf50c674d06ab1[m
+Author: Aaron Diestelkamp <867839+adiestel@users.noreply.github.com>
+Date:   Fri Apr 14 02:13:52 2023 -0500
+
+    Fix: Promptbar initializes in open state for Mobile (#542)
+    
+    * Fix for DEFAULT_SYSTEM_PROMPT
+    
+    * Set the prompt bar to be hidden if screen < 640
+
+[33mcommit f01d0c51d6ad937539b2223f4997efd497778155[m
+Author: Miraz_hossain <72273036+clevermiraz@users.noreply.github.com>
+Date:   Fri Apr 14 13:12:49 2023 +0600
+
+    Update Bangla Translation (#546)
+
+[33mcommit 7ec68caff0d0e53cea9d56721d38e659d206c755[m
+Author: Chris <34248815+chrisociepa@users.noreply.github.com>
+Date:   Thu Apr 13 16:08:09 2023 +0200
+
+    Add Polish translation (#532)
+    
+    * Add Polish translation
+    
+    * Minor fix in Polish translation
+
+[33mcommit 183a74d7f7acd4a50de1c795baf54824acb84535[m
+Author: Aaron Diestelkamp <867839+adiestel@users.noreply.github.com>
+Date:   Thu Apr 13 06:09:53 2023 -0500
+
+    Fix for DEFAULT_SYSTEM_PROMPT (#510)
+
+[33mcommit ea1d09244acc3c94a87a3658b1ee271542c6fecf[m
+Author: Ivan Fioravanti <ivan.fioravanti@gmail.com>
+Date:   Thu Apr 13 13:09:03 2023 +0200
+
+    Feature request: Adding temperature as parameter (#513)
+    
+    * Adding temperature as parameter
+    
+    * NEXT_PUBLIC_ prefix added
+    
+    * add spacing
+    
+    ---------
+    
+    Co-authored-by: Ivan Fioravanti <>
+    Co-authored-by: Mckay Wrigley <mckaywrigley@gmail.com>
+
+[33mcommit d1eb6ee29bf89f6f0e15c22be71e7c44ac0bd7cf[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Thu Apr 13 05:01:27 2023 -0600
+
+    delete message (#531)
+    
+    * feat: delete single message
+    
+    * improve plugin hotkey support (#426)
+    
+    * feat: delete single message
+    
+    * remove logs
+    
+    * remove logs
+    
+    ---------
+    
+    Co-authored-by: Ryland <rylandl@qq.com>
+    Co-authored-by: Dornfeld Capital <75278543+dornfeld-capital@users.noreply.github.com>
+    Co-authored-by: L.Ryland <41134883+L-Ryland@users.noreply.github.com>
+
+[33mcommit f61e91d07f240c227aaff642ffb4127b64fa460f[m
+Author: Syed Muzamil <38078427+SyedMuzamilM@users.noreply.github.com>
+Date:   Thu Apr 13 16:28:13 2023 +0530
+
+    fix: modal scrolling on small devices (#527)
+    
+    * fix: propmt side not showing on small devices
+    
+    * added the robot icon while chat is loading
+    
+    * fix: sidbar position
+    
+    * fix: modal not scrolling on small devices
+    
+    * fix: overlap between the modal and icons
+
+[33mcommit 5ed5e156cd78b415d6aa03dffbb55fbcff2236d3[m
+Author: Andrea Falco <fox91fox@gmail.com>
+Date:   Thu Apr 13 12:56:33 2023 +0200
+
+    Added support to docker multi-platform image, close #518 (#519)
+
+[33mcommit 78881cebfd87e2b37a78248d990702cb9fc6dd7d[m
+Author: Claudio Canales <klaudioz@gmail.com>
+Date:   Thu Apr 13 03:56:00 2023 -0700
+
+    Update README.md (#521)
+    
+    Fix no existing route to index.ts
+
+[33mcommit 6d53ee7d12fb7edc8fa8dc6f0773bbc59e1999ad[m
+Author: 牛强 <hi@jony4.vip>
+Date:   Wed Apr 12 01:20:10 2023 +0800
+
+    fix: issues/498 (#499)
+
+[33mcommit 8f8aac05ef303e73e4c1f1aa7392ca64bdf509c9[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Tue Apr 11 03:17:49 2023 -0600
+
+    log removal
+
+[33mcommit 25a4dbb052542898a48695c27cc8cefec28b5756[m
+Author: itbm <22393016+itbm@users.noreply.github.com>
+Date:   Tue Apr 11 10:16:33 2023 +0100
+
+    Add support for Azure OpenAI (#495)
+
+[33mcommit 60288ad20a4fa5da0fc94c3988927af6da7b8c39[m
+Author: Dornfeld Capital <75278543+dornfeld-capital@users.noreply.github.com>
+Date:   Mon Apr 10 22:41:29 2023 -0500
+
+    improve plugin hotkey support (#426)
+
+[33mcommit da7463e901976fa33b7ba23e593f98c5ec05bd39[m
+Author: Thomas LÉVEIL <thomasleveil@users.noreply.github.com>
+Date:   Tue Apr 11 05:41:04 2023 +0200
+
+    document OPENAI_API_HOST and OPENAI_ORGANIZATION (#429)
+
+[33mcommit 0a1474abc0cbdf96e0d584619594da614553a994[m
+Author: Régis NDIZIHIWE <ndizihiweregis06@gmail.com>
+Date:   Mon Apr 10 20:39:09 2023 -0700
+
+    Update demo image (#459)
+
+[33mcommit 93112a8211f0cfc8c1f525cefb5b24dd5c141f53[m
+Author: Mr <looking.a.new.job@gmail.com>
+Date:   Tue Apr 11 05:37:17 2023 +0200
+
+    Add Romanian translation (#468)
+    
+    * Create Romanian chat.json
+    
+    I have created Romanian translation of the chat.json.
+    
+    * Add Romanian translation
+    
+    I have created Romanian translations.
+    
+    * Update next-i18next.config.js
+    
+    Added ro locale
+    
+    ---------
+    
+    Co-authored-by: Mckay Wrigley <mckaywrigley@gmail.com>
+
+[33mcommit ac69b7a887a5b29e38c4b3448aa55bfab14fe425[m
+Author: Shinji Yamada <dotneet@gmail.com>
+Date:   Tue Apr 11 12:36:19 2023 +0900
+
+    fix google plugin bug due to URI encoding issue. (#469)
+    
+    * fix: uri encoding
+    
+    * fix: error handling
+
+[33mcommit 25958a9548da0cf087e60a72afaf19a7c7af5b50[m
+Author: Akash Kriplani <akashkriplani@users.noreply.github.com>
+Date:   Tue Apr 11 09:04:16 2023 +0530
+
+    fix parameter of length to type "number" (#492)
+
+[33mcommit 6500db9c1c95b12c12eea517b83176ef71d98fb9[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Mon Apr 10 21:10:18 2023 -0600
+
+    MAJOR REFACTOR (#494)
+    
+    * move index to home folder, create state and context files and barrell folder
+    
+    * Sanity Check Commit:  reducer added to home.tsx manual QA all working
+    
+    * WIP: promptBar
+    
+    * fix missing json parse on folders and prompts
+    
+    * split context and add promptbar context
+    
+    * add context to nested prompt componets and componetize Folder componet
+    
+    * remove log
+    
+    * Create buttons folder and componetize sidebar action button
+    
+    * tidy up prompt handlers
+    
+    * componetized sidebar
+    
+    * added back chatbar componet to left side sidebar
+    
+    * monster commit: Componetized the common code between chatbar and promptbar into new componet Sidebar and added context to both bars
+    
+    * add useFetch service
+    
+    * added prettier import sort to keep imports ordered and easier to indentify
+    
+    * added react query and useFetch to work with RQ
+    
+    * added apiService, errorService and reactQuery
+    
+    * add callback and tidy up error service
+    
+    * refactor chat and child componets to useContext
+    
+    * fix extra calls and bad calls to mel endpoint
+    
+    * minor import cleanup
+    
+    ---------
+    
+    Co-authored-by: jc.durbin <jc.durbin@ardanis.com>
+
+[33mcommit 68c9cd4bd803bdb186c4ee6514f00239549a26a3[m
+Author: Thomas LÉVEIL <thomasleveil@users.noreply.github.com>
+Date:   Wed Apr 5 00:55:52 2023 +0200
+
+    Fix 416 copy button on code block (#427)
+    
+    * update README regarding GOOGLE_API_KEY and GOOGLE_CSE_ID
+    
+    * :bug: fix copy button not showing up on code block with no recognized language
+    
+    fixes #416
+
+[33mcommit 3c32c03b9cfac33200621121ef6015798f3fa499[m
+Author: Thomas LÉVEIL <thomasleveil@users.noreply.github.com>
+Date:   Wed Apr 5 00:53:32 2023 +0200
+
+    update README regarding GOOGLE_API_KEY and GOOGLE_CSE_ID (#422)
+
+[33mcommit fc60f65c74ddc66b233269c8f9d259c73de106b8[m
+Author: itbm <22393016+itbm@users.noreply.github.com>
+Date:   Tue Apr 4 23:53:10 2023 +0100
+
+    Hide API Key and Plugin Key buttons if set server side (#423)
+
+[33mcommit d324df1bab809540945a92475f6d2202507852a6[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Tue Apr 4 10:41:34 2023 -0600
+
+    spelling
+
+[33mcommit 31b8e73bf6eab933f3e800205c8e4220c01ec7fc[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Tue Apr 4 10:41:26 2023 -0600
+
+    brevity
+
+[33mcommit 4f92751ee3f863415eaf50fbd421ee8ace26b60b[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Tue Apr 4 10:09:28 2023 -0600
+
+    Google fixes (#415)
+    
+    * push
+    
+    * fixes
+
+[33mcommit e1f286efb839917be58c06b43702e3d74c837508[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Tue Apr 4 09:41:24 2023 -0600
+
+    push (#414)
+
+[33mcommit e8150e719548ce107f0cd45efbaae02746a9315f[m
+Author: oznav2 <92755196+oznav2@users.noreply.github.com>
+Date:   Mon Apr 3 11:52:12 2023 +0300
+
+    Update promptbar.json (#389)
+    
+    fix : added missing translation
+
+[33mcommit 6156a2702fbd2e22113fbba8d691260a5644d9f6[m
+Author: spctechdev <111750395+spctechdev@users.noreply.github.com>
+Date:   Mon Apr 3 06:41:59 2023 +0000
+
+    Fix previous IT locale (#374)
+    
+    * Update chat.json
+    
+    * Update promptbar.json
+    
+    * Update sidebar.json
+    
+    * Update sidebar.json
+    
+    * Update sidebar.json
+
+[33mcommit 165472f12133a027075ce7577c5598fcfb2863db[m
+Author: Nguyễn Hữu Phong <huuphong.nguyen@icloud.com>
+Date:   Mon Apr 3 13:41:26 2023 +0700
+
+    Update Vietnamese (#385)
+
+[33mcommit 83e25b97b0824b66d2698b5c9b25d3e97bae329f[m
+Author: Jiaping(JP) Zhang <vincentzhangv@gmail.com>
+Date:   Sun Apr 2 13:38:42 2023 -0700
+
+    update chat role icon (#378)
+
+[33mcommit b7732a95a6d06ba1da2e7567c6f0162980fa942b[m
+Author: Thomas LÉVEIL <thomasleveil@users.noreply.github.com>
+Date:   Sun Apr 2 22:37:59 2023 +0200
+
+    :notes document (#373)
+
+[33mcommit b3b65f8ce5e365e26a443da09d37684189387800[m
+Author: Thomas LÉVEIL <thomasleveil@users.noreply.github.com>
+Date:   Sun Apr 2 22:36:09 2023 +0200
+
+    Fix translations import export (#376)
+    
+    * fix "Import data" case
+    
+    * fix "Export data" translations
+
+[33mcommit 2c236e2c07dd2e2379aa2a7956290017ba327b6e[m
+Author: Alan P <alanpog@gmail.com>
+Date:   Sun Apr 2 16:35:33 2023 -0400
+
+    tokenLimit now can be closer to real model limit. (#366)
+
+[33mcommit bc2435d4cb40a2052d175c2625c3613a3359432e[m
+Merge: a89308d 90c0e7d
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Sun Apr 2 08:02:01 2023 -0600
+
+    Merge branch 'main' of https://github.com/mckaywrigley/chatbot-ui-pro
+
+[33mcommit a89308d03a5dce998c5812585a68abbc285ddbd8[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Sun Apr 2 08:02:00 2023 -0600
+
+    revert
+
+[33mcommit 90c0e7d35dd20a3070a004e4faf320003bb8b18d[m
+Author: spctechdev <111750395+spctechdev@users.noreply.github.com>
+Date:   Sun Apr 2 13:42:33 2023 +0000
+
+    Locale it (#363)
+    
+    * Add files via upload
+    
+    * Update next-i18next.config.js
+    
+    * Update chat.json
+
+[33mcommit e8e74bf773df5a3cd0c7daf8dd93ee1f1b537c54[m
+Merge: 1dc4f86 ae18abe
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Sun Apr 2 06:59:48 2023 -0600
+
+    Merge branch 'main' of https://github.com/mckaywrigley/chatbot-ui-pro
+
+[33mcommit 1dc4f86df58edd991a822af2c38107702ae0afc2[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Sun Apr 2 06:59:47 2023 -0600
+
+    change output limit
+
+[33mcommit ae18abe931c1c3cc40b0a13c531990898c414a88[m
+Author: Brad Ullman <brad@ullman.com>
+Date:   Sat Apr 1 23:19:10 2023 -0700
+
+    remove unused code (#356)
+
+[33mcommit f9ddf0708597ea2164202ef60c5982910ba7e1c2[m
+Author: Brad Ullman <brad@ullman.com>
+Date:   Sat Apr 1 23:17:49 2023 -0700
+
+    remove dupe main (#355)
+
+[33mcommit 91cbe0b104e8e43f724446e56c0b86dd8a1173df[m
+Author: Syed Muzamil <38078427+SyedMuzamilM@users.noreply.github.com>
+Date:   Sun Apr 2 10:41:03 2023 +0530
+
+    fix: some ui issues (#346)
+    
+    * fix: scroll button not visible in light mode
+    
+    * fix: sidebar when there is a folder
+    
+    When a folder is added in the sidebar and there are less items scroll
+    bar appears. This simple change fixes that behaviour
+    
+    * fix: small devices regerate/Stop button below input
+    
+    Below 768px Stop Genrating and Regerate Button remains hidden behind the
+    input. This is the fix for that
+
+[33mcommit b7b6bbaaca7930ae39b2425d00de069464223717[m
+Author: Jason Banich <Jdban101@gmail.com>
+Date:   Sat Apr 1 22:05:07 2023 -0700
+
+    add react-hot-toast and surface OpenAI API errors to users (#328)
+
+[33mcommit 23ad285a4b63bfcfec9006d3d3537f4fc6c54ccf[m
+Author: Jason Banich <Jdban101@gmail.com>
+Date:   Sat Apr 1 22:02:15 2023 -0700
+
+    Adds a loading spinner that replaces send icon while result is generated (#329)
+
+[33mcommit 56d3b2fba2077e58851b53e7c9314320906bb05d[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Sat Apr 1 23:01:05 2023 -0600
+
+    change to "data"
+
+[33mcommit d68f77867d7d18eab53b282c5a00a5c22c09cac8[m
+Author: Superman <supermanchc@gmail.com>
+Date:   Sun Apr 2 12:59:51 2023 +0800
+
+    feat: support import and export with prompts (#330)
+    
+    * feat: support import and export prompts
+    
+    * test: update importExports.test.ts
+    
+    * Delete .gitpod.yml
+
+[33mcommit 462ca9bb048cbcd5bb0d37f1b74cabcb55615dcc[m
+Author: Abror Aliboyev <71618949+aaliboyev@users.noreply.github.com>
+Date:   Sun Apr 2 09:46:32 2023 +0500
+
+    fix for openai token limit error (#350)
+
+[33mcommit 8f3a3ae3e7880daa209293934743595c576a87f0[m
+Author: riande <123424756+riande@users.noreply.github.com>
+Date:   Sun Apr 2 06:45:54 2023 +0200
+
+    locale improvements (#351)
+
+[33mcommit cfb610df1e5edc5f04186f450b3de3c7a41a0496[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Sat Apr 1 14:54:59 2023 -0600
+
+    fix spacing
+
+[33mcommit 9683ce21b3592add0155c2ba24e9a4bac5839185[m
+Author: Daniel <danieljkhoo@gmail.com>
+Date:   Sat Apr 1 18:36:46 2023 +0800
+
+    Fix icon color (#344)
+
+[33mcommit 3650d8d7bfa5debb0167c3512defe3fced87a393[m
+Author: Matri <matri@aifi.com>
+Date:   Sat Apr 1 15:40:25 2023 +0800
+
+    fix: prompts list height (#340)
+
+[33mcommit aefec17525b664ba3e2d82512fa0196622925182[m
+Author: Colin Ricardo <21294951+colinricardo@users.noreply.github.com>
+Date:   Sat Apr 1 03:14:59 2023 +0100
+
+    fix: label layout shift (#338)
+
+[33mcommit 863d8d8121b0bcb82945b4c25532daaaec6f7f18[m
+Author: Brijesh Bittu <brijeshb42@gmail.com>
+Date:   Fri Mar 31 14:52:56 2023 +0530
+
+    Autofocus input when after clicking OpenAI API Key in sidebar. (#324)
+    
+    * Update Key.tsx
+    
+    Autofocus input after its visible.
+    
+    * Update Key.tsx
+
+[33mcommit c1b7b0e070ba2565c993e95490e77e09ec5d35aa[m
+Author: Rudolf Olah <89982117+rudolfolah@users.noreply.github.com>
+Date:   Thu Mar 30 22:10:11 2023 -0400
+
+    Feature: add link to openai account usage (#319)
+    
+    * Update ModelSelect.tsx to include link to account usage
+    
+    It would be helpful to be able to click a link to see the account usage and billing, and the model selection is related to the pricing.
+    
+    * updated styling and added icon for external link
+    
+    * fixed missing import
+
+[33mcommit 22bcaef8051a5e87402fe8387b22768c09bca12e[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Thu Mar 30 19:56:43 2023 -0600
+
+    update demo
+
+[33mcommit 317bc9b6f38be49815041d225b7d491b63ef99ca[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Thu Mar 30 19:47:58 2023 -0600
+
+    fix nasty bug
+
+[33mcommit 40828f15687eb2cfa69884e00045a60a07037a9b[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Thu Mar 30 19:17:38 2023 -0600
+
+    change default prompt in example
+
+[33mcommit 31129919bf125e7c0e52d0c1f6a128fb5bb206d3[m
+Author: Bryan Lee <38807139+liby@users.noreply.github.com>
+Date:   Fri Mar 31 09:16:02 2023 +0800
+
+    feat: support custom default system prompt (#285)
+
+[33mcommit 2114b7296e5f2d3099ed997a8eda1265c9e4841e[m
+Author: Matri <matrixdom@126.com>
+Date:   Fri Mar 31 09:14:17 2023 +0800
+
+    fix: properly trigger prompt modal close (#309)
+    
+    Co-authored-by: MatriQi <matri@aifi.io>
+
+[33mcommit 5cdd3e56b7c25a557d4afca3b8c241ef92fec38d[m
+Author: Syed Muzamil <38078427+SyedMuzamilM@users.noreply.github.com>
+Date:   Fri Mar 31 01:01:57 2023 +0530
+
+    fix: small ui issue (#311)
+    
+    * fix: unnecessary lines before the chats or prompts
+    
+    Removed unncessary lines if there are no folders before prompts and
+    chats.
+    
+    * added the light mode for scroll down button
+
+[33mcommit ef8c1b2c33aeeee34528c031f3ea2e14f599b535[m
+Author: Burke Libbey <burke@libbey.me>
+Date:   Thu Mar 30 15:30:34 2023 -0400
+
+    Allow specifying OpenAI-Organization header: (#313)
+    
+    See https://platform.openai.com/docs/api-reference/introduction
+    
+    > For users who belong to multiple organizations, you can pass a header
+    > to specify which organization is used for an API request. Usage from
+    > these API requests will count against the specified organization's
+    > subscription quota.
+
+[33mcommit 3631a5ac75616d5d7d52b49eb8a4debdb7bd428e[m
+Author: ryanhex53 <ouyang.em@gmail.com>
+Date:   Thu Mar 30 17:53:24 2023 +0800
+
+    return detail error from api call. (#295)
+
+[33mcommit 4d7adf477a423c2f9ed52115a2615ba20457ccd1[m
+Author: Dasun Nimantha <72796127+dasunNimantha@users.noreply.github.com>
+Date:   Thu Mar 30 15:22:22 2023 +0530
+
+    fix: In light mode, the arrow in the "scroll to bottom" icon is difficult to see #299 (#304)
+
+[33mcommit e020de47ce207582a09b288a45138cca64332048[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Wed Mar 29 15:21:50 2023 -0600
+
+    change messaging
+
+[33mcommit 85c4f88a06277d79195d6ccf2f2c9f189c70599b[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Wed Mar 29 10:10:55 2023 -0600
+
+    Update README.md
+
+[33mcommit 6ef83b0cb6b56667030e8f23327b8462d1de1b96[m
+Author: Redon <790348264@qq.com>
+Date:   Wed Mar 29 11:11:16 2023 +0800
+
+    fix: translation omission (#281)
+
+[33mcommit 00c6c722701bbe62dec0cf98f5b068632b426e77[m
+Author: Thomas LÉVEIL <thomasleveil@users.noreply.github.com>
+Date:   Wed Mar 29 05:10:47 2023 +0200
+
+    :sparkles: feat: add DEFAULT_MODEL environment variable (#280)
+    
+    * :sparkles: feat: add DEFAULT_MODEL environment variable
+    
+    * set the model maxLength setting in the models definition
+    
+    * set the model tokenLimit setting in the models definition
+
+[33mcommit 3f82710cdd0012f7855a00d3912efb817d353ace[m
+Author: Dasun Nimantha <72796127+dasunNimantha@users.noreply.github.com>
+Date:   Wed Mar 29 02:27:20 2023 +0530
+
+    chore: added Sinhala language locales (#276)
+
+[33mcommit b2ef40cf6f65bc90ca08110cb5b78b5d4ba28ac6[m
+Author: Mohammed Sohail <hey@msohail.dev>
+Date:   Tue Mar 28 23:57:10 2023 +0300
+
+    Fix invalid Tailwind property (#275)
+
+[33mcommit 52d47292ad6f0c4ef6c7fcc86d9c0489da2a07eb[m
+Author: Mostafa Higazy <44501304+DjTer3a@users.noreply.github.com>
+Date:   Tue Mar 28 22:55:35 2023 +0400
+
+    Adding arabic translation (#274)
+
+[33mcommit aefeac2902717bd391b3674b3e73fd82408cd521[m
+Author: Ernesto Barrera <44771579+ernestobarrera@users.noreply.github.com>
+Date:   Tue Mar 28 17:44:24 2023 +0200
+
+    New JSON translation file for Spanish (#270)
+    
+    Translation to Spanish of the prompts custom template bar
+
+[33mcommit baca00c59e7e946d9b15e0bfea64ac0cb24ce4df[m
+Author: Jungley <jungley810@gmail.com>
+Date:   Tue Mar 28 22:27:54 2023 +0800
+
+    doc: update doc about Docker (#264)
+    
+    maybe fix #259
+
+[33mcommit a70ae8799d692f20ca2a834f737db116fb587ca5[m
+Author: Syed Muzamil <38078427+SyedMuzamilM@users.noreply.github.com>
+Date:   Tue Mar 28 19:30:07 2023 +0530
+
+    fix: website crash when typing / followed with non prompt name (#262)
+    
+    * fix: froward slash crash
+    
+    * added the rounded corners when editing folder/chat
+
+[33mcommit cd49445491cdf5507b67584fc3e3386236da01d0[m
+Author: Dasun Nimantha <72796127+dasunNimantha@users.noreply.github.com>
+Date:   Tue Mar 28 19:29:31 2023 +0530
+
+    style: changed scroll icon size via size attribute as suggested (#263)
+
+[33mcommit abdcd4508da787605119af946b0a1f5b40d8b965[m
+Author: Syed Muzamil <38078427+SyedMuzamilM@users.noreply.github.com>
+Date:   Tue Mar 28 15:53:34 2023 +0530
+
+    fix: layout shifting on small devices (#258)
+    
+    * fix: overlap between plus and prompt menu icon
+    
+    * fix: prompt sidebar not showing on small devices
+    
+    * fix: layout shifting on small devices when there is a code block
+
+[33mcommit 3749c9b2af71a47827a529c24d9742cd39bd2364[m
+Author: Simon Holmes <srsholmes@gmail.com>
+Date:   Tue Mar 28 10:22:58 2023 +0000
+
+    chore: migrate to vitest for 10x faster tests (#257)
+    
+    * chore migrate to vitest
+    
+    * chore: cleanup jest stuff
+    
+    * chore: install the coverage dep
+
+[33mcommit 11d6172e957b2180e7e62fdef3f31a439fa8de31[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Tue Mar 28 03:22:24 2023 -0600
+
+    Update README.md
+
+[33mcommit 1f9d17f8bf1d3fd82d00ba7a974fe75e7108f623[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Tue Mar 28 02:52:45 2023 -0600
+
+    scroll btn (#256)
+    
+    * feat: added scroll down button
+    
+    when the use scrolls up on the chat a button will appear on the bottom right side of the screen. It will smoothly scroll down to the bottom of the chat when the button was pressed.
+    
+    * remove env
+    
+    ---------
+    
+    Co-authored-by: dasunNimantha <dasun4@pm.me>
+
+[33mcommit a73ef2b8cf1dad6d4f1e78cb3b28f9d4e228c3f2[m
+Author: Bryan Lee <38807139+liby@users.noreply.github.com>
+Date:   Tue Mar 28 16:46:16 2023 +0800
+
+    fix: resolve Enter event conflict during CJK IME (#253)
+    
+    * fix: resolve Enter event conflict during CJK IME
+    
+    * add
+    
+    ---------
+    
+    Co-authored-by: Mckay Wrigley <mckaywrigley@gmail.com>
+
+[33mcommit 28c8bf0e0d4b8e8789b28d7824e9dd37b95640fb[m
+Author: Redon <790348264@qq.com>
+Date:   Tue Mar 28 16:36:30 2023 +0800
+
+    chore: update chinese locales (#247)
+    
+    * chore: update chinese locales
+    
+    * chore: update locales
+
+[33mcommit a78a8c4a94a8681ce51d0742c83ed07e4a794622[m
+Author: Brad Ullman <brad@ullman.com>
+Date:   Tue Mar 28 01:35:57 2023 -0700
+
+    make all chat area components tabbable (accessibility) (#246)
+    
+    * make all chat area components tabbable
+    
+    * align message role description
+    
+    * remove inline styles on icons
+    
+    * remove inline styles on icons
+
+[33mcommit 5d31947ab9392a66378859576ee12720b793f8f5[m
+Author: Syed Muzamil <38078427+SyedMuzamilM@users.noreply.github.com>
+Date:   Tue Mar 28 14:03:15 2023 +0530
+
+    fix: prompt sidebar not showing on small devices (#232)
+    
+    * fix: overlap between plus and prompt menu icon
+    
+    * fix: prompt sidebar not showing on small devices
+
+[33mcommit 7c74df338ec00f4c35afe71076ba40a92e10c459[m
+Author: Redon <790348264@qq.com>
+Date:   Tue Mar 28 16:32:28 2023 +0800
+
+    feat: empty state add icons (#248)
+
+[33mcommit 00d807495d5561252183ea175d24469d79bddb30[m
+Author: Brad Ullman <brad@ullman.com>
+Date:   Tue Mar 28 01:31:03 2023 -0700
+
+    update prompts to be tabbable (#241)
+
+[33mcommit a3eb247c3fe5aa260af224e9d6172e89da8bf1c5[m
+Author: Brad Ullman <brad@ullman.com>
+Date:   Tue Mar 28 01:29:56 2023 -0700
+
+    convert folders to buttons & folder icons to buttons (accessibility)  (#237)
+    
+    * tabbable folders
+    
+    * fix spacing
+
+[33mcommit b0c289f7a43a846760b31741ccd7d6d8f72a06b4[m
+Author: Thomas LÉVEIL <thomasleveil@users.noreply.github.com>
+Date:   Tue Mar 28 10:27:37 2023 +0200
+
+    fix import  (#242)
+    
+    * :bug: fix import (#224)
+    
+    * :bug: fix import of corrupted history
+    
+    see https://github.com/mckaywrigley/chatbot-ui/issues/224#issuecomment-1486080888
+    
+    * add the run-test-suite github action
+
+[33mcommit 5aa5be3f435981b053ee8cab7205b6107ff34dc5[m
+Author: Syed Muzamil <38078427+SyedMuzamilM@users.noreply.github.com>
+Date:   Mon Mar 27 22:00:00 2023 +0530
+
+    fix: overlap between plus and prompt menu icon (#230)
+
+[33mcommit 34c79c0d66c188a2c6c6113067f5ac8fee66a472[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Mon Mar 27 09:38:56 2023 -0600
+
+    Prompts (#229)
+
+[33mcommit 2269403806e2e7bf0a8d27be2ba9d32e1a1af140[m
+Author: Danil Shishkevich <44939683+shishkevichd@users.noreply.github.com>
+Date:   Mon Mar 27 22:20:33 2023 +0700
+
+    chore: fix styles in "OpenAI Key" div (#228)
+    
+    chore: do nothing if the name of the renamed dialog contains nothing.
+    chore: fix some styles
+    chore: remake conversation settings on mobile
+
+[33mcommit a1743c82ccf8f25fcc46127c7c21d3df2cfd6096[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Mon Mar 27 07:48:51 2023 -0600
+
+    fix regenerate
+
+[33mcommit 3ca503a3f244b871a663ccd29c5c1da8a5fa04e7[m
+Author: Danil Shishkevich <44939683+shishkevichd@users.noreply.github.com>
+Date:   Mon Mar 27 20:43:01 2023 +0700
+
+    chore: some small improvements (#223)
+    
+    * chore: stylize error message div
+    chore: correct styles for sidebar btn
+    chore: add spinner and replace header "Please wait" on spinner
+    chore: correct Russian translate
+    chore: hide clear conversation btn if not conversations
+    chore: stylize "Need OpenAI key" div
+    
+    * chore: corrent Russian translate
+
+[33mcommit d8e3844fb9b63bb854406f694b6486b806556ebb[m
+Author: Julian Pufler <julian@pufler.dev>
+Date:   Mon Mar 27 15:40:43 2023 +0200
+
+    fix german wording and switch to informal style (#226)
+
+[33mcommit 82401a414273e843fd47693ccdb6333f9f24c226[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Mon Mar 27 01:38:01 2023 -0600
+
+    Option for clear all messages (#222)
+    
+    Co-authored-by: ryanhex53 <ouyang.em@gmail.com>
+
+[33mcommit 90399d24cc81efd35eba2caf406df231e54068fb[m
+Author: Praise <lizan60@qq.com>
+Date:   Mon Mar 27 15:26:59 2023 +0800
+
+    Display optimization on iPhone device page (#220)
+    
+    * Disable Zoom Page
+    
+    * add height
+    
+    ---------
+    
+    Co-authored-by: Praise <lizan60@gmail.com>
+
+[33mcommit 46e1857489ab00e294c88ad7566c1b2c0f9237d9[m
+Author: Thomas LÉVEIL <thomasleveil@users.noreply.github.com>
+Date:   Mon Mar 27 09:22:38 2023 +0200
+
+    Fix rendering performances issues related to scrolling events (#174)
+    
+    * memoize chat related components
+    
+    * Avoid re-rendering ChatInput on every message udpate
+    
+    * change the way the horizontal scrollbar is hidden
+    
+    * make the scroll event listener passive
+    
+    * perf(Chat): fix performances issues related to autoscroll
+    
+    Uses the intersection API to determine autoscroll mode instead of listening for scroll events
+    
+    * tuning detection of autoscroll
+
+[33mcommit c3f2dced56809cabb76ce4e066266d3c0bd5c64b[m
+Author: Brad Ullman <brad@ullman.com>
+Date:   Sun Mar 26 14:19:27 2023 -0700
+
+    convert conversation icons to buttons (accessibility) (#192)
+    
+    * update sidebar overflow
+    
+    * update all clickable icons to buttons
+    
+    * refactor buttons so they are not inside other buttons
+    
+    * format doc
+    
+    * update input background to transparent
+    
+    * adjust btns size to match #202
+    
+    * update text size per #202
+
+[33mcommit df7c363ccbafdeaf2940dc7a4a55458a8af8e153[m
+Author: Danny Aziz <daanyaal997@gmail.com>
+Date:   Sun Mar 26 16:48:34 2023 -0400
+
+    Add some additional text for API Key (#210)
+    
+    * feat: API Key Link
+    
+    * feat: key input placeholder
+
+[33mcommit bf8830e1a59ff89c1d7599449b8f62b9925599e7[m
+Author: Danil Shishkevich <44939683+shishkevichd@users.noreply.github.com>
+Date:   Mon Mar 27 02:56:13 2023 +0700
+
+    fix: missing translation (#206)
+    
+    for translators: need translate `Save & Submit` and `Cancel`
+
+[33mcommit 0e393b0becef73c5378b61907536f63384da3f63[m
+Author: Mark Anthony Llego <lr.mallego@mmdc.mcl.edu.ph>
+Date:   Mon Mar 27 03:55:47 2023 +0800
+
+    Fix unreadable dropdown menu text in dark mode (#204)
+    
+    * Fix unreadable dropdown menu text in dark mode
+    
+    * Fix unreadable dropdown menu text in dark mode
+
+[33mcommit 6d5d09d69f1312746e624df00ba2758ad9c775c4[m
+Author: Danil Shishkevich <44939683+shishkevichd@users.noreply.github.com>
+Date:   Sun Mar 26 22:14:47 2023 +0700
+
+    chore: restyle modal with model select (#202)
+    
+    chore: set normal font size for sidebar
+    chore: set normal gradient for `ChatInput`
+
+[33mcommit 5d9bc10cf48322bd40f27f3e05e709c3e5d19246[m
+Author: Jiayao Yu <jiayao.yu@gmail.com>
+Date:   Sun Mar 26 08:09:10 2023 -0700
+
+    Allow switching GPT model in the middle of a conversation (#181)
+    
+    * Allow switching model in the middle of a conversation
+    
+    * Hide model selection menu behind a settings button
+    
+    * rename
+    
+    * Touch up the settings icon
+
+[33mcommit 0bd7d86174e6542cda17263fbd665f499521eaf0[m
+Author: tatsui <tatsuya.ito.at@gmail.com>
+Date:   Sun Mar 26 23:45:27 2023 +0900
+
+    docker build action (#196)
+
+[33mcommit b0059fdf0d7adccbdc5c98ba9730ee99df6a34b2[m
+Author: umarhadi <siswantoumarhadi47@gmail.com>
+Date:   Sun Mar 26 19:11:42 2023 +0700
+
+    feat: add Bahasa Indonesia support (#198)
+    
+    Signed-off-by: umarhadi <hi@umarhadi.dev>
+
+[33mcommit 831245c8371854001745ae212258224b08d2a1b2[m
+Author: Abdullah Al Nahid <43277262+nahid18@users.noreply.github.com>
+Date:   Sun Mar 26 16:56:42 2023 +0600
+
+    feat: bangla lang support (#195)
+    
+    Co-authored-by: nahid18 <nahidpatwary50@email.com>
+
+[33mcommit c0b1b2eadba4f2b08dfdb5daea17a498dc46b338[m
+Author: Danil Shishkevich <44939683+shishkevichd@users.noreply.github.com>
+Date:   Sun Mar 26 17:07:00 2023 +0700
+
+    fix: fix fonts (#194)
+    
+    * fix: hotfix fonts
+    
+    * chore: set normal line height
+
+[33mcommit ff13a3eab8dbee1cc669774c22298a82a38f3eba[m
+Author: oznav2 <92755196+oznav2@users.noreply.github.com>
+Date:   Sun Mar 26 12:29:51 2023 +0300
+
+    add_Hebrew_locales (#190)
+    
+    * add_Hebrew_locales
+    
+    Add Locales of Hebrew
+    
+    * Update next-i18next.config.js
+    
+    updating i-18next with Hebrew
+
+[33mcommit 4d0d1e8b95ddf52af68f22a66a380d399c1ca25f[m
+Author: Danil Shishkevich <44939683+shishkevichd@users.noreply.github.com>
+Date:   Sun Mar 26 16:29:31 2023 +0700
+
+    chore: change sidebar font size & style (#191)
+    
+    * chore: change sidebar font size & style
+    
+    * chore: create font size style for sidebar
+
+[33mcommit 0f07812cc5c8cd1cf9a8a12af47f095a4e2fb02d[m
+Author: Danil Shishkevich <44939683+shishkevichd@users.noreply.github.com>
+Date:   Sun Mar 26 15:25:58 2023 +0700
+
+    chore: delete code light theme, like chatgpt (#186)
+
+[33mcommit 675da9431d4b7a8bc2df8dce0c4bc8307d5c8741[m
+Author: HaithamLeo <73870784+HaithamLeo@users.noreply.github.com>
+Date:   Sun Mar 26 12:25:00 2023 +0400
+
+    added CONTRIBUTING.md file (#188)
+
+[33mcommit 10354fb29050e7633e6f9bda30b4fc43e6950263[m
+Author: Redon <790348264@qq.com>
+Date:   Sun Mar 26 15:21:48 2023 +0800
+
+    feat: export json format (#185)
+
+[33mcommit d6973b9cccb07b96ae732a1925b0e080a3bbd380[m
+Author: Simon Holmes <srsholmes@gmail.com>
+Date:   Sun Mar 26 05:13:18 2023 +0000
+
+    feat: add in prettier and format code for consistency (#168)
+
+[33mcommit b843f6e0e0c527ef317bc553d56706657fe59c21[m
+Author: hy3na <hy3nainsakariba@proton.me>
+Date:   Sun Mar 26 14:11:58 2023 +0900
+
+    Corrected wording (#178)
+
+[33mcommit 9706f67bb43c8bef0aea3247606ee3a7bd6d5770[m
+Author: Nguyễn Hữu Phong <huuphong.nguyen@icloud.com>
+Date:   Sun Mar 26 12:11:40 2023 +0700
+
+    Locale vi (#177)
+    
+    * Locale vi
+    
+    * Fix translates layout
+
+[33mcommit 71d7e44bcee2564a9a4301df3d0dc46c5eb53e40[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Sat Mar 25 23:06:49 2023 -0600
+
+    hotfix
+
+[33mcommit 499007da946772b6cdb1181355e202ca4cfd46f5[m
+Author: Bruce Shi <shibocuhk@gmail.com>
+Date:   Sat Mar 25 21:37:00 2023 -0700
+
+    Latex plugin (#165)
+
+[33mcommit 14fe29c03aeb6f737811055064803f71f3f731cd[m
+Author: Jack Wu <jackwu833016@gmail.com>
+Date:   Sun Mar 26 00:28:08 2023 -0400
+
+    feat: Message copy button (#171)
+    
+    * Add copy button
+    
+    * Fix copy button not copying the entire message
+    
+    * fix style
+    
+    * remove prewrap
+    
+    ---------
+    
+    Co-authored-by: Mckay Wrigley <mckaywrigley@gmail.com>
+
+[33mcommit fffb729b34614d2ccd34d314f1f9cc9b2820f050[m
+Author: Brad Ullman <brad@ullman.com>
+Date:   Sat Mar 25 21:11:48 2023 -0700
+
+    sort the data, not the UI. buttons are now tab-able from the top down (#176)
+
+[33mcommit e18276223b38e8e6c4b35ec9ce7456cb5e52734d[m
+Author: Alberto <aesadde@users.noreply.github.com>
+Date:   Sat Mar 25 21:08:29 2023 -0700
+
+    fix: update es translations (#167)
+    
+    Co-authored-by: aesadde <albertosadde@gmail.com>
+
+[33mcommit 3915cef98a5547e0c17021eb0580f92abfd5893f[m
+Author: hy3na <hy3nainsakariba@proton.me>
+Date:   Sun Mar 26 13:08:08 2023 +0900
+
+    add_ja_locales (#172)
+    
+    Co-authored-by: Mckay Wrigley <mckaywrigley@gmail.com>
+
+[33mcommit d281c161a2d59bfc7eb2bd74e22b148d67d2d4c5[m
+Author: Brian Kim <29084277+brianjckim@users.noreply.github.com>
+Date:   Sun Mar 26 00:06:50 2023 -0400
+
+    locale ko (#166)
+    
+    Co-authored-by: Brian Kim <brian@brianjckim.com>
+
+[33mcommit a0a2cb8b35489120d37215c1a01b9edb88162b78[m
+Author: TULASEE RAO CHINTHA <tulasi.chintha@gmail.com>
+Date:   Sat Mar 25 17:35:29 2023 -0400
+
+    Added Telugu language(South Indian) translations (#161)
+
+[33mcommit f698d9f3c4a7cba1523e57704cbfd2d8304e3a11[m
+Author: toni <99801307+toniseldr@users.noreply.github.com>
+Date:   Sat Mar 25 17:12:56 2023 -0300
+
+    locate pt (#159)
+    
+    * locate portuguese
+    
+    * locate portuguese
+
+[33mcommit 0038bb8366be45d18dca20ebaf888d904d758646[m
+Author: Thomas LÉVEIL <thomasleveil@users.noreply.github.com>
+Date:   Sat Mar 25 21:10:17 2023 +0100
+
+    recover from corrupted conversationHistory data (#162)
+    
+    If an item from conversationHistory is badly corrupted, skip it instead of crashing the app
+
+[33mcommit 1253565a69974a82275afa25408f9db36ef896d3[m
+Author: RichyRK <123424756+RichyRK@users.noreply.github.com>
+Date:   Sat Mar 25 19:35:29 2023 +0100
+
+    Add locale sv (Swedish) (#157)
+    
+    * add locale sv (Swedish)
+    
+    * add locale sv (Swedish)
+
+[33mcommit 9a6ad3d66cbe43da91d1c73512b929789e976117[m
+Author: Matias <1847940+matias-casal@users.noreply.github.com>
+Date:   Sat Mar 25 14:50:02 2023 -0300
+
+    locale es (#156)
+    
+    Co-authored-by: Mati <mcasal@bootweb.com.ar>
+
+[33mcommit 966021ed74cb0788f7ac15b93dd3ba6bd0b0b3a5[m
+Author: Jungley <yejing@live.cn>
+Date:   Sun Mar 26 01:08:03 2023 +0800
+
+    feat: Allow customization of OpenAI host with environment variable (#152)
+    
+    This commit modifies the OpenAI host configuration to support customization through an environment variable. This change is particularly useful in scenarios where access to the official OpenAI host is restricted or unavailable, allowing users to configure an alternative host for their specific needs.
+
+[33mcommit dd44a0621346a83c0ac08c51802473fc1333c2bf[m
+Author: Thomas LÉVEIL <thomasleveil@users.noreply.github.com>
+Date:   Sat Mar 25 18:03:45 2023 +0100
+
+    :globe_with_meridians: locale de (#154)
+
+[33mcommit 2ae4c69de7fc278ff1fb8169d1188069b6e3cdda[m
+Author: Anerco <aner.cohen@gmail.com>
+Date:   Sat Mar 25 19:55:45 2023 +0300
+
+    chore: move deps to dev deps (#140)
+
+[33mcommit f5ebde2d2d7d510fbcff4a193da3c3776c9e4638[m
+Author: Thomas LÉVEIL <thomasleveil@users.noreply.github.com>
+Date:   Sat Mar 25 17:48:50 2023 +0100
+
+    Locale fr (#153)
+    
+    * :globe_with_meridians: fr translations
+    
+    * :coffin: remove unused translation
+
+[33mcommit cb58a703e331467db2ef696cee319d913082c336[m
+Author: Danil Shishkevich <44939683+shishkevichd@users.noreply.github.com>
+Date:   Sat Mar 25 23:33:29 2023 +0700
+
+    feat: Russian language (#148)
+    
+    * feat: russian (Русский) language
+    
+    * chore: correct translate
+    
+    * chore: correct "System prompt" translate
+
+[33mcommit b89ca2082eb226ccd149244e47c3e169e446f170[m
+Author: Thomas LÉVEIL <thomasleveil@users.noreply.github.com>
+Date:   Sat Mar 25 17:32:59 2023 +0100
+
+    Precise error messages (#150)
+    
+    * Introduce a component to display error messages
+    
+    * precise error message when api key is invalid
+
+[33mcommit 3f09a4c35549af678f429c1ec43b0fc8cd8ad280[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Sat Mar 25 10:13:51 2023 -0600
+
+    hotfix
+
+[33mcommit 92eab6c6346b1e53921185eff254d051534ffd60[m
+Author: Jungley <jungley810@gmail.com>
+Date:   Sat Mar 25 23:42:48 2023 +0800
+
+    feat: Add i18n support for Chinese language (#142)
+    
+    * feat: Add i18n support for Chinese language
+    
+    * fix: locale not working in Docker environment
+
+[33mcommit 932853f1ba8795bde36fc8cff08f500431f166bd[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Sat Mar 25 08:54:37 2023 -0600
+
+    Update README.md
+
+[33mcommit 4fbb5e1f79c9d279238b0adb24ee4c4063c275f7[m
+Author: Danil Shishkevich <44939683+shishkevichd@users.noreply.github.com>
+Date:   Sat Mar 25 21:29:54 2023 +0700
+
+    fix: change message edit logic (#144)
+    
+    if the edited message isn't different from the original message, then do nothing.
+
+[33mcommit 698c3bda29f4d06e8e1221c085faf45574764ed0[m
+Author: Thomas LÉVEIL <thomasleveil@users.noreply.github.com>
+Date:   Sat Mar 25 15:00:40 2023 +0100
+
+    smoother autoscroll down (#141)
+
+[33mcommit 93a8e814d606a9f082ac7aa66bb940eddf7ec1f1[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Sat Mar 25 07:18:57 2023 -0600
+
+    fix send params
+
+[33mcommit d27326125bf5062133eb52d81729a16a8568e378[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Sat Mar 25 07:12:51 2023 -0600
+
+    regenerate button (#138)
+
+[33mcommit d7fdcd0dfe5df2e3b9d5d8735920d5d13bdfc901[m
+Author: Danil Shishkevich <44939683+shishkevichd@users.noreply.github.com>
+Date:   Sat Mar 25 20:11:27 2023 +0700
+
+    fix: disable button if messageContent is empty (#137)
+
+[33mcommit a00532396466e5bd5aa3c36bfed2395ce734147e[m
+Merge: 8014519 2c8e854
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Sat Mar 25 06:41:44 2023 -0600
+
+    Merge branch 'main' of https://github.com/mckaywrigley/chatbot-ui-pro
+
+[33mcommit 801451993c3d1888133025122786948d16f9dacf[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Sat Mar 25 06:41:43 2023 -0600
+
+    fix mobile edit
+
+[33mcommit 2c8e8547d0a265a326ed85ae98f5c5bfae535d40[m
+Author: Thomas LÉVEIL <thomasleveil@users.noreply.github.com>
+Date:   Sat Mar 25 13:35:08 2023 +0100
+
+    Do not rely on user to figure out if server is configured with an api key (#136)
+    
+    Fixes #105 (and probably also #115)
+    
+    Co-authored-by: Mckay Wrigley <mckaywrigley@gmail.com>
+
+[33mcommit 1e6531354d7a1562ff6c46d8bad09ba1a9a74cdb[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Sat Mar 25 06:24:07 2023 -0600
+
+    fix sidebar arrow showing
+
+[33mcommit 291e2d985258db89b2084ebc5ec58268d0bfa435[m
+Author: Awesh Choudhary <66569398+aweshchoudhary@users.noreply.github.com>
+Date:   Sat Mar 25 17:42:06 2023 +0530
+
+    Added Better Closing Sidebar Logic (Close on Background Click) (#122)
+
+[33mcommit 69e05160a34beeca9f81fd79dc0d59a55f19b1c1[m
+Author: Ernesto Barrera <44771579+ernestobarrera@users.noreply.github.com>
+Date:   Sat Mar 25 13:11:30 2023 +0100
+
+    Added character count to alert message (#135)
+    
+    This improvement adds additional information to the alert that is displayed when the user enters more characters than allowed in the rich text element. Now, the alert also shows the number of characters that the user has entered, which helps to provide clearer and more useful feedback to the use
+
+[33mcommit 338ddedfecd8a0e7e3a2490e56b3c7e5f0123bc9[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Sat Mar 25 06:09:51 2023 -0600
+
+    handle mobile edit
+
+[33mcommit a03d8b2ba9fdfaac4a4f08a18e5534e69cf437f0[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Sat Mar 25 05:49:41 2023 -0600
+
+    edit message
+
+[33mcommit e30336c00e2b682420d3740776ddff4461bb95e0[m
+Author: Danil Shishkevich <44939683+shishkevichd@users.noreply.github.com>
+Date:   Sat Mar 25 17:39:31 2023 +0700
+
+    feat: codeblock styling like chatgpt (#132)
+
+[33mcommit c3132ef2fb4b3423cd0d345a9e40c3a0d579ba69[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Sat Mar 25 04:37:47 2023 -0600
+
+    fix import issue
+
+[33mcommit 4876dced04c56b3e1becabecc69b21b1af6c183b[m
+Author: igor <igor@logycon.com>
+Date:   Sat Mar 25 06:24:43 2023 -0400
+
+    add k8s config (#117)
+
+[33mcommit c73f604819928980894201dfa8674c2cca1720c4[m
+Author: Brad Ullman <bullman@salesforce.com>
+Date:   Sat Mar 25 03:21:58 2023 -0700
+
+    Update Sidebar Setting elements to be buttons (improve accessibility) (#130)
+    
+    * update sidebar elements to be buttons so they are keyboard navigatable
+    
+    * rollback whitespace change
+
+[33mcommit bc3b6d3355e90241a1aee99baf2ae3f05a1f2a7c[m
+Author: Redon <790348264@qq.com>
+Date:   Fri Mar 24 16:43:44 2023 +0800
+
+    feat: show language name (#113)
+
+[33mcommit ad2e1f0d4c661a18b543f97d9d3a549c0363fe97[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Thu Mar 23 20:30:17 2023 -0600
+
+    Update README.md
+
+[33mcommit 9d88722f355108f1b7ee3a60080cbae4871a997c[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Thu Mar 23 19:08:20 2023 -0600
+
+    clean history on import
+
+[33mcommit 93b528f10d6e6986ec508c4dda9d6514ed0652e0[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Thu Mar 23 19:06:00 2023 -0600
+
+    stray log
+
+[33mcommit 1f31cc55074c0f2f99ceca46e579ec875c9021a8[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Thu Mar 23 19:05:47 2023 -0600
+
+    hotfix import
+
+[33mcommit f5118e30375ac9091050061faafdd3abef0e5600[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Thu Mar 23 17:59:40 2023 -0600
+
+    folders (#108)
+    
+    * folders
+    
+    * fixes
+    
+    * storage fix
+
+[33mcommit 1a4b4401eebca2ba0b9b0ed9f34b9c6b5e935d8c[m
+Author: Alan P <alanpog@gmail.com>
+Date:   Thu Mar 23 17:51:51 2023 -0400
+
+    include prompt in token count (#104)
+
+[33mcommit 7ce2d5ec2c270b142838bf7f9cbdc152add3a323[m
+Author: Tony <92271804+jean-jacket@users.noreply.github.com>
+Date:   Thu Mar 23 19:01:35 2023 +0000
+
+    autofocus textarea (#103)
+
+[33mcommit 42c48f290f954517c81132cdd35cf3d0a0683199[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Thu Mar 23 09:20:11 2023 -0600
+
+    fix rogue messages
+
+[33mcommit 83217c6d83e65b4400f5ab408d0cef9ccfc3c8c5[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Thu Mar 23 08:54:22 2023 -0600
+
+    new load behavior
+
+[33mcommit 2b1ef7be3e2e8f040d4c2b7db6774eeb220b568e[m
+Author: Awesh Choudhary <66569398+aweshchoudhary@users.noreply.github.com>
+Date:   Thu Mar 23 20:01:45 2023 +0530
+
+    SEO Fixed and Added Semantic Html Tags (#98)
+
+[33mcommit 1789351ab55b6af78ea64c28247ee7172c782983[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Thu Mar 23 08:20:02 2023 -0600
+
+    handle code copy error
+
+[33mcommit 71a770c24e66e66714e902d41604dd75495d4a41[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Thu Mar 23 08:14:37 2023 -0600
+
+    tweak scroll tolerance
+
+[33mcommit 68cd41a6dccbbbde161c7de5ffa13b6d54558d97[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Thu Mar 23 08:11:37 2023 -0600
+
+    fix scroll behavior
+
+[33mcommit 83987d3021317bd15ac85c35252e9aaa38cdb199[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Thu Mar 23 01:19:30 2023 -0600
+
+    update readme
+
+[33mcommit da11d0b91e7522a0f62fcc2f6df9fd4cf7ba903b[m
+Author: Aubrey Keus <aekeus@gmail.com>
+Date:   Thu Mar 23 03:17:54 2023 -0400
+
+    Search within conversation.messages + conversation.name (#91)
+
+[33mcommit a1a8ac42a6d7f8b000af78df68c86d96d1229331[m
+Author: patanjalikr13 <42902972+patanjalikr13@users.noreply.github.com>
+Date:   Thu Mar 23 12:46:34 2023 +0530
+
+    added download button, downlaod handler and necessary utility functions (#85)
+    
+    Co-authored-by: Patanjali Kumar <patanjali@oddup.com>
+
+[33mcommit d30471f5a9c24c5f48114a4fee9e1db9868d18b1[m
+Author: CMarghin <74823355+CH4R4F@users.noreply.github.com>
+Date:   Thu Mar 23 07:11:45 2023 +0000
+
+    fix style issue after clicking on ClearConversation (#89)
+    
+    there is a small difference in the spaces of the button after confirming which leads to an unexpected animation in the sidebar settings
+
+[33mcommit 52004c938b9e9c3f329538aa0fff61a8930efe90[m
+Author: CMarghin <74823355+CH4R4F@users.noreply.github.com>
+Date:   Thu Mar 23 07:11:01 2023 +0000
+
+    Name conversations automatically #86 (#90)
+
+[33mcommit 172bb8e5b1a0f999a25122f38f7372aca6cc34df[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Wed Mar 22 22:38:44 2023 -0600
+
+    add dist
+
+[33mcommit aac8d22707d535fda739c2cbf8abc6b6cd080b3c[m
+Author: Ethereumdegen <admazzola@gmail.com>
+Date:   Wed Mar 22 13:59:14 2023 -0400
+
+    improve error msg (#81)
+    
+    Co-authored-by: apexmfer <apexmfer@gmail.com>
+
+[33mcommit 79c4ea053f922ca5a29de4bcf04f55e5a0ebd1c1[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Wed Mar 22 11:45:18 2023 -0600
+
+    fix light mode
+
+[33mcommit cccf75374328dd977e2c1f623f60cd66e6b74903[m
+Author: Xiangxuan Liu <9570112+nauxliu@users.noreply.github.com>
+Date:   Thu Mar 23 01:38:48 2023 +0800
+
+    Update the Stop Generating button style (#79)
+
+[33mcommit 6c1ed37323cef9b3ba30a644fadd69a9459641b1[m
+Author: Xiangxuan Liu <9570112+nauxliu@users.noreply.github.com>
+Date:   Thu Mar 23 01:20:55 2023 +0800
+
+    Apply the gradient bg style to input on mobile (#77)
+
+[33mcommit e8902354e4e709d7dcd53b27b8351ef798f5f467[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Wed Mar 22 11:07:42 2023 -0600
+
+    okay good
+
+[33mcommit c9030c63ef911db100b64e4e58577cc67ea883a4[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Wed Mar 22 11:04:31 2023 -0600
+
+    revert
+
+[33mcommit ec84eb2c49f12a95e0419dd632440b91f999f650[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Wed Mar 22 11:01:51 2023 -0600
+
+    Feat/add stop conversation button (#76)
+    
+    * chore add in stop conversation button
+    
+    * feat: use abort controller
+    
+    * chore: formatting
+    
+    ---------
+    
+    Co-authored-by: Simon Holmes <srsholmes@gmail.com>
+
+[33mcommit b0f2a0a3baf555200984a9fd22382515d1770ccb[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Wed Mar 22 10:51:27 2023 -0600
+
+    hotfix
+
+[33mcommit 5bffa8b0c97daa9c405d7ff7bc211222c09994ab[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Wed Mar 22 10:46:30 2023 -0600
+
+    hotfix
+
+[33mcommit cec0735403427ea6fc6b46655bb9de18b8080cef[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Wed Mar 22 08:13:37 2023 -0600
+
+    hotfix
+
+[33mcommit f0c575b40d3166515203928958c4aa70073298d6[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Wed Mar 22 08:10:00 2023 -0600
+
+    add import/export (#71)
+
+[33mcommit 972a5aff23943d6e549ed90a9b99cde46b561559[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Wed Mar 22 07:24:49 2023 -0600
+
+    fix copy code overlap (#70)
+
+[33mcommit 37c088a2124e20dd47216da4b1cb8e01281fbc28[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Wed Mar 22 07:14:24 2023 -0600
+
+    hide rogue scrollbar (#69)
+
+[33mcommit 4055e844509a9addc0108fab9c654c7f1b36cda0[m
+Author: Khairul Haaziq <101852870+khairulhaaziq@users.noreply.github.com>
+Date:   Wed Mar 22 21:10:31 2023 +0800
+
+    enhance ui and fix layout problems (#63)
+
+[33mcommit d14268b0758b615022b44327814e6f08b2c780b2[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Tue Mar 21 16:40:29 2023 -0600
+
+    keep message focus
+
+[33mcommit b7803cf4ba9a7d5fefa382285d8c5ca494daf944[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Tue Mar 21 16:38:04 2023 -0600
+
+    Clear conversations (#53)
+    
+    * Add button "Clear Conversations"
+    
+    * custom btn
+    
+    ---------
+    
+    Co-authored-by: Xiangxuan Liu <xiangxuan.liu@rightcapital.com>
+
+[33mcommit cb0fb447a794624119c282173106eef84aa63508[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Tue Mar 21 16:25:42 2023 -0600
+
+    Quocthinhvo/main (#52)
+    
+    * Change scroll bar style in desktop
+    
+    * new scrollbar
+    
+    ---------
+    
+    Co-authored-by: Quốc Thịnh Võ <46624702+quocthinhvo@users.noreply.github.com>
+
+[33mcommit 5b6968a6be4f5240911f45443bfbfc2929f21035[m
+Author: angular-moon <xiaoxuss@163.com>
+Date:   Tue Mar 21 23:46:56 2023 +0800
+
+    Fixed Search conversations input box was out of bounds (#41)
+
+[33mcommit 3d0e7830069c588e77961e5a53548496e050c0f6[m
+Author: Xiangxuan Liu <9570112+nauxliu@users.noreply.github.com>
+Date:   Tue Mar 21 23:46:20 2023 +0800
+
+    Auto close sidebar when a conversation is selected/created on mobile (#47)
+
+[33mcommit b80f39925ce8ad05170e16d295624280c7037b23[m
+Author: Xiangxuan Liu <9570112+nauxliu@users.noreply.github.com>
+Date:   Tue Mar 21 23:45:09 2023 +0800
+
+    Show latest conversations on the top (#46)
+
+[33mcommit 0d6ff739a2148ca1d477a4e93c096b2b49c73381[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Tue Mar 21 01:39:32 2023 -0600
+
+    add custom system prompt (#39)
+
+[33mcommit 6e19d44020b3ed2818dc6ce4a61987fe6d26f951[m
+Author: Alan P <alanpog@gmail.com>
+Date:   Tue Mar 21 00:05:23 2023 -0400
+
+    wrap user messages (#35)
+
+[33mcommit 537957d5f50971c65e451823b32d83ce1b70c6ef[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Mon Mar 20 22:02:24 2023 -0600
+
+    Token based and model conditional limits (#36)
+    
+    * use tiktoken for api limit
+    
+    * model conditional char limits on frontend
+    
+    * adjust for completion tokens
+    
+    ---------
+    
+    Co-authored-by: Alan Pogrebinschi <alanpog@gmail.com>
+
+[33mcommit 4c425eb4413f05154414782c62591068da9cfe7b[m
+Author: Dom Sip <dominik.sipowicz@gmail.com>
+Date:   Tue Mar 21 00:21:16 2023 +0000
+
+    remove ENV var from vercel deployment (#30)
+
+[33mcommit 61384fa68519b3c45c8d985306dfc0bb41fded13[m
+Author: Xiangxuan Liu <9570112+nauxliu@users.noreply.github.com>
+Date:   Mon Mar 20 23:48:12 2023 +0800
+
+    Add apple-mobile-web-app meta tags (#29)
+
+[33mcommit dd439bb4a8d193930ff17d679bc86478bde2a4b1[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Mon Mar 20 07:17:58 2023 -0600
+
+    error handling (#27)
+
+[33mcommit a0751994b137063309aa77b4a053099c95ee384c[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Mon Mar 20 04:30:18 2023 -0600
+
+    api key fix
+
+[33mcommit ff1d36f642381ede5cd94b012f2fc7beaffb153b[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Mon Mar 20 03:55:12 2023 -0600
+
+    readme update
+
+[33mcommit 7810a3e7dcf4123bf3b4751ce0378fb32371e541[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Mon Mar 20 03:53:00 2023 -0600
+
+    Add GPT-4 support (#25)
+    
+    * mobile ui updates
+    
+    * fixes sidebar btn
+    
+    * return if null
+    
+    * mobile input blur
+    
+    * handle mobile enter key
+    
+    * new convo name
+    
+    * new delete mechanism
+    
+    * test height
+    
+    * revert
+    
+    * change padding
+    
+    * remove overflow
+    
+    * check relative
+    
+    * padding
+    
+    * done
+    
+    * retry
+    
+    * test
+    
+    * test
+    
+    * should work now
+    
+    * test
+    
+    * test
+    
+    * more
+    
+    * max h
+    
+    * revert
+    
+    * done
+
+[33mcommit 9a4824818ea7ab7a02eb5c71237cc1ccd077cb86[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Sun Mar 19 21:54:32 2023 -0600
+
+    readme update
+
+[33mcommit 3af4a7edf3d1d9a34c9736894ade2487851db296[m
+Author: Sonny Lazuardi <sonnylazuardi@gmail.com>
+Date:   Mon Mar 20 11:47:03 2023 +0800
+
+    Fix safari small screen text input position style (#20)
+    
+    * Update .gitignore
+    
+    * Update next.config.js
+    
+    * Enable GPT-4
+    
+    * Update index.ts
+    
+    * Fix logic
+    
+    * Fix error
+    
+    * Add set openai key instruction
+    
+    * Fix menu safari
+    
+    * Revert changes
+    
+    * new line
+    
+    ---------
+    
+    Co-authored-by: Sonny <sonny.lazuardi@grabtaxi.com>
+
+[33mcommit 71a78172e61a0f1d0e0460ab4c6b4732944d6cf5[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Sun Mar 19 21:40:51 2023 -0600
+
+    Feat/search conversation (#24)
+    
+    * feat: Add conditional search input for conversation list
+    
+    * style and ux adjust
+    
+    ---------
+    
+    Co-authored-by: Tekle Ayele <tekleayele@gmail.com>
+
+[33mcommit 5da68bbdd45e29df76e4d5833c8543e49235ca77[m
+Author: Thomas LÉVEIL <thomasleveil@users.noreply.github.com>
+Date:   Sun Mar 19 13:49:41 2023 +0100
+
+    :whale: add Dockerfile (#17)
+    
+    Co-authored-by: dev <dev@ptfprod7>
+
+[33mcommit 7e6651dea788c3148acda051eac56d9b218d6687[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Sun Mar 19 06:48:57 2023 -0600
+
+    add more mobile ui (#18)
+
+[33mcommit 263c5c33ae1f5e9b4f8c83294543d3f76242123a[m
+Merge: 240185c 0f346a8
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Sun Mar 19 05:45:39 2023 -0600
+
+    Merge pull request #16 from nauxliu/fix-user-message-render
+    
+    User message should not render as Markdown
+
+[33mcommit 0f346a808ecaa3f55a95455df3683361cd5cb4b5[m
+Author: Xiangxuan Liu <xiangxuan.liu@rightcapital.com>
+Date:   Sun Mar 19 19:37:38 2023 +0800
+
+    User message should not render as Markdown
+
+[33mcommit 240185c11a333543492869e536298c9cbc0d2405[m
+Merge: dab7627 7c9e552
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Sun Mar 19 01:59:58 2023 -0600
+
+    Merge pull request #15 from nauxliu/fix-converstaion-context
+    
+    Correct the improper context being used when it exceeds the limit.
+
+[33mcommit 7c9e552a5c6ea221012606b9f5f978742cb7cefb[m
+Author: Xiangxuan Liu <xiangxuan.liu@rightcapital.com>
+Date:   Sun Mar 19 14:19:43 2023 +0800
+
+    Correct the improper context being used when it exceeds the limit.
+
+[33mcommit dab76278eb9b78caea45f084f5ce565959d8ecf6[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Sat Mar 18 23:17:15 2023 -0600
+
+    fix 1st convo default name
+
+[33mcommit edb86e90a7d326d5c6e45d15c0c424076e13fd55[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Sat Mar 18 22:42:37 2023 -0600
+
+    readme update
+
+[33mcommit a387b3d1cd88cdcc057fd4c7d44517c796549b85[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Sat Mar 18 22:32:09 2023 -0600
+
+    change to auto scroll
+
+[33mcommit 481c339d1cd0dd837ebb6ad09b11b58ee9327aad[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Sat Mar 18 22:27:50 2023 -0600
+
+    slight input ui tweak
+
+[33mcommit d0b4a355ca3762495881358f786fe22e863807e7[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Sat Mar 18 22:22:51 2023 -0600
+
+    put it in reverse terry
+
+[33mcommit 891bc38a4589030bd18a4537f861af0e09202f84[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Sat Mar 18 22:21:11 2023 -0600
+
+    fix loader position
+
+[33mcommit e6449998ef1a1a11d8e304986a2bd72359ce92e5[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Sat Mar 18 22:19:19 2023 -0600
+
+    add api key
+
+[33mcommit 396fe4ec6f37c316ac202f285fb6901df4712046[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Sat Mar 18 17:56:55 2023 -0600
+
+    fix syntax
+
+[33mcommit fe7d1a6ab2a743ecd16d771be8e6e7b05151a360[m
+Merge: 6b9293a a6d2118
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Sat Mar 18 17:55:55 2023 -0600
+
+    Merge pull request #11 from asolpshinning/patch-1
+    
+    Updated ChatInput.tsx text area to autoextend for larger prompt size
+
+[33mcommit 6b9293af6fef17d49fa150f28e7d71fdfd63698b[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Sat Mar 18 17:52:46 2023 -0600
+
+    Update README.md
+
+[33mcommit a6d2118085ef8dab619ae98e2c2242f797ee789d[m
+Author: asolpshinning <57355937+asolpshinning@users.noreply.github.com>
+Date:   Sat Mar 18 14:17:45 2023 -0500
+
+    Updated ChatInput.tsx text area to autoextend for larger prompt size
+
+[33mcommit d3bd34ae87b3cbe288422174197b6e41f060d84c[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Sat Mar 18 10:09:20 2023 -0600
+
+    minor case issue
+
+[33mcommit 903c7f68061c8a69d7adff5810c72a5485cbb130[m
+Merge: 8aa0d11 bbfb834
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Sat Mar 18 10:08:34 2023 -0600
+
+    Merge pull request #9 from nauxliu/disable-input-when-message-is-streaming
+    
+    Ignore new message when the current message is not finished yet
+
+[33mcommit bbfb834e89ee555f43c4098020d365b95b9d41c6[m
+Author: Xiangxuan Liu <xiangxuan.liu@rightcapital.com>
+Date:   Sun Mar 19 00:03:19 2023 +0800
+
+    Ignore new message when the current message is not finished yet
+
+[33mcommit 8aa0d1185ab941c5e31570e48a52755401156193[m
+Merge: 6bf8bac 934ba27
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Sat Mar 18 09:54:43 2023 -0600
+
+    Merge pull request #8 from nauxliu/settings-button-style
+    
+    Update settings button style
+
+[33mcommit 934ba277a64bb85eca51e718ec763074e6a2c231[m
+Author: Xiangxuan Liu <xiangxuan.liu@rightcapital.com>
+Date:   Sat Mar 18 23:40:05 2023 +0800
+
+    Update settings button style
+
+[33mcommit 6bf8bacec0819f44d66b19d8d3fd6687930d83ec[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Sat Mar 18 07:51:17 2023 -0600
+
+    gfm
+
+[33mcommit 16513b20de77a9fd1463a14b9464aa1a22d8032f[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Sat Mar 18 06:49:20 2023 -0600
+
+    fix naming bugs
+
+[33mcommit 9807ba4c423bc22541c9ae2f9e86ef928eb90f2b[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Sat Mar 18 06:21:58 2023 -0600
+
+    Update README.md
+
+[33mcommit 0728777c631f31118bd92b4f0d80192c58d11c17[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Sat Mar 18 06:20:08 2023 -0600
+
+    Update README.md
+
+[33mcommit a4c620d74d091889d0c8170acdf90a908619dc73[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Sat Mar 18 04:55:31 2023 -0600
+
+    fix width
+
+[33mcommit f8b02cde19009c5ce4b06bf8bc21566784d484a9[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Sat Mar 18 04:49:22 2023 -0600
+
+    adjust sidebar btn
+
+[33mcommit ef31d6ec28a16789766bcb199f77ed9aed78bf8d[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Sat Mar 18 04:48:59 2023 -0600
+
+    increase sidebar btn
+
+[33mcommit 3fecd56d22600bf22861da9fefb321efae416840[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Sat Mar 18 04:46:42 2023 -0600
+
+    responsive width
+
+[33mcommit 0654782f5793652996c0331edbbfc28c18ead67e[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Sat Mar 18 04:41:34 2023 -0600
+
+    rogue div
+
+[33mcommit fad67499e720d1ad9c9d07ee197744b59777b38c[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Sat Mar 18 04:29:39 2023 -0600
+
+    mobile improvements
+
+[33mcommit fa4e27a164ef2f13fc5adc0cd9303681c35fa8e2[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Sat Mar 18 04:10:35 2023 -0600
+
+    fix minor ui bugs
+
+[33mcommit cb4a3861ec7673512b12e6005c717dfb87d2cfc6[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Sat Mar 18 03:58:45 2023 -0600
+
+    readme update
+
+[33mcommit a0056460abd1ccc3a97953188d08f94fce8d75bf[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Sat Mar 18 03:57:15 2023 -0600
+
+    add rename and delete improvements
+
+[33mcommit b6d55762270fa61bef9cfcfd4e01aa8184bdb10e[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Sat Mar 18 02:32:30 2023 -0600
+
+    light/dark code highlight
+
+[33mcommit f56501ba7c6020f51e8a85419675933226e9edd4[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Sat Mar 18 02:20:32 2023 -0600
+
+    toggle sidebar
+
+[33mcommit 81f1412c38ceb82d8f2e5608b9a4d34b6c1b15ff[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Sat Mar 18 01:54:31 2023 -0600
+
+    readme update
+
+[33mcommit 8ec460a1110f714f34e390e771c241df211fea28[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Sat Mar 18 01:53:04 2023 -0600
+
+    readme update
+
+[33mcommit 761314c20b5e3c7f5f28cf11b9669e56a25f0100[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Sat Mar 18 01:52:43 2023 -0600
+
+    code syntax highlights
+
+[33mcommit f17a08a82728e7756ebccbb63fba19358eb7e7bd[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Fri Mar 17 19:30:02 2023 -0600
+
+    readme update
+
+[33mcommit 9c50142c64ecce963b6bc3694457c3ffb4462585[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Fri Mar 17 19:25:04 2023 -0600
+
+    add markdown
+
+[33mcommit 506b5c1684ebe5c79a962896eb47953caf66fc1d[m
+Merge: 7f35469 3ba74d9
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Fri Mar 17 18:24:25 2023 -0600
+
+    Merge pull request #4 from PeterTakahashi/fix/support-japanese-typing
+    
+    fix: support japanese typing
+
+[33mcommit 3ba74d99fbcc965092b5a2bc898b2216383fc6a4[m
+Author: PeterTakahashi <seiya.takahashi@rights-s.jp>
+Date:   Sat Mar 18 08:31:37 2023 +0900
+
+    fix: support japanese typing
+
+[33mcommit 7f35469fc4c8327480d67caee4b8aa77e079c076[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Wed Mar 15 14:35:24 2023 -0600
+
+    add demo
+
+[33mcommit c40f755cac7663589ae8399f0b1a9e8ab8ca0b0a[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Wed Mar 15 08:32:21 2023 -0600
+
+    fix deletion bug
+
+[33mcommit 742efea50db281f080bdfef40abe4cd3d59cddb5[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Wed Mar 15 07:25:15 2023 -0600
+
+    fix delete error
+
+[33mcommit dcfd3d956e5c47ce0f48365d448cb935abe4b223[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Wed Mar 15 07:07:26 2023 -0600
+
+    remove old
+
+[33mcommit 014b08c88cc019435cb9768a7c27e9b128de442d[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Wed Mar 15 06:26:54 2023 -0600
+
+    ocd
+
+[33mcommit cfa4d1a685909ad6c16c87e943ccf5b8466753ee[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Wed Mar 15 06:25:29 2023 -0600
+
+    readme update
+
+[33mcommit 640e0dbf6ef8a6fe628ad43ab93f223cebd4d9a3[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Wed Mar 15 06:23:26 2023 -0600
+
+    readme update
+
+[33mcommit f05390c97dc11af4e27320380668575cb922ca3e[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Wed Mar 15 06:20:11 2023 -0600
+
+    readme udpate
+
+[33mcommit 48f3f557e1b623d671c5ec480818750908572edb[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Wed Mar 15 06:05:02 2023 -0600
+
+    prompt adjust
+
+[33mcommit 758a1215c207a36b2909c7f8b7afe042a70d1b49[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Wed Mar 15 06:04:12 2023 -0600
+
+    mvp
+
+[33mcommit e87136c4ecb548a953e86a60251311b1d51be033[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Wed Mar 15 04:46:57 2023 -0600
+
+    single save
+
+[33mcommit ce331a1bbdbbeacef05c941aaf94b36da15a24ea[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Wed Mar 15 04:24:09 2023 -0600
+
+    boom
+
+[33mcommit a6503fb498dc2638f5eab1d70a6c8f288324ef89[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Mon Mar 13 19:21:14 2023 -0600
+
+    chatbot-ui starter
+
+[33mcommit 4c9730e4cd7b7bb06e218429724255f4331df8e1[m
+Author: Mckay Wrigley <mckaywrigley@gmail.com>
+Date:   Mon Mar 13 19:20:11 2023 -0600
+
+    first commit

@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 1234",
+    "dev": "next dev -p 5678",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -15,6 +15,8 @@
     "@dqbd/tiktoken": "^1.0.2",
     "@next/font": "^13.4.13",
     "@tabler/icons-react": "^2.9.0",
+    "cookie-cutter": "^0.2.0",
+    "cookies": "^0.8.0",
     "eventsource-parser": "^0.1.0",
     "i18next": "^22.4.13",
     "next": "^13.4.13",
@@ -22,7 +24,7 @@
     "openai": "^3.2.1",
     "react": "^18.2.0",
     "react-bootstrap": "^2.8.0",
-    "react-client-session": "^0.0.8",
+    "react-cookie": "^4.1.1",
     "react-dom": "^18.2.0",
     "react-hot-toast": "^2.4.0",
     "react-i18next": "^12.2.0",
@@ -32,6 +34,7 @@
     "rehype-mathjax": "^4.0.2",
     "remark-gfm": "^3.0.1",
     "remark-math": "^5.1.1",
+    "universal-cookie": "^4.0.4",
     "uuid": "^9.0.0"
   },
   "devDependencies": {
@@ -46,6 +49,7 @@
     "@types/uuid": "^9.0.1",
     "@vitest/coverage-c8": "^0.29.7",
     "autoprefixer": "^10.4.14",
+    "cookiecutter": "^1.3.0",
     "dotenv-webpack": "^8.0.1",
     "endent": "^2.1.0",
     "eslint": "8.36.0",
@@ -58,5 +62,9 @@
     "tailwindcss": "^3.2.7",
     "typescript": "4.9.5",
     "vitest": "^0.29.7"
-  }
+  },
+  "exclude": [
+    "node_modules",
+    "/home/tsd/mid/chatbot-ui/node_modules/cookie-cutter"
+  ]
 }

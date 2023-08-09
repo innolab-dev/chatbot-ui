@@ -60,4 +60,4 @@ def generate_response(data, memory, mogodb):
     response = agent_chain.run(input=prompt)
     mogodb.add_ai_message(response)
     # print(prompt)
-    print(response)
+    return response
