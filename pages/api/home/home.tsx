@@ -40,6 +40,7 @@ import HomeContext from './home.context';
 import { HomeInitialState, initialState } from './home.state';
 
 import { v4 as uuidv4 } from 'uuid';
+import { getUserEmail } from '@/utils/data/cookies';
 
 interface Props {
   serverSideApiKeyIsSet: boolean;
@@ -209,12 +210,17 @@ const Home = ({
 
     dispatch({ field: 'loading', value: false });
     
-    var email = "panda@gmail.com";
+    var userEmail = getUserEmail();
 
+    // Database: create new conversation
     let data = new URLSearchParams();
-    let api = "http://219.78.93.165:7000/" + "new-session";
-    data.append("email", email);
-    data.append("sessionID", conversationName);
+    let api = "http://219.78.93.165:7000/" + "new-conversation";
+    data.append("email", userEmail);
+    data.append("conversationID", newConversation.id);
+    data.append("conversationName", newConversation.name);
+    data.append("model", newConversation.model.name);
+    data.append("temperature", newConversation.temperature.toString());
+    data.append("systemMsg", newConversation.prompt);
 
     fetch(api, { method: "post", body: data })
           .then(res => {console.log(res.text())})
@@ -226,8 +232,6 @@ const Home = ({
               // }
           })
           .catch(err => console.log(err));
-
-
   };
 
   const handleUpdateConversation = (

@@ -62,7 +62,24 @@ export const ConversationComponent = ({ conversation }: Props) => {
       });
       setRenameValue('');
       setIsRenaming(false);
-    }
+
+      // Database: update conversation name
+      let data = new URLSearchParams();
+      let api = "http://219.78.93.165:7000/" + "update-conversation-name";
+      data.append("conversationID", conversation.id);
+      data.append("conversationName", renameValue);
+
+      fetch(api, { method: "post", body: data })
+            .then(res => {console.log(res.text())})
+            .then(data => {
+                // console.log(data);
+                // window.alert(data);
+                // if (data.indexOf("Created") != -1) {
+                //       props.setEnd(null);
+                // }
+            })
+            .catch(err => console.log(err));
+          }
   };
 
   const handleConfirm: MouseEventHandler<HTMLButtonElement> = (e) => {

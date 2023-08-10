@@ -32,6 +32,8 @@ def send_email(input):
 
     response = requests.post(request_url, json=email_info)
     if response.status_code == 202:
-        return "Just return the following string to the user : 'Email sent successfully'"
+        # return "Just return the following string to the user : 'Email sent successfully'"
+        return "Email sent successfully"
     else:
-        return "Just return the following string to the user : 'Email sent failed'"
+        # return "Just return the following string to the user : 'Email sent failed'"
+        return "Email sent failed, please try it later, with error code: " + str(response.status_code)

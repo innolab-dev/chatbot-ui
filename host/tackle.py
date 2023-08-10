@@ -4,7 +4,7 @@ from langchain.agents import AgentType
 from langchain.agents import initialize_agent
 from langchain.agents import Tool
 
-from power_automate import send_email
+# from power_automate import send_email
 from llm import llm_azure_gpt35
 
 from llm import internaL_db
@@ -24,13 +24,13 @@ tools = [
         description="useful for when you need to answer questions about alphabet company annual report",
         func=internaL_db.run,
     ),
-    Tool(
-        name="Send Email",
-        func=send_email,
-        description=""""
-        Useful for sending the email, please just send what is the intention of the email, and who is the target to send
-        """
-    ),
+    # Tool(
+    #     name="Send Email",
+    #     func=send_email,
+    #     description=""""
+    #     Useful for sending the email, please just send what is the intention of the email, and who is the target to send
+    #     """
+    # ),
 ]
 
 

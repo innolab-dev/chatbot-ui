@@ -269,7 +269,7 @@ export const ChatInput = ({
   const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
       setStatus("initial");
-      setFile(e.target.files[0]);
+      setFile(e.target.files['0']);
     }
   };
 
@@ -279,27 +279,79 @@ export const ChatInput = ({
     }
   }
 
-  
-  const handleUploadClick = () => {
-    if (!file) {
-      return;
-    }
-    console.log(file);
+//   if (!file) {
+//     return;
+// }
 
-    // 👇 Uploading the file using the fetch API to the server
-    fetch('https://httpbin.org/post', {
-      method: 'POST',
-      body: file,
-      // 👇 Set headers manually for single file upload
-      headers: {
-        'content-type': file.type,
-        'content-length': `${file.size}`, // 👈 Headers need to be a string
-      },
-    })
-      .then((res) => res.json()) // turn the fetched reponse into json
-      .then((data) => console.log(data))  // log the data
-      .catch((err) => console.error(err));
+// // 👇 Uploading the file using the fetch API to the server
+// const formData = new FormData();
+// formData.append('file', file);
+
+// const data = {
+//     purpose: 'upload',
+//     files: formData,
+// };
+
+// await fetch('http://219.78.93.165:1111/file_uploader', {
+//     method: 'POST',
+//     body: JSON.stringify(data),
+//     headers: {  
+//         'Content-Type': 'application/json',
+//     },
+// })
+// .then((response) => response.json())
+// .then((data) => console.log(data))
+// .catch((err) => console.error(err));
+
+
+  
+  const handleUploadClick = async () => {
+    if (file){
+      try {
+        console.log("dick", file);
+        const formData = new FormData();
+    
+        formData.append('files', file);
+        const data = {file: formData, purpose: 'upload'};
+        // console.log(data);
+        const response = await fetch('http://219.78.93.165:1111/file_uploader', {
+          method: 'POST',
+          headers: {  
+          'Content-Type': 'false',
+          },
+          body: JSON.stringify({data}),
+        });
+    
+        // Handle the response if needed
+        console.log(response.json());
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
   };
+
+  // function handleUploadClick(){
+  //   if(file){
+  //     var fd = new FormData();
+  //     fd.append('file', file);
+    
+  //     $.ajax({
+  //       type: "POST",
+  //       url: '/upload',
+  //       dataType : 'json',
+  //       data: fd,
+  //       contentType: false,
+  //       processData: false,
+  //       success: function (response){
+  //         console.log(response);
+  //       }         
+  //     });         
+  //   }
+  // }
+
+
+
 
   const handleCancelUploadClick = () => {
     setFile(undefined);
@@ -351,9 +403,9 @@ export const ChatInput = ({
           {file && 
           // for file name display
           <div className='container mx-auto flex flex-col text-black'>
-            <p className='p-1 inline-block m-0 m-auto pre-wrap break-words text-black/50 dark:text-white/50'
+            <p className='inline-block m-0 m-auto pre-wrap break-words text-black/50 dark:text-white/50'
             >
-            {file.name} - {file.type}
+            {file.name}
             </p>
 
             {/*for the two buttons  */}

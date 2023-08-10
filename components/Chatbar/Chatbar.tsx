@@ -142,6 +142,24 @@ export const Chatbar = () => {
       (c) => c.id !== conversation.id,
     );
 
+    // Database: delete conversation
+    let data = new URLSearchParams();
+    let api = "http://219.78.93.165:7000/" + "delete-conversation";
+    data.append("conversationID", conversation.id);
+    data.append("conversationName", conversation.name);
+
+    fetch(api, { method: "post", body: data })
+          .then(res => {console.log(res.text())})
+          .then(data => {
+              // console.log(data);
+              // window.alert(data);
+              // if (data.indexOf("Created") != -1) {
+              //       props.setEnd(null);
+              // }
+          })
+          .catch(err => console.log(err));
+    // Database: end
+
     homeDispatch({ field: 'conversations', value: updatedConversations });
     chatDispatch({ field: 'searchTerm', value: '' });
     saveConversations(updatedConversations);

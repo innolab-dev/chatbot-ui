@@ -1,40 +1,53 @@
 prompt_for_classfication = """
-I want you to classify prompts into one of 3 categories:
+I want you to classify prompts into one of 6 categories:
 
-1) Image-related 
-- Any prompt that involves generating, modifying, or describing an image, pictures, photos
-
-2) Code-related
-- Any prompt that involves writing code or explaining code
-
-3) Question-answering
-- Any prompt that is asking a question that requires a factual answer 
-- Or any casual talk
-- if you think it is not Image-related or the code-related, just output this one
-
-I will provide a prompt. Your response should be the number corresponding to the category that best fits the prompt. Only respond with '1', '2' or '3'. 
+1.  Image-related
+    Any prompt that involves generating, modifying, or describing an image, pictures, photos
+    Examples:
+    Generate an image of a cat
+    Create a picture of a dog running through a field
+    Can you make a photo editing to combine these two faces?
+    
+2.  Code-related
+    Except for those asking the database, which should be classified as 4
+    Any prompt that involves writing code or explaining code
+    
+    Examples:
+    Write a function in Python to calculate the factorial of a number
+    Can you explain what a for loop does in JavaScript?
+    
+3.  Email-sender
+    Any prompt that involves writing an email, or sending an email
+    Examples:
+    Please draft an email to john@example.com asking about the status of the project
+    Can you write an email to sales@company.com inquiring about pricing for a custom order?
+    
+4.  Document, database related
+    Any prompt that involves updating / deleting documents in a database, listing files in a database, searching and answering questions about files in a database
+    If start with something like "According to my database...", it should be this category
+    Examples:
+    What documents in the database relate to Project X?
+    Please update the status for entry 12345 in the database to Completed
+    According to the database, what is the status of Project Y?
+    
+5.  Selling product
+    Any prompt that involves selling the product, or buying the product, or enquires about our company product
+    Examples:
+    I want to buy a blue model of the Acme Widget. Do you have this in stock?
+    Can you tell me more about the features of the Deluxe Gizmo? I'm interested in purchasing one.
+    
+6.  Question-answering
+    Any prompt that is asking a question that requires a factual answer
+    Or any casual talk
+    If you think it is not Image-related or Code-related, classify it as this one
+    Examples:
+    What is the capital of France?
+    How are you doing today?
+    Can you recommend a good restaurant in town for dinner?
+    
+I will provide a prompt. Your response should be the number corresponding to the category that best fits the prompt. Only respond with '1', '2' or '3', etc.
 
 Do not provide any additional explanation or text besides the category number.
-
-Here are some examples:
-
-Prompt: How tall is the Eiffel Tower?
-Response: 3
-
-Prompt: Hello, how do you feel today?
-Response: 3
-
-Prompt: Can you write a function in Python to reverse a string?
-Response: 2 
-
-Prompt: Can you generate the code of bfs in python for me?
-Response: 2
-
-Prompt: Generate an image of a cat to me.
-Response: 1
-
-Prompt: Please make an image that combines the features of a dog and a cat.
-Response: 1
 
 Now classify this prompt: {prompt}
 """
@@ -105,4 +118,37 @@ Please review the email content, and give back the suitable subject line,
 
 here is the email content:
 {content}
+"""
+
+prompt_file_uploader_routing = """
+Please classify this user prompt into one of the following categories, and extract the relevant information from the prompt. Return the extracted information in JSON format:
+
+Upload file - Return {"purpose": "upload", "file_path": "file path"}
+
+Search file and answer question - Return {"purpose": "search", "query": "search query"}
+
+Delete file - Return {"purpose": "delete", "file_id": "id"}
+
+List files - Return {"purpose": "list"}
+
+Upload file and search - Return {"purpose":"upload_and_search","file_path":"file path","query":"search query"}
+
+Examples:
+
+Prompt: I want to upload the file located at ./test.txt
+Ans: {"purpose": "upload", "file_path": "./test.txt"}
+
+Prompt: What is the best language for AI according to the database?
+Ans: {"purpose": "search", "query": "What is the best language for AI?"}
+
+Prompt: Delete file 12345
+Ans: {"purpose": "delete", "file_id": "12345"}
+
+Prompt: Show me all files
+Ans: {"purpose": "list"}
+
+Prompt: Based on the file I uploaded, what is the best language for AI?
+Ans: {"purpose":"upload_and_search","file_path":"./test.txt","query":"What is the best language for AI?"}
+
+
 """

@@ -4,6 +4,7 @@ export const getToken = () => {
     const cookies = new Cookies();
     const token = cookies.get('token');
     console.log("token", token);
+    console.log("userEmail", getUserEmail());
 
     return token;
 };

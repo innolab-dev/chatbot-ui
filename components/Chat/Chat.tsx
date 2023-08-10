@@ -96,6 +96,7 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
         const chatBody: ChatBody = {
           model: updatedConversation.model,
           messages: updatedConversation.messages,
+          conversationID: updatedConversation.id,
           key: apiKey,
           prompt: updatedConversation.prompt,
           temperature: updatedConversation.temperature,
@@ -114,7 +115,7 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
               .find((key) => key.pluginId === 'google-search')
               ?.requiredKeys.find((key) => key.key === 'GOOGLE_CSE_ID')?.value,
           });
-        }
+        }         
         const controller = new AbortController();
         const response = await fetch(endpoint, {
           method: 'POST',
@@ -145,6 +146,24 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
               ...updatedConversation,
               name: customName,
             };
+
+            // Database: update conversation name
+            let data = new URLSearchParams();
+            let api = "http://219.78.93.165:7000/" + "update-conversation-name";
+            data.append("conversationID", updatedConversation.id);
+            data.append("conversationName", customName);
+        
+            fetch(api, { method: "post", body: data })
+                  .then(res => {console.log(res.text())})
+                  .then(data => {
+                      // console.log(data);
+                      // window.alert(data);
+                      // if (data.indexOf("Created") != -1) {
+                      //       props.setEnd(null);
+                      // }
+                  })
+                  .catch(err => console.log(err));
+
           }
           homeDispatch({ field: 'loading', value: false });
           const reader = data.getReader();
