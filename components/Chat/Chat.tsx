@@ -34,6 +34,7 @@ import { SystemPrompt } from './SystemPrompt';
 import { TemperatureSlider } from './Temperature';
 import { MemoizedChatMessage } from './MemoizedChatMessage';
 
+
 interface Props {
   stopConversationRef: MutableRefObject<boolean>;
 }
@@ -149,7 +150,7 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
 
             // Database: update conversation name
             let data = new URLSearchParams();
-            let api = "http://219.78.93.165:7000/" + "update-conversation-name";
+            let api = "http://219.79.203.190:7000/" + "update-conversation-name";
             data.append("conversationID", updatedConversation.id);
             data.append("conversationName", customName);
         

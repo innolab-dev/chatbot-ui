@@ -1,41 +1,55 @@
 # Flask app
+import os
 from flask import Flask, redirect, url_for, request, jsonify
 from tackle import generate_response
 from prompt import prompt_for_classfication, prompt_file_uploader_routing
 from image import image_gen, ImageGenerator
 import re
 import json
+from urllib.parse import parse_qs
 from llm import llm_davinci
 from power_automate import send_email
 from memory import memory
 from Chromadb import DB
+from flask_cors import CORS
 app = Flask(__name__)
-
+CORS(app)
 # set global state here first, later may just pass it as a input/output messsage with the ui
 state = None
 
 # need to change the history declartion here later
-memory, mongo = memory("test-session")
+# memory, mongo = memory("test-session")
 # usage
 generator = ImageGenerator()
 
 
 database = DB("database")
 
-# may change here later.
+
+@app.route('/uploads', methods=['POST'])
+def upload_file():
+    file = request.files['file']
+    # Get the filename
+    filename = file.filename
+    folder = './uploads'
+    # Save file
+    app.config['UPLOAD_FOLDER'] = folder
+    file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+    # response = database.upload(folder + "/" + filename)
+    response = {"message": "File uploaded successfully"}
+    return response
 
 
 @app.route('/file_uploader', methods=['POST', 'GET'])
 def file_uploader():
     if request.is_json:
+        # direct access
         data = request.get_json()
     else:
+        # redirect access
         data = request.args
     purpose = data.get('purpose')
-    if purpose == "upload":
-        file = data["files"]
-        response = database.upload(file)
-    elif purpose == "search":
+    if purpose == "search":
         query = data["query"]
         response = database.search(query)
     elif purpose == "delete":
@@ -43,11 +57,6 @@ def file_uploader():
         response = database.delete(id)
     elif purpose == "list":
         response = database.list_documents()
-    elif purpose == "upload and search":
-        file = data["files"]
-        response = database.upload(file)
-        query = data["query"]
-        response = database.search(query)
     result = {
         'text': response,
         'image': None
@@ -89,18 +98,27 @@ def email():
 def chat():
     global state
     # response = "something problem just hold up"
-    data = request.get_json()
+    # data = request.get_json()
+    if request.is_json:
+        data = request.get_json()
+        # print("model", data.get('model'))
+        # print("systemPrompt", data.get('systemPrompt'))
+        # print("temperature", data.get('temperature'))
+        # print("messages", data.get('messages'))
+        # print("message", data.get('message'))
+        prompt = data.get('message')['content']
+        # print("id", data.get('conversationID'))
+        # print("key", data.get('key'))
+    else:
+        query_string = request.query_string
+        params = parse_qs(query_string)
+        params = {k.decode(): v[0].decode() for k, v in params.items()}
+        prompt = params['Prompt']
 
-    # result = {
-    #     'text': "DLLM",
-    #     'image': "NULL"
-    # }
-    # return jsonify(result)
-
-    # which track?
     print("state is :", state)
     if state == None:
-        prompt = data["messages"][-1]["content"]
+        llm_model_selection = data["model"]['id']
+        llm_model_selection = "gpt35"  # hard code for now
         # print(prompt_for_classfication.format(prompt=prompt))
         s = llm_davinci(prompt_for_classfication.format(prompt=prompt))
         # Extract number
@@ -129,11 +147,15 @@ def chat():
                               f"Current Prompt = {prompt} Ans:")
             red = json.loads(res)
             # data.get('purpose')
-            return redirect(url_for('file_uploader', purpose=red.get("purpose"), query=red.get("query"), files=red.get("file_path"), id=red.get("id")))
+            return redirect(url_for('file_uploader', purpose=red.get("purpose"), query=red.get("query"), id=red.get("id")))
         else:
             print("general answering")
             # Run response generation code
-            response = generate_response(data, memory, mongo)
+            conversationID = data.get('conversationID')
+            memory, mongo = memory(conversationID)
+            temperature = data.get('temperature')
+            response = generate_response(
+                prompt, memory, mongo, temperature, llm_model_selection)
             image = 'NULL'
 
     elif state == "image":
@@ -148,4 +170,4 @@ def chat():
 
 
 if __name__ == '__main__':
-    app.run(host="219.78.93.165")
+    app.run(host="219.79.203.190")

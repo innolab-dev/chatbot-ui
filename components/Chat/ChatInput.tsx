@@ -287,17 +287,11 @@ export const ChatInput = ({
 // const formData = new FormData();
 // formData.append('file', file);
 
-// const data = {
-//     purpose: 'upload',
-//     files: formData,
-// };
 
-// await fetch('http://219.78.93.165:1111/file_uploader', {
+// await fetch('http://219.79.203.190:1111/file_uploader', {
 //     method: 'POST',
-//     body: JSON.stringify(data),
-//     headers: {  
-//         'Content-Type': 'application/json',
-//     },
+//     body: formDat,
+    
 // })
 // .then((response) => response.json())
 // .then((data) => console.log(data))
@@ -306,28 +300,58 @@ export const ChatInput = ({
 
   
   const handleUploadClick = async () => {
-    if (file){
-      try {
-        console.log("dick", file);
-        const formData = new FormData();
+    // if (file){
+    //   try {
+    //     console.log("dick", file);
+    //     const formData = new FormData();
     
-        formData.append('files', file);
-        const data = {file: formData, purpose: 'upload'};
-        // console.log(data);
-        const response = await fetch('http://219.78.93.165:1111/file_uploader', {
-          method: 'POST',
-          headers: {  
-          'Content-Type': 'false',
-          },
-          body: JSON.stringify({data}),
-        });
+    //     formData.append('file', file);
+    //     // console.log(data);
+    //     const response = await fetch('http://219.79.203.190:1111/uploads', {
+    //       method: 'POST',
+    //       body: formData,
+    //     });
     
-        // Handle the response if needed
-        console.log(response.json());
-      } catch (error) {
-        console.error(error);
-      }
+    //     // Handle the response if needed
+    //     console.log(response.json());
+    //   } catch (error) {
+    //     console.error(error);
+    //   }
+    // }
+    if (!file) {
+      return;
     }
+    setStatus("uploading");
+    
+    // 👇 Uploading the file using the fetch API to the server
+    const formData = new FormData();
+    formData.append('file', file);
+    
+    
+    await fetch('http://219.79.203.190:5000/uploads', {
+        method: 'POST',
+        body: formData,
+        
+    })
+    .then((response) => response.json())
+    .then((data) => {
+      // Access the message from the response
+      const message: string = data.message;
+      console.log(message);
+      if (message == 'File uploaded successfully') {
+        setStatus("success");
+        setFile(undefined);
+        setTimeout(() => {
+          setStatus("initial");
+        }, 5000);
+        
+        console.log('Upload successfully');
+      } else {
+        setStatus("fail");
+        console.log('Failed to upload');
+      }
+    })
+    .catch((err) => console.error(err));
 
   };
 
@@ -398,7 +422,7 @@ export const ChatInput = ({
           </button>
           
           {/* Added a new button here: for file uploading */}
-          <input type="file" ref={inputRef} onChange={handleFileChange} style={{display: 'none'}} />
+          <input type="file" accept=".txt,.pdf,.docx,.csv,.pptx,.xlsx" ref={inputRef} onChange={handleFileChange} style={{display: 'none'}} />
 
           {file && 
           // for file name display
@@ -423,6 +447,8 @@ export const ChatInput = ({
             </div>
           </div>
           }
+
+
           <Result status={status}/>
 
           {/* <FileUploader/> */}

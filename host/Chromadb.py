@@ -11,6 +11,7 @@ from langchain.document_loaders import PyPDFLoader
 from langchain.document_loaders import DirectoryLoader
 from langchain.document_loaders import UnstructuredWordDocumentLoader
 from langchain.document_loaders import UnstructuredPowerPointLoader
+from langchain.document_loaders import UnstructuredExcelLoader
 from langchain.document_loaders.csv_loader import CSVLoader
 from langchain.embeddings import HuggingFaceInstructEmbeddings
 
@@ -86,6 +87,10 @@ class DB:
             loader = CSVLoader(file_path)
         elif file_type == "pptx":
             loader = UnstructuredPowerPointLoader(file_path)
+        elif file_path == 'xlsx':
+            loader = UnstructuredExcelLoader(file_path)
+        else:
+            return "File type not supported"
         # may be more here later
         parent_id = str(uuid.uuid4())
         # child_ids = []
@@ -98,7 +103,7 @@ class DB:
                 "ids": child_ids,
                 "filename": os.path.basename(file_path)
             }
-        return f"upload {file_path} successfully"
+        return {"message": "File uploaded successfully"}
 
     def delete(self, id):
         if id in self.doc_id_map:

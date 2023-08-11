@@ -24,7 +24,7 @@ export class OpenAIError extends Error {
   }
 }
 // Flask endpoint 
-const FLASK_URL = 'http://219.78.93.165:1111/testing'
+const FLASK_URL = 'http://219.79.203.190:1111/testing'
 
 
 // connect to backend
@@ -38,7 +38,6 @@ export const OpenAIStream = async (
   message: Message
 ) => {
   // Make request to Flask
-  console.log("ConversationID:", conversationID);
   const res = await fetch(FLASK_URL, {
     method: 'POST',
     headers: {
@@ -55,11 +54,9 @@ export const OpenAIStream = async (
     })
   })
   const decoder = new TextDecoder();
-
   if (res.ok) {
     // Get Flask response
     const data = await res.json() 
-
     // Create stream from Flask response 
     const stream = new ReadableStream({
       async start(controller) {

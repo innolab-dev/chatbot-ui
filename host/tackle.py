@@ -50,13 +50,18 @@ tools.append(toolls[0])
 #     # print(prompt)
 #     return response
 
-def generate_response(data, memory, mogodb):
+def generate_response(prompt, memory, mogodb, temperature, llm_model_selection):
     # {'model': {'id': 'Vicuna', 'name': 'Vicuna', 'maxLength': 96000, 'tokenLimit': 32768}, 'systemPrompt': "You are ChatGPT, a large language model trained by OpenAI. Follow the user's instructions carefully. Respond using markdown.", 'temperature': 0.7, 'key': '', 'messages': [{'role': 'user', 'content': 'hello'}, {'role': 'assistant', 'content': 'Hello! How can I assist you today?'}, {'role': 'user', 'content': 'hello'}]}
     # print(data)
-    prompt = data["messages"][-1]["content"]
+    # prompt = data["messages"][-1]["content"]
+
+    if llm_model_selection == "gpt35":
+        llm = llm_azure_gpt35  # now default setting, will change it later
+    llm.temperature = temperature
+
     mogodb.add_user_message(prompt)
     agent_chain = initialize_agent(
-        tools, llm_azure_gpt35, agent=AgentType.CHAT_CONVERSATIONAL_REACT_DESCRIPTION, verbose=True, memory=memory)
+        tools, llm, agent=AgentType.CHAT_CONVERSATIONAL_REACT_DESCRIPTION, verbose=True, memory=memory)
     response = agent_chain.run(input=prompt)
     mogodb.add_ai_message(response)
     # print(prompt)

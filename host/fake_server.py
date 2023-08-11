@@ -1,4 +1,5 @@
 # Flask app
+from urllib.parse import parse_qs
 import os
 from flask import Flask, request, jsonify
 
@@ -10,9 +11,6 @@ CORS(app)
 
 # set global state here first, later may just pass it as a input/output messsage with the ui
 state = None
-
-# need to change the history declartion here later
-
 
 # may change here later.
 
@@ -62,19 +60,25 @@ def file_uploader():
 
 @app.route('/testing', methods=['POST'])
 def testing():
-    data = request.get_json()
-
-    print("model", data.get('model'))
-    print("systemPrompt", data.get('systemPrompt'))
-    print("temperature", data.get('temperature'))
-    print("messages", data.get('messages'))
-    print("message", data.get('message'))
-    print("id", data.get('id'))
-    print("key", data.get('key'))
-
+    if request.is_json:
+        data = request.get_json()
+        print("model", data.get('model'))
+        print("systemPrompt", data.get('systemPrompt'))
+        print("temperature", data.get('temperature'))
+        print("messages", data.get('messages'))
+        print("message", data.get('message'))
+        prompt = data.get('message')['content']
+        print("id", data.get('conversationID'))
+        print("key", data.get('key'))
+    else:
+        query_string = request.query_string
+        params = parse_qs(query_string)
+        params = {k.decode(): v[0].decode() for k, v in params.items()}
+        prompt = params['Prompt']
+        print(prompt)  # 'hello'
     result = {
-        'text': "DLLM",
-        'image': None
+        'text': f"DLLM,{prompt}",
+        'image': 'https://www.w3schools.com/images/w3schools_green.jpg'
     }
     return jsonify(result)
 
@@ -86,13 +90,26 @@ def upload_file():
     # Save file
     # Get the filename
     filename = file.filename
-
+    folder = './uploads'
     # Change the filename
-    app.config['UPLOAD_FOLDER'] = './uploads'
+    app.config['UPLOAD_FOLDER'] = folder
     # Save the file with new name
     file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
     return {"message": "File uploaded successfully"}
 
 
+@app.route('/teams_testing', methods=['POST'])
+def teams_testing():
+    # data = request.get_json()
+    data = request.args.get('prompt')
+    # data = data['inputs']['queries']['Prompt']
+    print(data)
+    result = {
+        'text': f"DLLM +{data}",
+        'image': "NULL"
+    }
+    return jsonify(result)
+
+
 if __name__ == '__main__':
-    app.run(host="219.78.93.165", port=1111)
+    app.run(host="219.79.203.190", port=1111)
