@@ -8,6 +8,7 @@ import wasm from '../../node_modules/@dqbd/tiktoken/lite/tiktoken_bg.wasm?module
 
 import tiktokenModel from '@dqbd/tiktoken/encoders/cl100k_base.json';
 import { Tiktoken, init } from '@dqbd/tiktoken/lite/init';
+import { getUserEmail } from '@/utils/data/cookies';
 
 export const config = {
   runtime: 'edge',
@@ -52,7 +53,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     encoding.free();
 
-    const stream = await OpenAIStream(model, promptToSend, temperatureToUse, conversationID, key, messagesToSend, messages[messages.length - 1]); // add files
+    const stream = await OpenAIStream(getUserEmail(), model, promptToSend, temperatureToUse, conversationID, key, messagesToSend, messages[messages.length - 1]); // add files
 
     return new Response(stream);
   } catch (error) {

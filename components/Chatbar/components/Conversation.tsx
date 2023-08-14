@@ -65,7 +65,7 @@ export const ConversationComponent = ({ conversation }: Props) => {
 
       // Database: update conversation name
       let data = new URLSearchParams();
-      let api = "http://219.79.203.190:7000/" + "update-conversation-name";
+      let api = "http://219.78.13.231:7000/" + "update-conversation-name";
       data.append("conversationID", conversation.id);
       data.append("conversationName", renameValue);
 

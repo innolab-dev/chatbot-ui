@@ -6,7 +6,7 @@ const Menu: React.FC = (): JSX.Element => {
     const [showDropDown, setShowDropDown] = useState<boolean>(false);
     const [selectLLMs, setSelectLLMs] = useState<string>("");
     const LLMs = () => {
-        return ["Respond with database", "Email Automation", "Image Generation", "Summarize a website"];
+        return [["Respond with database", "https://www.google.com"], ["Email Automation", "https://www.facebook.com"], ["Image Generation","https://www.twitter.com"], ["Summarize a website", "https://www.instagram.com"]];
     };
 
     /**
@@ -35,8 +35,11 @@ const Menu: React.FC = (): JSX.Element => {
      * @param city  The selected city
      */
     const LLMSelection = (city: string): void => {
+
         setSelectLLMs(city);
     };
+
+    
 
     return (
         <div className="w-full flex-1 rounded-md border border-neutral-600 bg-[#202123] px-4 py-3 pr-10 text-[14px] leading-4 text-white flex flex-grow-4 flex-shrink-4">

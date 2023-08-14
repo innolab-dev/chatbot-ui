@@ -214,7 +214,7 @@ const Home = ({
 
     // Database: create new conversation
     let data = new URLSearchParams();
-    let api = "http://219.79.203.190:7000/" + "new-conversation";
+    let api = "http://219.78.13.231:7000/" + "new-conversation";
     data.append("email", userEmail);
     data.append("conversationID", newConversation.id);
     data.append("conversationName", newConversation.name);

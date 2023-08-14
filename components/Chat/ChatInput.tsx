@@ -288,7 +288,7 @@ export const ChatInput = ({
 // formData.append('file', file);
 
 
-// await fetch('http://219.79.203.190:1111/file_uploader', {
+// await fetch('http://219.78.13.231:1111/file_uploader', {
 //     method: 'POST',
 //     body: formDat,
     
@@ -307,7 +307,7 @@ export const ChatInput = ({
     
     //     formData.append('file', file);
     //     // console.log(data);
-    //     const response = await fetch('http://219.79.203.190:1111/uploads', {
+    //     const response = await fetch('http://219.78.13.231:1111/uploads', {
     //       method: 'POST',
     //       body: formData,
     //     });
@@ -328,7 +328,7 @@ export const ChatInput = ({
     formData.append('file', file);
     
     
-    await fetch('http://219.79.203.190:5000/uploads', {
+    await fetch('http://219.78.13.231:5000/uploads', {
         method: 'POST',
         body: formData,
         

@@ -1,4 +1,4 @@
-const url = 'http://219.79.203.190:1111/file_uploader';
+const url = 'http://219.78.13.231:1111/file_uploader';
 
 const data = {
   purpose: 'upload',

@@ -51,6 +51,34 @@ Do not provide any additional explanation or text besides the category number.
 
 Now classify this prompt: {prompt}
 """
+prompt_use_in_image = """
+I will provide a prompt describing a request to generate or modify an image. Please parse the prompt and return a JSON object with the following format:
+
+{
+  "purpose": "generate" or "modify",
+  "model": "mid-journey" or "stable diffusion" 
+}
+
+The "purpose" should be "generate" if the prompt is asking to generate a new image. It should be "modify" if the prompt is asking to modify an existing image.
+
+The "model" should be "mid-journey" by default, or "stable diffusion" if the prompt specifies that model.
+
+Examples:
+
+Prompt: Can you generate an image of a cute cat for me?  
+Ans: {"purpose": "generate", "model": "mid-journey"}
+
+Prompt: Can you make some changes to the existing cat image?
+Ans: {"purpose": "modify", "model": "mid-journey"}  
+
+Prompt: Can you generate an image of a cute dog using stable diffusion?
+Ans: {"purpose": "generate", "model": "stable diffusion"}
+
+"""
+Prompt_template = """
+Prompt:{prompt}
+Ans:
+"""
 
 
 prompt_for_image_description = """

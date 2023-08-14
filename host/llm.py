@@ -1,3 +1,4 @@
+from langchain.chat_models import ChatVertexAI
 import pinecone
 from langchain.vectorstores import Pinecone
 from langchain.embeddings.openai import OpenAIEmbeddings
@@ -42,3 +43,7 @@ doc_db = Pinecone.from_existing_index('langchain-demo', embeddings)
 internaL_db = RetrievalQA.from_chain_type(
     llm=llm_azure_gpt35, chain_type="stuff", retriever=doc_db.as_retriever()
 )
+
+
+bison_chat = ChatVertexAI(model_name="chat-bison@001", max_output_tokens=512)
+codey = ChatVertexAI(model_name='codechat-bison@001', max_output_tokens=512)

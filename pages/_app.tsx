@@ -15,7 +15,7 @@ function App({ Component, pageProps }: AppProps<{}>) {
 
   if ((getToken() == null) && (typeof window !== 'undefined'))
   {
-    window.location.href = "http://localhost:3000/";
+    window.location.href = "http://localhost:3001/";
   }
 
   const queryClient = new QueryClient();

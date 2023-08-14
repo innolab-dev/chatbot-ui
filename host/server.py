@@ -7,15 +7,14 @@ from image import image_gen, ImageGenerator
 import re
 import json
 from urllib.parse import parse_qs
-from llm import llm_davinci
+from llm import llm_davinci, codey
 from power_automate import send_email
 from memory import memory
 from Chromadb import DB
 from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
-# set global state here first, later may just pass it as a input/output messsage with the ui
-state = None
+
 
 # need to change the history declartion here later
 # memory, mongo = memory("test-session")
@@ -59,22 +58,7 @@ def file_uploader():
         response = database.list_documents()
     result = {
         'text': response,
-        'image': None
-    }
-    return jsonify(result)
-
-
-@app.route('/code-related', methods=['POST'])
-def code():
-    if request.is_json:
-        data = request.get_json()
-    else:
-        data = request.args
-    response = "We don't have the code related response funtion yet"
-    # going to be implement it later
-    result = {
-        'text': response,
-        'image': None
+        'image': 'NULL'
     }
     return jsonify(result)
 
@@ -89,24 +73,25 @@ def email():
     response = send_email(prompt)
     result = {
         'text': response,
-        'image': None
+        'image': 'NULL'
     }
     return jsonify(result)
 
 
 @app.route('/chat', methods=['POST'])
 def chat():
-    global state
     # response = "something problem just hold up"
     # data = request.get_json()
     if request.is_json:
         data = request.get_json()
-        # print("model", data.get('model'))
         # print("systemPrompt", data.get('systemPrompt'))
         # print("temperature", data.get('temperature'))
         # print("messages", data.get('messages'))
         # print("message", data.get('message'))
         prompt = data.get('message')['content']
+        llm_model_selection = data["model"]['id']
+        conversationID = data.get('conversationID')
+        temperature = data.get('temperature')
         # print("id", data.get('conversationID'))
         # print("key", data.get('key'))
     else:
@@ -114,54 +99,44 @@ def chat():
         params = parse_qs(query_string)
         params = {k.decode(): v[0].decode() for k, v in params.items()}
         prompt = params['Prompt']
+        llm_model_selection = "gpt35"
+        temperature = 0.5
+        conversationID = params['conversationID']
 
-    print("state is :", state)
-    if state == None:
-        llm_model_selection = data["model"]['id']
-        llm_model_selection = "gpt35"  # hard code for now
-        # print(prompt_for_classfication.format(prompt=prompt))
-        s = llm_davinci(prompt_for_classfication.format(prompt=prompt))
-        # Extract number
-        match = re.search(r'(\d)', s)
-        if match:
-            category = match.group(1)
-        # print("*************************")
-        # print(category)
-        # print("*************************")
+    llm_model_selection = "gpt35"  # hard code for now
+    image = 'NULL'
+    s = llm_davinci(prompt_for_classfication.format(prompt=prompt))
+    # Extract number
+    match = re.search(r'(\d)', s)
+    if match:
+        category = match.group(1)
         if category == '1':
             print("image related")
-            response, image, state = image_gen(data, state, generator)
+            response, image = image_gen(prompt, generator)
         elif category == "2":
             print("code related")
-            # going to be implement it later
-            response = "We don't have the code related response funtion yet"
-            image = 'NULL'
+            mem, mongo = memory(conversationID)
+            llm_model_selection = 'codey'
+            response = generate_response(
+                prompt, mem, mongo, temperature, llm_model_selection)
         elif category == "3":
             print("email sender")
             response = send_email(prompt)
-            image = 'NULL'
         elif category == "4":
             print("database related")
-            # p = prompt_file_uploader_routing.format(prompt=prompt)
             res = llm_davinci(prompt_file_uploader_routing +
                               f"Current Prompt = {prompt} Ans:")
             red = json.loads(res)
-            # data.get('purpose')
             return redirect(url_for('file_uploader', purpose=red.get("purpose"), query=red.get("query"), id=red.get("id")))
         else:
             print("general answering")
             # Run response generation code
-            conversationID = data.get('conversationID')
-            memory, mongo = memory(conversationID)
-            temperature = data.get('temperature')
+            mem, mongo = memory(conversationID)
             response = generate_response(
-                prompt, memory, mongo, temperature, llm_model_selection)
-            image = 'NULL'
+                prompt, mem, mongo, temperature, llm_model_selection)
 
-    elif state == "image":
-        print("image follow up")
-        response, image, state = image_gen(data, state, generator)
-
+    else:
+        response = "I don't understand what you are saying"
     result = {
         'text': response,
         'image': image
@@ -170,4 +145,4 @@ def chat():
 
 
 if __name__ == '__main__':
-    app.run(host="219.79.203.190")
+    app.run(host="219.78.13.231")
