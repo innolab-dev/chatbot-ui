@@ -1,0 +1,31 @@
+Power app (webapp/ mobile app) 					V Both
+Power BI							V Export Data from Dataverse to PowerBI for analysing
+Dynamic copilot 365						X No access
+Google Gen AI Builder (Seems much powerful like app)		X Still rolling out (Chat support)
+
+Link Langchain
+V Power bot/automate						V Automate (Fake Zapier) / Virtual Agent (only full widget, cant only export input and output)
+x app												
+(BI, shd be ok)							V Only for data analysis in database (can access data inside)
+(try teams add on (like bot))					V Power app can directly export on Teams
+									
+
+
+
+Dynamic 365: (Diff. plan from Microsoft 365)
+Dynamics 365 Sales, Finance, HR, ...
+Dynamic 365 是針對需求完整設計的一站式解決方案
+e.g. Dynamic 365 Human Resource 就是針對 HR 包含的內容，進行完整的功能規劃的 HR 計畫，包含：福利、薪酬、請假休假、認證、訓練等一站式解決方案
+
+Dynamic copilot 365: (Dynamic 365 with copilot) (X access)
+e.g. Send email with auto-generated text and format
+
+
+Fake Zapier (Power Automate):
+Send Email
+Send Notificaiton (Power Automate)
+Team reply msg
+File upload/edit (word, excel, csv, image) (if hv cognitive search -> better since whole company uses Microsoft)
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+

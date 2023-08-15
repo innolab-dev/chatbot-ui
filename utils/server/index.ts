@@ -24,7 +24,7 @@ export class OpenAIError extends Error {
   }
 }
 // Flask endpoint 
-const FLASK_URL = 'http://219.78.13.231:5000/chat'
+const FLASK_URL = 'http://219.78.175.160:5000/chat'
 
 
 // connect to backend
@@ -38,6 +38,8 @@ export const OpenAIStream = async (
   messages: Message[], 
   message: Message
 ) => {
+
+
   // Make request to Flask
   const res = await fetch(FLASK_URL, {
     method: 'POST',

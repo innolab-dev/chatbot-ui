@@ -144,7 +144,7 @@ export const Chatbar = () => {
 
     // Database: delete conversation
     let data = new URLSearchParams();
-    let api = "http://219.78.13.231:7000/" + "delete-conversation";
+    let api = "http://219.78.175.160:7000/" + "delete-conversation";
     data.append("conversationID", conversation.id);
     data.append("conversationName", conversation.name);
 

@@ -40,7 +40,7 @@ import HomeContext from './home.context';
 import { HomeInitialState, initialState } from './home.state';
 
 import { v4 as uuidv4 } from 'uuid';
-import { getUserEmail } from '@/utils/data/cookies';
+import { getCookieEmail } from '@/utils/data/cookies';
 
 interface Props {
   serverSideApiKeyIsSet: boolean;
@@ -210,11 +210,11 @@ const Home = ({
 
     dispatch({ field: 'loading', value: false });
     
-    var userEmail = getUserEmail();
+    var userEmail = getCookieEmail();
 
     // Database: create new conversation
     let data = new URLSearchParams();
-    let api = "http://219.78.13.231:7000/" + "new-conversation";
+    let api = "http://219.78.175.160:7000/" + "new-conversation";
     data.append("email", userEmail);
     data.append("conversationID", newConversation.id);
     data.append("conversationName", newConversation.name);

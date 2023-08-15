@@ -23,7 +23,7 @@ function FileUploadSingle() {
             files: formData,
         };
 
-        await fetch('http://219.78.13.231:1111/file_uploader', {
+        await fetch('http://219.78.175.160:1111/file_uploader', {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {  

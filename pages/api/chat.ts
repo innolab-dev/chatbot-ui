@@ -10,13 +10,14 @@ import tiktokenModel from '@dqbd/tiktoken/encoders/cl100k_base.json';
 import { Tiktoken, init } from '@dqbd/tiktoken/lite/init';
 import { getUserEmail } from '@/utils/data/cookies';
 
+
 export const config = {
   runtime: 'edge',
 };
 
 const handler = async (req: Request): Promise<Response> => {
   try {
-    const { model, messages, conversationID, key, prompt, temperature } = (await req.json()) as ChatBody;
+    const {userEmail, model, messages, conversationID, key, prompt, temperature } = (await req.json()) as ChatBody;
 
     await init((imports) => WebAssembly.instantiate(wasm, imports));
     const encoding = new Tiktoken(
@@ -53,7 +54,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     encoding.free();
 
-    const stream = await OpenAIStream(getUserEmail(), model, promptToSend, temperatureToUse, conversationID, key, messagesToSend, messages[messages.length - 1]); // add files
+    const stream = await OpenAIStream(userEmail, model, promptToSend, temperatureToUse, conversationID, key, messagesToSend, messages[messages.length - 1]); // add files
 
     return new Response(stream);
   } catch (error) {

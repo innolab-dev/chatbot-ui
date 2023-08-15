@@ -8,7 +8,7 @@ from langchain.agents import Tool
 from llm import llm_azure_gpt35, bison_chat, codey
 
 from llm import internaL_db
-
+from langchain import PromptTemplate, LLMChain
 
 llm_math_chain = LLMMathChain(llm=llm_azure_gpt35)
 toolss = load_tools(["wikipedia"], llm=llm_azure_gpt35)
@@ -40,16 +40,6 @@ toolls = load_tools(["google-search"])
 tools.append(toolls[0])
 
 
-# def generate_response(data, memory):
-#     # {'model': {'id': 'Vicuna', 'name': 'Vicuna', 'maxLength': 96000, 'tokenLimit': 32768}, 'systemPrompt': "You are ChatGPT, a large language model trained by OpenAI. Follow the user's instructions carefully. Respond using markdown.", 'temperature': 0.7, 'key': '', 'messages': [{'role': 'user', 'content': 'hello'}, {'role': 'assistant', 'content': 'Hello! How can I assist you today?'}, {'role': 'user', 'content': 'hello'}]}
-#     # print(data)
-#     agent_chain = initialize_agent(
-#         tools, llm_azure_gpt35, agent=AgentType.CHAT_CONVERSATIONAL_REACT_DESCRIPTION, verbose=True, memory=memory)
-#     prompt = data["messages"][-1]["content"]
-#     response = agent_chain.run(input=prompt)
-#     # print(prompt)
-#     return response
-
 def _handle_error(error) -> str:
     return str(error)[:1024]
 
@@ -63,15 +53,27 @@ def generate_response(prompt, memory, mogodb, temperature, llm_model_selection):
         llm = llm_azure_gpt35  # now default setting, will change it later
         llm.temperature = temperature
         agent_chain = initialize_agent(
-            tools, llm, agent=AgentType.CHAT_CONVERSATIONAL_REACT_DESCRIPTION, verbose=True, memory=memory)
+            tools, llm, agent=AgentType.CONVERSATIONAL_REACT_DESCRIPTION, verbose=True, memory=memory)
     elif llm_model_selection == "google-chatbison" or 'codey':
         if llm_model_selection == "codey":
             llm = codey
         else:
             llm = bison_chat
         llm.temperature = temperature
-        agent_chain = initialize_agent(tools, llm, agent=AgentType.CHAT_CONVERSATIONAL_REACT_DESCRIPTION,
+        agent_chain = initialize_agent(tools, llm, agent=AgentType.CONVERSATIONAL_REACT_DESCRIPTION,
                                        verbose=True, memory=memory, handle_parsing_errors=_handle_error, max_iterations=2)
     response = agent_chain.run(input=prompt)
     mogodb.add_ai_message(response)
     return response
+
+
+def code_gen(prompt):
+    template = """Question: {question}
+
+    Answer: Let's think step by step."""
+
+    promptTemplate = PromptTemplate(
+        template=template, input_variables=["question"])
+    llm_chain = LLMChain(prompt=promptTemplate, llm=codey)
+    s = llm_chain.run(prompt)
+    return s

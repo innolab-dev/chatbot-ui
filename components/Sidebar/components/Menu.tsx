@@ -6,7 +6,7 @@ const Menu: React.FC = (): JSX.Element => {
     const [showDropDown, setShowDropDown] = useState<boolean>(false);
     const [selectLLMs, setSelectLLMs] = useState<string>("");
     const LLMs = () => {
-        return [["Respond with database", "https://www.google.com"], ["Email Automation", "https://www.facebook.com"], ["Image Generation","https://www.twitter.com"], ["Summarize a website", "https://www.instagram.com"]];
+        return [["Buffer Memory", "http://localhost:7860/flow/a96c8cdb-412d-4a4a-ad7c-03be0f1a7ecf"], ["Email Automation", "https://www.facebook.com"], ["Image Generation","https://www.twitter.com"], ["Summarize a website", "https://www.instagram.com"]];
     };
 
     /**
@@ -34,6 +34,8 @@ const Menu: React.FC = (): JSX.Element => {
      *
      * @param city  The selected city
      */
+
+
     const LLMSelection = (city: string): void => {
 
         setSelectLLMs(city);
@@ -44,7 +46,7 @@ const Menu: React.FC = (): JSX.Element => {
     return (
         <div className="w-full flex-1 rounded-md border border-neutral-600 bg-[#202123] px-4 py-3 pr-10 text-[14px] leading-4 text-white flex flex-grow-4 flex-shrink-4">
             <IconMenu2 size={16}  onClick={(): void => toggleDropDown()} className="ml-0 pl-0"/>
-            <div className="ml-2"  onClick={(): void => toggleDropDown()}>                 
+            <div className="ml-2 flex flex-col"  onClick={(): void => toggleDropDown()}>                 
                 <div className="announcement">
                     <div>
                     {selectLLMs
@@ -59,17 +61,17 @@ const Menu: React.FC = (): JSX.Element => {
                     dismissHandler(e)
                     }
                 >
-                    <div>{selectLLMs ? "Selected: " + selectLLMs : "Select one"} </div>
-                    {showDropDown && <hr></hr>}
-                    {showDropDown && (
-                    <DropDown
-                        LLMs={LLMs()}
-                        showDropDown={false}
-                        toggleDropDown={(): void => toggleDropDown()}
-                        LLMSelection={LLMSelection}
-                    />
-                    )}
                 </button>
+                <div className="pt-1 pb-1">{selectLLMs ? "Selected: " + selectLLMs : "Select one"} </div>
+                {showDropDown && <hr></hr>}
+                {showDropDown && (
+                <DropDown
+                    LLMs={LLMs()}
+                    showDropDown={false}
+                    toggleDropDown={(): void => toggleDropDown()}
+                    LLMSelection={LLMSelection}
+                />
+                    )}
             </div>
         </div>
     );

@@ -1,7 +1,7 @@
 # Flask app
 import os
 from flask import Flask, redirect, url_for, request, jsonify
-from tackle import generate_response
+from tackle import generate_response, code_gen
 from prompt import prompt_for_classfication, prompt_file_uploader_routing
 from image import image_gen, ImageGenerator
 import re
@@ -34,7 +34,7 @@ def upload_file():
     # Save file
     app.config['UPLOAD_FOLDER'] = folder
     file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-    # response = database.upload(folder + "/" + filename)
+    response = database.upload(folder + "/" + filename)
     response = {"message": "File uploaded successfully"}
     return response
 
@@ -48,6 +48,7 @@ def file_uploader():
         # redirect access
         data = request.args
     purpose = data.get('purpose')
+    print("purpose", purpose)
     if purpose == "search":
         query = data["query"]
         response = database.search(query)
@@ -92,6 +93,8 @@ def chat():
         llm_model_selection = data["model"]['id']
         conversationID = data.get('conversationID')
         temperature = data.get('temperature')
+        user_email = data.get('userEmail')
+        print("email: ", user_email)
         # print("id", data.get('conversationID'))
         # print("key", data.get('key'))
     else:
@@ -117,8 +120,7 @@ def chat():
             print("code related")
             mem, mongo = memory(conversationID)
             llm_model_selection = 'codey'
-            response = generate_response(
-                prompt, mem, mongo, temperature, llm_model_selection)
+            response = code_gen(prompt)
         elif category == "3":
             print("email sender")
             response = send_email(prompt)
@@ -145,4 +147,4 @@ def chat():
 
 
 if __name__ == '__main__':
-    app.run(host="219.78.13.231")
+    app.run(host="219.78.175.160")

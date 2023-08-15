@@ -118,8 +118,9 @@ class DB:
     def search(self, query):
         result = self.qa_chain(query)
         response = "Answer: " + result["result"] + "\nSources:"
-        for source in result["source_documents"]:
-            response += "\n"+source.metadata["source"]
+        # for source in result["source_documents"]:
+        #     response += "\n"+source.metadata["source"]
+        response += "\n"+str(result["source_documents"][0].metadata["source"])
         return response
 
     def list_documents(self):

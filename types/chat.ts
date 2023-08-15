@@ -12,6 +12,7 @@ export interface Message {
 export type Role = 'assistant' | 'user';
 
 export interface ChatBody {
+  userEmail: string;
   model: OpenAIModel;
   messages: Message[];
   conversationID: string;

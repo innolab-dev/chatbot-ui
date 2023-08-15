@@ -1,15 +1,18 @@
 import Cookies from "universal-cookie";
 
+const cookies = new Cookies();
+var email = "";
 export const getToken = () => {
-    const cookies = new Cookies();
     const token = cookies.get('token');
-
     return token;
 };
   
-export const getUserEmail = () => {
-    const cookies = new Cookies();
+export const getCookieEmail = () => {
     const userEmail = cookies.get('userEmail');
-
+    email = userEmail;
     return userEmail;
 };
+
+export const getUserEmail = () => {
+    return email;
+}

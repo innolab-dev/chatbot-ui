@@ -151,20 +151,14 @@ here is the email content:
 prompt_file_uploader_routing = """
 Please classify this user prompt into one of the following categories, and extract the relevant information from the prompt. Return the extracted information in JSON format:
 
-Upload file - Return {"purpose": "upload", "file_path": "file path"}
-
 Search file and answer question - Return {"purpose": "search", "query": "search query"}
 
 Delete file - Return {"purpose": "delete", "file_id": "id"}
 
 List files - Return {"purpose": "list"}
 
-Upload file and search - Return {"purpose":"upload_and_search","file_path":"file path","query":"search query"}
 
 Examples:
-
-Prompt: I want to upload the file located at ./test.txt
-Ans: {"purpose": "upload", "file_path": "./test.txt"}
 
 Prompt: What is the best language for AI according to the database?
 Ans: {"purpose": "search", "query": "What is the best language for AI?"}
@@ -174,9 +168,6 @@ Ans: {"purpose": "delete", "file_id": "12345"}
 
 Prompt: Show me all files
 Ans: {"purpose": "list"}
-
-Prompt: Based on the file I uploaded, what is the best language for AI?
-Ans: {"purpose":"upload_and_search","file_path":"./test.txt","query":"What is the best language for AI?"}
 
 
 """
