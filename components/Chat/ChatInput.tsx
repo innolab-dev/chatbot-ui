@@ -282,45 +282,48 @@ export const ChatInput = ({
     }
   }
 
-//   if (!file) {
-//     return;
-// }
+  // const handleUploadClick = async () => {
 
-// // 👇 Uploading the file using the fetch API to the server
-// const formData = new FormData();
-// formData.append('file', file);
-
-
-// await fetch('http://219.78.175.160:1111/file_uploader', {
-//     method: 'POST',
-//     body: formDat,
+  //   if (!file) {
+  //     return;
+  //   }
+  //   setStatus("uploading");
     
-// })
-// .then((response) => response.json())
-// .then((data) => console.log(data))
-// .catch((err) => console.error(err));
+  //   // 👇 Uploading the file using the fetch API to the server
+  //   const formData = new FormData();
+  //   formData.append('file', file);
 
+    
+    
+  //   await fetch('http://219.78.175.160:5000/uploads', {
+  //       method: 'POST',
+  //       body: formData,
+        
+  //   })
+  //   .then((response) => response.json())
+  //   .then((data) => {
+  //     // Access the message from the response
+  //     const message: string = data.message;
+  //     console.log(message);
+  //     if (message == 'File uploaded successfully') {
+  //       setStatus("success");
+  //       setFile(undefined);
+  //       setTimeout(() => {
+  //         setStatus("initial");
+  //       }, 5000);
+        
+  //       console.log('Upload successfully');
+  //     } else {
+  //       setStatus("fail");
+  //       console.log('Failed to upload');
+  //     }
+  //   })
+  //   .catch((err) => console.error(err));
 
+  // };
   
   const handleUploadClick = async () => {
-    // if (file){
-    //   try {
-    //     console.log("dick", file);
-    //     const formData = new FormData();
-    
-    //     formData.append('file', file);
-    //     // console.log(data);
-    //     const response = await fetch('http://219.78.175.160:1111/uploads', {
-    //       method: 'POST',
-    //       body: formData,
-    //     });
-    
-    //     // Handle the response if needed
-    //     console.log(response.json());
-    //   } catch (error) {
-    //     console.error(error);
-    //   }
-    // }
+
     if (!file) {
       return;
     }
@@ -329,9 +332,9 @@ export const ChatInput = ({
     // 👇 Uploading the file using the fetch API to the server
     const formData = new FormData();
     formData.append('file', file);
+    formData.append('email', getCookieEmail());
     
-    
-    await fetch('http://219.78.175.160:5000/uploads', {
+    await fetch('http://219.78.175.160:1111/uploads', {
         method: 'POST',
         body: formData,
         
@@ -357,27 +360,6 @@ export const ChatInput = ({
     .catch((err) => console.error(err));
 
   };
-
-  // function handleUploadClick(){
-  //   if(file){
-  //     var fd = new FormData();
-  //     fd.append('file', file);
-    
-  //     $.ajax({
-  //       type: "POST",
-  //       url: '/upload',
-  //       dataType : 'json',
-  //       data: fd,
-  //       contentType: false,
-  //       processData: false,
-  //       success: function (response){
-  //         console.log(response);
-  //       }         
-  //     });         
-  //   }
-  // }
-
-
 
 
   const handleCancelUploadClick = () => {

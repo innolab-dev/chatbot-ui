@@ -15,17 +15,9 @@ const DropDown: React.FC<DropDownProps> = ({
     }: DropDownProps): JSX.Element => {
     const [showDropDown, setShowDropDown] = useState<boolean>(false);
 
-    /**
-     * Handle passing the LLM name
-     * back to the parent component
-     *
-     * @param LLM  The selected LLM
-     */
+
     const onClickHandler = (LLM: string[]): void => {
         LLMSelection(LLM[0]);
-        console.log("clicked");
-        // setGoToURL(true);
-        // setCurLLM(LLM[1]);
 
     
     };
@@ -36,28 +28,22 @@ const DropDown: React.FC<DropDownProps> = ({
 
     return (
         <>
-        <div className={showDropDown ? 'dropdown' : 'dropdown active'}>
+        <ul className={showDropDown ? 'dropdown' : 'dropdown active '}>
             {LLMs.map(
             (LLM: string[], index: number): JSX.Element => {
                 return (
                 <a href={LLM[1]} key={index} target="_blank">
-
-                    {/* <p className='p-2'
-                        
-                        
-                        }}
-                    >
+                    <li className='px-1 py-1 break-words text-center'
+                    key={index}
+                    onClick={(): void => {
+                    onClickHandler(LLM);}}>
                         {LLM[0]}
-                    </p> */}
-                    <p className='p-1 break-words'
-                        key={index}
-                        onClick={(): void => {
-                        onClickHandler(LLM);}}>{LLM[0]}</p>
+                    </li>
                 </a>
                 );
             }
             )}
-        </div>
+        </ul>
         </>
     );
 };

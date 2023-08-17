@@ -62,7 +62,7 @@ const Menu: React.FC = (): JSX.Element => {
                     }
                 >
                 </button>
-                <div className="pt-1 pb-1">{selectLLMs ? "Selected: " + selectLLMs : "Select one"} </div>
+                <div className={showDropDown ? "text-center pt-1 pb-1" : "pt-1 pb-1"}>{selectLLMs ? "Selected: " + selectLLMs : "Select one"} </div>
                 {showDropDown && <hr></hr>}
                 {showDropDown && (
                 <DropDown

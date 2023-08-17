@@ -15,6 +15,7 @@ def send_email(input):
         user_name=user,
         user_position="Summer Internship",
         boss_name="bob"
+        # more information
     ))
 
     subject_line = llm_davinci(prompt_for_subject_line.format(content=content))

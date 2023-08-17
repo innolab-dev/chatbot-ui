@@ -86,6 +86,8 @@ def testing():
 @app.route('/uploads', methods=['POST'])
 def upload_file():
     file = request.files['file']
+    email = request.form['email']
+    print(email)
 
     # Save file
     # Get the filename

@@ -10,7 +10,7 @@ from urllib.parse import parse_qs
 from llm import llm_davinci, codey
 from power_automate import send_email
 from memory import memory
-from Chromadb import DB
+from Chromadb import database
 from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
@@ -22,9 +22,6 @@ CORS(app)
 generator = ImageGenerator()
 
 
-database = DB("database")
-
-
 @app.route('/uploads', methods=['POST'])
 def upload_file():
     file = request.files['file']
@@ -34,6 +31,7 @@ def upload_file():
     # Save file
     app.config['UPLOAD_FOLDER'] = folder
     file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+    # database = databasefunc("email")
     response = database.upload(folder + "/" + filename)
     response = {"message": "File uploaded successfully"}
     return response
@@ -54,6 +52,7 @@ def file_uploader():
         response = database.search(query)
     elif purpose == "delete":
         id = data["id"]
+        print("id: ", id)
         response = database.delete(id)
     elif purpose == "list":
         response = database.list_documents()
@@ -64,19 +63,19 @@ def file_uploader():
     return jsonify(result)
 
 
-@app.route('/email-sender', methods=['POST'])
-def email():
-    if request.is_json:
-        data = request.get_json()
-    else:
-        data = request.args
-    prompt = data["messages"][-1]["content"]
-    response = send_email(prompt)
-    result = {
-        'text': response,
-        'image': 'NULL'
-    }
-    return jsonify(result)
+# @app.route('/email-sender', methods=['POST'])
+# def email():
+#     if request.is_json:
+#         data = request.get_json()
+#     else:
+#         data = request.args
+#     prompt = data["messages"][-1]["content"]
+#     response = send_email(prompt)
+#     result = {
+#         'text': response,
+#         'image': 'NULL'
+#     }
+#     return jsonify(result)
 
 
 @app.route('/chat', methods=['POST'])
@@ -129,7 +128,9 @@ def chat():
             res = llm_davinci(prompt_file_uploader_routing +
                               f"Current Prompt = {prompt} Ans:")
             red = json.loads(res)
-            return redirect(url_for('file_uploader', purpose=red.get("purpose"), query=red.get("query"), id=red.get("id")))
+            for i in red:
+                print(i)
+            return redirect(url_for('file_uploader', purpose=red.get("purpose"), query=red.get("query"), id=red.get("file_id")))
         else:
             print("general answering")
             # Run response generation code

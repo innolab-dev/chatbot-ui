@@ -40,7 +40,10 @@ import HomeContext from './home.context';
 import { HomeInitialState, initialState } from './home.state';
 
 import { v4 as uuidv4 } from 'uuid';
-import { getCookieEmail } from '@/utils/data/cookies';
+import { getCookieEmail, getToken } from '@/utils/data/cookies';
+
+import style from './style.module.css';
+import { importData } from '@/utils/app/importExport';
 
 interface Props {
   serverSideApiKeyIsSet: boolean;
@@ -48,15 +51,26 @@ interface Props {
   defaultModelId: OpenAIModelID;
 }
 
+
 const Home = ({
   serverSideApiKeyIsSet,
   serverSidePluginKeysSet,
   defaultModelId,
 }: Props) => {
+
+  // Redirect to login page if not logged in
+  if ((getToken() == null) && (typeof window !== 'undefined'))
+  {
+    window.location.href = "http://localhost:3000/";
+  }
+  console.log("token: " + getToken());
+  console.log("userEmail: " + getCookieEmail());
+
   const { t } = useTranslation('chat');
   const { getModels } = useApiService();
   const { getModelsError } = useErrorService();
   const [initialRender, setInitialRender] = useState<boolean>(true);
+  const [loading, setLoading] = useState<boolean>(true);
 
   const contextValue = useCreateReducer<HomeInitialState>({
     initialState,
@@ -374,6 +388,36 @@ const Home = ({
     serverSidePluginKeysSet,
   ]);
 
+  // Load user conversation and memory
+  useEffect(() => {
+    //Database: grab user conversations and conversation memory
+    let data = new URLSearchParams();
+    data.append("email", getCookieEmail());
+
+    let api = "http://219.78.175.160:7000/" + "load-conversations";
+    fetch(api, { method: "post", body: data })
+        .then(res => {
+                var temp = res.text()
+                console.log("res",temp.then(
+                  data => {
+                    var messageJson = JSON.parse(data)
+                    const { history, folders, prompts } = importData(messageJson);
+
+                    dispatch({ field: 'conversations', value: history });
+                    dispatch({
+                      field: 'selectedConversation',
+                      value: history[history.length - 1],
+                    });
+                    dispatch({ field: 'folders', value: folders });
+                    dispatch({ field: 'prompts', value: prompts });
+
+                    setLoading(false);                      
+                  }))
+              })
+        .catch(err => console.log(err));
+    }
+  , []); // Run the function when the page is rendered
+
   return (
     <HomeContext.Provider
       value={{
@@ -386,6 +430,10 @@ const Home = ({
         handleUpdateConversation,
       }}
     >
+      {loading && <div className={style.loaderContainer}>
+        <div className={style.spinner}></div>
+      </div>}
+
       <Head>
         <title>Innolab GPT</title>
         <meta name="description" content="ChatGPT but better." />
@@ -417,6 +465,7 @@ const Home = ({
           </div>
         </main>
       )}
+
     </HomeContext.Provider>
   );
 };

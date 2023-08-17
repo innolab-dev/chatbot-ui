@@ -3,9 +3,9 @@ from langchain.chains import LLMMathChain
 from langchain.agents import AgentType
 from langchain.agents import initialize_agent
 from langchain.agents import Tool
-
+from Chromadb import database
 # from power_automate import send_email
-from llm import llm_azure_gpt35, bison_chat, codey
+from llm import llm_azure_gpt35, bison_chat, codey, llm_Vicuna
 
 from llm import internaL_db
 from langchain import PromptTemplate, LLMChain
@@ -19,18 +19,17 @@ tools = [
         description="useful for when you need to answer questions about maths, but not anything else",
         return_direct=True,  # help you to correct the prompt
     ),
+    # Tool( #pinecone use, not use now
+    #     name="Internal Database",
+    #     description="useful for when you need to answer questions about alphabet company annual report",
+    #     func=internaL_db.run,
+    # ),
     Tool(
         name="Internal Database",
-        description="useful for when you need to answer questions about alphabet company annual report",
-        func=internaL_db.run,
+        description="useful when you need to answer the question from the internal database",
+        func=database.search,
+        # func=databasefunc("email").search,
     ),
-    # Tool(
-    #     name="Send Email",
-    #     func=send_email,
-    #     description=""""
-    #     Useful for sending the email, please just send what is the intention of the email, and who is the target to send
-    #     """
-    # ),
 ]
 
 
@@ -48,9 +47,20 @@ def generate_response(prompt, memory, mogodb, temperature, llm_model_selection):
     # {'model': {'id': 'Vicuna', 'name': 'Vicuna', 'maxLength': 96000, 'tokenLimit': 32768}, 'systemPrompt': "You are ChatGPT, a large language model trained by OpenAI. Follow the user's instructions carefully. Respond using markdown.", 'temperature': 0.7, 'key': '', 'messages': [{'role': 'user', 'content': 'hello'}, {'role': 'assistant', 'content': 'Hello! How can I assist you today?'}, {'role': 'user', 'content': 'hello'}]}
     # print(data)
     # prompt = data["messages"][-1]["content"]
+    # Tool(
+    #     name="Internal Database",
+    #     description="useful when you need to answer the question from the internal database",
+    #     func=database.search,
+    #     # func=databasefunc("email").search,
+
     mogodb.add_user_message(prompt)
     if llm_model_selection == "gpt35":
         llm = llm_azure_gpt35  # now default setting, will change it later
+        llm.temperature = temperature
+        agent_chain = initialize_agent(
+            tools, llm, agent=AgentType.CONVERSATIONAL_REACT_DESCRIPTION, verbose=True, memory=memory)
+    elif llm_model_selection == "Vicuna":
+        llm = llm_Vicuna  # now default setting, will change it later
         llm.temperature = temperature
         agent_chain = initialize_agent(
             tools, llm, agent=AgentType.CONVERSATIONAL_REACT_DESCRIPTION, verbose=True, memory=memory)

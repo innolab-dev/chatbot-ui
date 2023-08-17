@@ -1,4 +1,4 @@
-from llm import llm_davinci
+from llm import llm_davinci, llm_azure_gpt35, llm_Vicuna
 from langchain.vectorstores import Chroma
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.chains import RetrievalQA
@@ -57,6 +57,38 @@ DB class
 """
 
 
+"""
+instead of using the hugging face embedding key, you might also want to use the embedding keys by AzureopenAI(slow and expensive)
+or by vicuna model, or the google embedding key
+
+for vicuna model use the follwoing function
+
+def get_embedding_from_api(word, model="vicuna-13b-v1.5-16k"):
+    if "ada" in model:
+        resp = openai.Embedding.create(
+            model=model,
+            input=word,
+        )
+        embedding = np.array(resp["data"][0]["embedding"])
+        return embedding
+
+    url = "http://localhost:12345/v1/embeddings" #change the url to the api url, mostly be aware of the port number
+    headers = {"Content-Type": "application/json"}
+    data = json.dumps({"model": model, "input": word})
+
+    response = requests.post(url, headers=headers, data=data)
+    if response.status_code == 200:
+        embedding = np.array(response.json()["data"][0]["embedding"])
+        return embedding
+    else:
+        print(f"Error: {response.status_code} - {response.text}")
+        return None
+
+usage:
+get_embedding_from_api("hello") #the word "hello" here change to the word/files you want to get the embedding
+"""
+
+
 class DB:
     def __init__(self, persist_directory):
         # Create persist directory
@@ -69,7 +101,9 @@ class DB:
                          embedding_function=self.embedding)
 
         # Create QA chain
-        self.llm = llm_davinci  # should be change here later
+        # self.llm = llm_davinci  # should be change here later
+        # self.llm = llm_azure_gpt35
+        self.llm = llm_Vicuna
         self.retriever = self.db.as_retriever()
         self.qa_chain = RetrievalQA.from_chain_type(
             llm=self.llm, chain_type="stuff", retriever=self.retriever, return_source_documents=True)
@@ -99,32 +133,32 @@ class DB:
             child_ids = self.db.add_documents([doc])
             doc.metadata["id"] = child_ids
 
-            self.doc_id_map[parent_id] = {
-                "ids": child_ids,
-                "filename": os.path.basename(file_path)
-            }
+            self.doc_id_map[parent_id] = os.path.basename(file_path)
         return {"message": "File uploaded successfully"}
 
     def delete(self, id):
-        if id in self.doc_id_map:
-            info = self.doc_id_map[id]
-            child_ids = info["ids"]
-        else:
-            child_ids = [id]
-
+        message = f"The file of id {id}, file name of {self.doc_id_map[id]} is deleted successfully"
         del self.doc_id_map[id]
-        self.db.delete(child_ids)
+        return message
 
     def search(self, query):
         result = self.qa_chain(query)
-        response = "Answer: " + result["result"] + "\nSources:"
-        # for source in result["source_documents"]:
-        #     response += "\n"+source.metadata["source"]
-        response += "\n"+str(result["source_documents"][0].metadata["source"])
+        response = "Answer: " + result["result"]
+        if result["source_documents"]:
+            response += "\nAssistant, please also give back the source reference to the user:\nSources:"
+            response += "\n" + \
+                str(result["source_documents"][0].metadata["source"])
         return response
 
     def list_documents(self):
         out = ""
         for parent_id, info in self.doc_id_map.items():
-            out += f"File name: {info['filename']}, id: {parent_id}\n"
+            out += f"File name: {info}, id: {parent_id}\n"
         return out
+
+
+database = DB("database")
+
+
+def databasefunc(email):
+    return DB(email)

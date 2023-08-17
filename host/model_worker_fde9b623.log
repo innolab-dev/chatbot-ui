@@ -1,0 +1,192 @@
+2023-08-16 01:47:25 | INFO | model_worker | args: Namespace(host='localhost', port=21002, worker_address='http://localhost:21002', controller_address='http://localhost:21001', model_path='lmsys/vicuna-13b-v1.5-16k', revision='main', device='cuda', gpus=None, num_gpus=1, max_gpu_memory=None, load_8bit=False, cpu_offloading=False, gptq_ckpt=None, gptq_wbits=16, gptq_groupsize=-1, gptq_act_order=False, awq_ckpt=None, awq_wbits=16, awq_groupsize=-1, model_names=None, conv_template=None, limit_worker_concurrency=5, stream_interval=2, no_register=False)
+2023-08-16 01:47:25 | INFO | model_worker | Loading the model ['vicuna-13b-v1.5-16k'] on worker fde9b623 ...
+2023-08-16 01:47:26 | ERROR | stderr | Loading checkpoint shards:   0%|                                                                                                            | 0/3 [00:00<?, ?it/s]
+2023-08-16 01:47:31 | ERROR | stderr | Loading checkpoint shards:  33%|█████████████████████████████████▎                                                                  | 1/3 [00:05<00:10,  5.12s/it]
+2023-08-16 01:47:35 | ERROR | stderr | Loading checkpoint shards:  67%|██████████████████████████████████████████████████████████████████▋                                 | 2/3 [00:09<00:04,  4.48s/it]
+2023-08-16 01:47:38 | ERROR | stderr | Loading checkpoint shards: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████| 3/3 [00:11<00:00,  3.58s/it]
+2023-08-16 01:47:38 | ERROR | stderr | Loading checkpoint shards: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████| 3/3 [00:11<00:00,  3.89s/it]
+2023-08-16 01:47:38 | ERROR | stderr | 
+2023-08-16 01:47:43 | INFO | model_worker | Register to controller
+2023-08-16 01:47:43 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m188035[0m]
+2023-08-16 01:47:43 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2023-08-16 01:47:43 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2023-08-16 01:47:43 | ERROR | stderr | [32mINFO[0m:     Uvicorn running on [1mhttp://localhost:21002[0m (Press CTRL+C to quit)
+2023-08-16 01:48:01 | INFO | stdout | [32mINFO[0m:     127.0.0.1:47616 - "[1mPOST /worker_get_conv_template HTTP/1.1[0m" [32m200 OK[0m
+2023-08-16 01:48:01 | INFO | stdout | [32mINFO[0m:     127.0.0.1:47620 - "[1mPOST /model_details HTTP/1.1[0m" [32m200 OK[0m
+2023-08-16 01:48:01 | INFO | stdout | [32mINFO[0m:     127.0.0.1:47620 - "[1mPOST /count_token HTTP/1.1[0m" [32m200 OK[0m
+2023-08-16 01:48:04 | INFO | stdout | [32mINFO[0m:     127.0.0.1:47628 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2023-08-16 01:48:10 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46132 - "[1mPOST /model_details HTTP/1.1[0m" [32m200 OK[0m
+2023-08-16 01:48:10 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46132 - "[1mPOST /count_token HTTP/1.1[0m" [32m200 OK[0m
+2023-08-16 01:48:12 | INFO | stdout | [32mINFO[0m:     127.0.0.1:46136 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2023-08-16 01:48:28 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 2. worker_id: fde9b623. 
+2023-08-16 01:49:13 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 2. worker_id: fde9b623. 
+2023-08-16 01:49:58 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 2. worker_id: fde9b623. 
+2023-08-16 01:50:43 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 2. worker_id: fde9b623. 
+2023-08-16 01:51:28 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 2. worker_id: fde9b623. 
+2023-08-16 01:52:13 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 2. worker_id: fde9b623. 
+2023-08-16 01:52:58 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 2. worker_id: fde9b623. 
+2023-08-16 01:53:43 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 2. worker_id: fde9b623. 
+2023-08-16 01:53:51 | INFO | stdout | [32mINFO[0m:     127.0.0.1:56544 - "[1mPOST /model_details HTTP/1.1[0m" [32m200 OK[0m
+2023-08-16 01:53:51 | INFO | stdout | [32mINFO[0m:     127.0.0.1:56544 - "[1mPOST /count_token HTTP/1.1[0m" [32m200 OK[0m
+2023-08-16 01:54:05 | INFO | stdout | [32mINFO[0m:     127.0.0.1:56560 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2023-08-16 01:54:28 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 3. worker_id: fde9b623. 
+2023-08-16 01:55:13 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 3. worker_id: fde9b623. 
+2023-08-16 01:55:25 | INFO | stdout | [32mINFO[0m:     127.0.0.1:34838 - "[1mPOST /model_details HTTP/1.1[0m" [32m200 OK[0m
+2023-08-16 01:55:25 | INFO | stdout | [32mINFO[0m:     127.0.0.1:34838 - "[1mPOST /count_token HTTP/1.1[0m" [32m200 OK[0m
+2023-08-16 01:55:39 | INFO | stdout | [32mINFO[0m:     127.0.0.1:34850 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2023-08-16 01:55:58 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 4. worker_id: fde9b623. 
+2023-08-16 01:56:43 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 4. worker_id: fde9b623. 
+2023-08-16 01:57:28 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 4. worker_id: fde9b623. 
+2023-08-16 01:58:14 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 4. worker_id: fde9b623. 
+2023-08-16 01:58:40 | INFO | stdout | [32mINFO[0m:     127.0.0.1:43060 - "[1mPOST /model_details HTTP/1.1[0m" [32m200 OK[0m
+2023-08-16 01:58:40 | INFO | stdout | [32mINFO[0m:     127.0.0.1:43060 - "[1mPOST /count_token HTTP/1.1[0m" [32m200 OK[0m
+2023-08-16 01:58:44 | INFO | stdout | [32mINFO[0m:     127.0.0.1:43062 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2023-08-16 01:58:56 | INFO | stdout | [32mINFO[0m:     127.0.0.1:44614 - "[1mPOST /model_details HTTP/1.1[0m" [32m200 OK[0m
+2023-08-16 01:58:56 | INFO | stdout | [32mINFO[0m:     127.0.0.1:44614 - "[1mPOST /count_token HTTP/1.1[0m" [32m200 OK[0m
+2023-08-16 01:58:59 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=4, locked=False). call_ct: 6. worker_id: fde9b623. 
+2023-08-16 01:59:00 | INFO | stdout | [32mINFO[0m:     127.0.0.1:44620 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2023-08-16 01:59:44 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 6. worker_id: fde9b623. 
+2023-08-16 02:00:00 | INFO | stdout | [32mINFO[0m:     127.0.0.1:53870 - "[1mPOST /model_details HTTP/1.1[0m" [32m200 OK[0m
+2023-08-16 02:00:00 | INFO | stdout | [32mINFO[0m:     127.0.0.1:53870 - "[1mPOST /count_token HTTP/1.1[0m" [32m200 OK[0m
+2023-08-16 02:00:10 | INFO | stdout | [32mINFO[0m:     127.0.0.1:53878 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2023-08-16 02:00:29 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 7. worker_id: fde9b623. 
+2023-08-16 02:01:14 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 7. worker_id: fde9b623. 
+2023-08-16 02:01:16 | INFO | stdout | [32mINFO[0m:     127.0.0.1:35360 - "[1mPOST /model_details HTTP/1.1[0m" [32m200 OK[0m
+2023-08-16 02:01:16 | INFO | stdout | [32mINFO[0m:     127.0.0.1:35360 - "[1mPOST /count_token HTTP/1.1[0m" [32m200 OK[0m
+2023-08-16 02:01:26 | INFO | stdout | [32mINFO[0m:     127.0.0.1:35370 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2023-08-16 02:01:38 | INFO | stdout | [32mINFO[0m:     127.0.0.1:60994 - "[1mPOST /model_details HTTP/1.1[0m" [32m200 OK[0m
+2023-08-16 02:01:38 | INFO | stdout | [32mINFO[0m:     127.0.0.1:60994 - "[1mPOST /count_token HTTP/1.1[0m" [32m200 OK[0m
+2023-08-16 02:01:48 | INFO | stdout | [32mINFO[0m:     127.0.0.1:32776 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2023-08-16 02:01:59 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 9. worker_id: fde9b623. 
+2023-08-16 02:02:26 | INFO | stdout | [32mINFO[0m:     127.0.0.1:48740 - "[1mPOST /model_details HTTP/1.1[0m" [32m200 OK[0m
+2023-08-16 02:02:26 | INFO | stdout | [32mINFO[0m:     127.0.0.1:48740 - "[1mPOST /count_token HTTP/1.1[0m" [32m200 OK[0m
+2023-08-16 02:02:35 | INFO | stdout | [32mINFO[0m:     127.0.0.1:48744 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2023-08-16 02:02:44 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 10. worker_id: fde9b623. 
+2023-08-16 02:03:29 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 10. worker_id: fde9b623. 
+2023-08-16 02:03:31 | INFO | stdout | [32mINFO[0m:     127.0.0.1:38538 - "[1mPOST /model_details HTTP/1.1[0m" [32m200 OK[0m
+2023-08-16 02:03:31 | INFO | stdout | [32mINFO[0m:     127.0.0.1:38538 - "[1mPOST /count_token HTTP/1.1[0m" [32m200 OK[0m
+2023-08-16 02:03:35 | INFO | stdout | [32mINFO[0m:     127.0.0.1:38548 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2023-08-16 02:04:14 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 11. worker_id: fde9b623. 
+2023-08-16 02:04:59 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 11. worker_id: fde9b623. 
+2023-08-16 02:05:44 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 11. worker_id: fde9b623. 
+2023-08-16 02:06:29 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 11. worker_id: fde9b623. 
+2023-08-16 02:07:14 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 11. worker_id: fde9b623. 
+2023-08-16 02:07:59 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 11. worker_id: fde9b623. 
+2023-08-16 02:08:43 | INFO | stdout | [32mINFO[0m:     127.0.0.1:57246 - "[1mPOST /worker_get_embeddings HTTP/1.1[0m" [32m200 OK[0m
+2023-08-16 02:08:44 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 12. worker_id: fde9b623. 
+2023-08-16 02:09:29 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 12. worker_id: fde9b623. 
+2023-08-16 02:10:14 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 12. worker_id: fde9b623. 
+2023-08-16 02:10:59 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 12. worker_id: fde9b623. 
+2023-08-16 02:11:44 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 12. worker_id: fde9b623. 
+2023-08-16 02:12:29 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 12. worker_id: fde9b623. 
+2023-08-16 02:13:15 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 12. worker_id: fde9b623. 
+2023-08-16 02:14:00 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 12. worker_id: fde9b623. 
+2023-08-16 02:14:45 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 12. worker_id: fde9b623. 
+2023-08-16 02:15:30 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 12. worker_id: fde9b623. 
+2023-08-16 02:16:15 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 12. worker_id: fde9b623. 
+2023-08-16 02:17:00 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 12. worker_id: fde9b623. 
+2023-08-16 02:17:45 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 12. worker_id: fde9b623. 
+2023-08-16 02:18:30 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 12. worker_id: fde9b623. 
+2023-08-16 02:19:15 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 12. worker_id: fde9b623. 
+2023-08-16 02:20:00 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 12. worker_id: fde9b623. 
+2023-08-16 02:20:45 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 12. worker_id: fde9b623. 
+2023-08-16 02:21:30 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 12. worker_id: fde9b623. 
+2023-08-16 02:21:48 | INFO | stdout | [32mINFO[0m:     127.0.0.1:49684 - "[1mPOST /model_details HTTP/1.1[0m" [32m200 OK[0m
+2023-08-16 02:21:48 | INFO | stdout | [32mINFO[0m:     127.0.0.1:49684 - "[1mPOST /count_token HTTP/1.1[0m" [32m200 OK[0m
+2023-08-16 02:22:02 | INFO | stdout | [32mINFO[0m:     127.0.0.1:49688 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2023-08-16 02:22:15 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 13. worker_id: fde9b623. 
+2023-08-16 02:22:38 | INFO | stdout | [32mINFO[0m:     127.0.0.1:48418 - "[1mPOST /model_details HTTP/1.1[0m" [32m200 OK[0m
+2023-08-16 02:22:38 | INFO | stdout | [32mINFO[0m:     127.0.0.1:48418 - "[1mPOST /count_token HTTP/1.1[0m" [32m200 OK[0m
+2023-08-16 02:22:42 | INFO | stdout | [32mINFO[0m:     127.0.0.1:48424 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2023-08-16 02:22:46 | INFO | stdout | [32mINFO[0m:     127.0.0.1:48438 - "[1mPOST /model_details HTTP/1.1[0m" [32m200 OK[0m
+2023-08-16 02:22:46 | INFO | stdout | [32mINFO[0m:     127.0.0.1:48438 - "[1mPOST /count_token HTTP/1.1[0m" [32m200 OK[0m
+2023-08-16 02:23:00 | INFO | stdout | [32mINFO[0m:     127.0.0.1:48454 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2023-08-16 02:23:00 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 02:23:45 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 02:24:30 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 02:25:15 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 02:26:00 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 02:26:45 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 02:27:30 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 02:28:16 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 02:29:01 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 02:29:46 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 02:30:31 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 02:31:16 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 02:32:01 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 02:32:46 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 02:33:31 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 02:34:16 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 02:35:01 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 02:35:46 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 02:36:31 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 02:37:16 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 02:38:01 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 02:38:46 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 02:39:31 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 02:40:16 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 02:41:01 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 02:41:46 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 02:42:31 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 02:43:16 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 02:44:02 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 02:44:47 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 02:45:32 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 02:46:17 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 02:47:02 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 02:47:47 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 02:48:32 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 02:49:17 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 02:50:02 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 02:50:47 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 02:51:32 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 02:52:17 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 02:53:02 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 02:53:47 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 02:54:32 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 02:55:17 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 02:56:02 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 02:56:47 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 02:57:32 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 02:58:17 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 02:59:03 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 02:59:48 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 03:00:33 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 03:01:18 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 03:02:03 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 03:02:48 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 03:03:33 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 03:04:18 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 03:05:03 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 03:05:48 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 03:06:33 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 03:07:18 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 03:08:03 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 03:08:48 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 03:09:33 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 03:10:18 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 03:11:03 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 03:11:48 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 03:12:33 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 03:13:19 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 03:14:04 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 03:14:49 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 03:15:34 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 03:16:19 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 03:17:04 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 15. worker_id: fde9b623. 
+2023-08-16 03:17:40 | INFO | stdout | [32mINFO[0m:     127.0.0.1:60652 - "[1mPOST /model_details HTTP/1.1[0m" [32m200 OK[0m
+2023-08-16 03:17:40 | INFO | stdout | [32mINFO[0m:     127.0.0.1:60652 - "[1mPOST /count_token HTTP/1.1[0m" [32m200 OK[0m
+2023-08-16 03:17:43 | INFO | stdout | [32mINFO[0m:     127.0.0.1:60666 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2023-08-16 03:17:43 | INFO | stdout | [32mINFO[0m:     127.0.0.1:60676 - "[1mPOST /model_details HTTP/1.1[0m" [32m200 OK[0m
+2023-08-16 03:17:43 | INFO | stdout | [32mINFO[0m:     127.0.0.1:60676 - "[1mPOST /count_token HTTP/1.1[0m" [32m200 OK[0m
+2023-08-16 03:17:45 | INFO | stdout | [32mINFO[0m:     127.0.0.1:60688 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2023-08-16 03:17:45 | INFO | stdout | [32mINFO[0m:     127.0.0.1:60704 - "[1mPOST /model_details HTTP/1.1[0m" [32m200 OK[0m
+2023-08-16 03:17:45 | INFO | stdout | [32mINFO[0m:     127.0.0.1:60704 - "[1mPOST /count_token HTTP/1.1[0m" [32m200 OK[0m
+2023-08-16 03:17:47 | INFO | stdout | [32mINFO[0m:     127.0.0.1:60714 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2023-08-16 03:17:49 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 18. worker_id: fde9b623. 
+2023-08-16 03:18:13 | INFO | stdout | [32mINFO[0m:     127.0.0.1:50200 - "[1mPOST /model_details HTTP/1.1[0m" [32m200 OK[0m
+2023-08-16 03:18:13 | INFO | stdout | [32mINFO[0m:     127.0.0.1:50200 - "[1mPOST /count_token HTTP/1.1[0m" [32m200 OK[0m
+2023-08-16 03:18:17 | INFO | stdout | [32mINFO[0m:     127.0.0.1:50202 - "[1mPOST /worker_generate HTTP/1.1[0m" [32m200 OK[0m
+2023-08-16 03:18:34 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 19. worker_id: fde9b623. 
+2023-08-16 03:19:19 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 19. worker_id: fde9b623. 
+2023-08-16 03:20:04 | INFO | model_worker | Send heart beat. Models: ['vicuna-13b-v1.5-16k']. Semaphore: Semaphore(value=5, locked=False). call_ct: 19. worker_id: fde9b623. 

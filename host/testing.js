@@ -1,19 +1,24 @@
-const url = 'http://219.78.175.160:1111/file_uploader';
+const { MongoClient } = require('mongodb');
+// const MongoClient = require('mongodb').MongoClient;
+// Replace with your actual MongoDB connection string 
+const url = 'mongodb+srv://projectvpn39:kDir8fgavrwmXhUN@cluster0.bdqojht.mongodb.net/langchain?retryWrites=true&w=majority';
 
-const data = {
-  purpose: 'upload',
-  files: './example_data/InnoLab_visit_developer_kids.pptx'
-};
+const client = new MongoClient(url);
 
-const headers = {
-  'Content-Type': 'application/json'
-};
+async function main() {
+  await client.connect();
+  
+  const db = client.db('langchain');
+  
+  const collection = db.collection('chat_history');
+  user = await collection.findOne({ SessionId: "4111d3e1-4f55-46e7-9021-1974f98123d0" })
+  console.log(user);
+              // console.log(user.History);
+              // response.json({ message: user.interest });
+  // Use the collection as neede
+  // console.log(collection.findOne
+  //   ({"SessionId": "4111d3e1-4f55-46e7-9021-1974f98123d0"}))
+  // await client.close();
+}
 
-fetch(url, {
-  method: 'POST',
-  body: JSON.stringify(data),
-  headers: headers
-})
-  .then(response => response.json())
-  .then(data => console.log(data))
-  .catch(error => console.error(error));
+main();
