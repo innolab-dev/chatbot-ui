@@ -40,7 +40,7 @@ import HomeContext from './home.context';
 import { HomeInitialState, initialState } from './home.state';
 
 import { v4 as uuidv4 } from 'uuid';
-import { getCookieEmail, getToken } from '@/utils/data/cookies';
+import { getUserEmail, getToken } from '@/utils/data/cookies';
 
 import style from './style.module.css';
 import { importData } from '@/utils/app/importExport';
@@ -64,7 +64,7 @@ const Home = ({
     window.location.href = "http://localhost:3000/";
   }
   console.log("token: " + getToken());
-  console.log("userEmail: " + getCookieEmail());
+  console.log("userEmail: " + getUserEmail());
 
   const { t } = useTranslation('chat');
   const { getModels } = useApiService();
@@ -224,7 +224,7 @@ const Home = ({
 
     dispatch({ field: 'loading', value: false });
     
-    var userEmail = getCookieEmail();
+    var userEmail = getUserEmail();
 
     // Database: create new conversation
     let data = new URLSearchParams();
@@ -392,7 +392,7 @@ const Home = ({
   useEffect(() => {
     //Database: grab user conversations and conversation memory
     let data = new URLSearchParams();
-    data.append("email", getCookieEmail());
+    data.append("email", getUserEmail());
 
     let api = "http://219.78.175.160:7000/" + "load-conversations";
     fetch(api, { method: "post", body: data })
@@ -401,15 +401,22 @@ const Home = ({
                 console.log("res",temp.then(
                   data => {
                     var messageJson = JSON.parse(data)
-                    const { history, folders, prompts } = importData(messageJson);
+                    console.log("data", data)
+                    console.log("messageJson", messageJson['history'])
 
-                    dispatch({ field: 'conversations', value: history });
-                    dispatch({
-                      field: 'selectedConversation',
-                      value: history[history.length - 1],
-                    });
-                    dispatch({ field: 'folders', value: folders });
-                    dispatch({ field: 'prompts', value: prompts });
+                    // When the account has chat history
+                    if (JSON.stringify(messageJson['history']) != "[]")
+                    {
+                      const { history, folders, prompts } = importData(messageJson);
+
+                      dispatch({ field: 'conversations', value: history });
+                      dispatch({
+                        field: 'selectedConversation',
+                        value: history[history.length - 1],
+                      });
+                      dispatch({ field: 'folders', value: folders });
+                      dispatch({ field: 'prompts', value: prompts });
+                    }
 
                     setLoading(false);                      
                   }))

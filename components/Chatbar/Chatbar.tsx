@@ -25,6 +25,7 @@ import ChatbarContext from './Chatbar.context';
 import { ChatbarInitialState, initialState } from './Chatbar.state';
 
 import { v4 as uuidv4 } from 'uuid';
+import { deleteCookie, getUserEmail } from '@/utils/data/cookies';
 
 export const Chatbar = () => {
   const { t } = useTranslation('sidebar');
@@ -204,6 +205,14 @@ export const Chatbar = () => {
     }
   };
 
+  // handle Logout Button
+  const handleLogout = () => {
+    handleClearConversations();
+    deleteCookie();
+    window.location.href = "http://localhost:3000/";
+    console.log("logout");
+  };
+
   useEffect(() => {
     if (searchTerm) {
       chatDispatch({
@@ -235,6 +244,7 @@ export const Chatbar = () => {
         handlePluginKeyChange,
         handleClearPluginKey,
         handleApiKeyChange,
+        handleLogout,
       }}
     >
       <Sidebar<Conversation>

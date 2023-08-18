@@ -32,7 +32,7 @@ import { PluginSelect } from './PluginSelect';
 import { PromptList } from './PromptList';
 import { VariableModal } from './VariableModal';
 import Result from './Result'
-import { getCookieEmail } from '@/utils/data/cookies';
+import { getUserEmail } from '@/utils/data/cookies';
 // import { FileUploader } from './FileUploader';
 
 interface Props {
@@ -98,7 +98,7 @@ export const ChatInput = ({
   };
 
   const handleSend = () => {
-    console.log("HandleSend:", getCookieEmail());
+    console.log("HandleSend:", getUserEmail());
 
     if (messageIsStreaming) {
       return;
@@ -332,7 +332,7 @@ export const ChatInput = ({
     // 👇 Uploading the file using the fetch API to the server
     const formData = new FormData();
     formData.append('file', file);
-    formData.append('email', getCookieEmail());
+    formData.append('email', getUserEmail());
     
     await fetch('http://219.78.175.160:1111/uploads', {
         method: 'POST',

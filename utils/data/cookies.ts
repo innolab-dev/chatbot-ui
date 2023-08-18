@@ -7,12 +7,15 @@ export const getToken = () => {
     return token;
 };
   
-export const getCookieEmail = () => {
+export const getUserEmail = () => {
     const userEmail = cookies.get('userEmail');
     email = userEmail;
     return userEmail;
 };
 
-export const getUserEmail = () => {
-    return email;
-}
+
+export const deleteCookie = () => {
+    cookies.remove('token');
+    cookies.remove('userEmail');
+};
+

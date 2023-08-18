@@ -33,7 +33,7 @@ import { ModelSelect } from './ModelSelect';
 import { SystemPrompt } from './SystemPrompt';
 import { TemperatureSlider } from './Temperature';
 import { MemoizedChatMessage } from './MemoizedChatMessage';
-import { getCookieEmail } from '@/utils/data/cookies';
+import { getUserEmail } from '@/utils/data/cookies';
 
 
 interface Props {
@@ -96,7 +96,7 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
         homeDispatch({ field: 'loading', value: true });
         homeDispatch({ field: 'messageIsStreaming', value: true });
         const chatBody: ChatBody = {
-          userEmail: getCookieEmail(),
+          userEmail: getUserEmail(),
           model: updatedConversation.model,
           messages: updatedConversation.messages,
           conversationID: updatedConversation.id,
