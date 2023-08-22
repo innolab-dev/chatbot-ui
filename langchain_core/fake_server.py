@@ -103,12 +103,16 @@ def upload_file():
 @app.route('/teams_testing', methods=['POST'])
 def teams_testing():
     # data = request.get_json()
-    data = request.args.get('prompt')
-    # data = data['inputs']['queries']['Prompt']
-    print(data)
+    # data = request.args.get('prompt')
+
+    query_string = request.query_string
+    params = parse_qs(query_string)
+    params = {k.decode(): v[0].decode() for k, v in params.items()}
+    prompt = params['Prompt']
+    print(prompt)
     result = {
-        'text': f"DLLM +{data}",
-        'image': "NULL"
+        'text': f"DLLM +{prompt}",
+        'image': "https://i.imgur.com/3fcfnm4.png"
     }
     return jsonify(result)
 

@@ -150,6 +150,8 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
               name: customName,
             };
 
+            console.log("updatedConversation", updatedConversation);
+
             // Database: update conversation name
             let data = new URLSearchParams();
             let api = "http://219.78.175.160:7000/" + "update-conversation-name";
@@ -198,6 +200,30 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
                 field: 'selectedConversation',
                 value: updatedConversation,
               });
+
+              var userEmail = getUserEmail();
+
+              // Database: create new conversation
+              let data = new URLSearchParams();
+              let api = "http://219.78.175.160:7000/" + "new-conversation";
+              data.append("email", userEmail);
+              data.append("conversationID", updatedConversation.id);
+              data.append("conversationName", updatedConversation.name);
+              data.append("model", updatedConversation.model.name);
+              data.append("temperature", updatedConversation.temperature.toString());
+              data.append("systemMsg", updatedConversation.prompt);
+
+              fetch(api, { method: "post", body: data })
+                    .then(res => {console.log(res.text())})
+                    .then(data => {
+                        // console.log(data);
+                        // window.alert(data);
+                        // if (data.indexOf("Created") != -1) {
+                        //       props.setEnd(null);
+                        // }
+                    })
+                    .catch(err => console.log(err));
+
             } else {
               const updatedMessages: Message[] =
                 updatedConversation.messages.map((message, index) => {

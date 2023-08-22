@@ -1,12 +1,38 @@
-# image_generator.py
+# image.py
+import requests
 from prompt import prompt_for_image_description, prompt_for_image_modified, prompt_use_in_image, Prompt_template
 from midjourney_handler import gen_image, upscale, reset, variation
 from llm import llm_davinci
 import json
 
+####################
+# setting the diffusion model use for text to image
+import torch
+from diffusers import StableDiffusionPipeline
+pipe = StableDiffusionPipeline.from_pretrained(
+    "CompVis/stable-diffusion-v1-4", torch_dtype=torch.float16)
+pipe = pipe.to("cuda")
+# generator = torch.Generator("cuda").manual_seed(1024)
+####################
+
+
+def generate_diffuse(prompt):
+    image = pipe(prompt).images[0]
+    # Upload image to Imgur and get image url, using the tsd_innolab google account
+    image_file = 'prompt.png'
+    image.save(image_file)
+    imgur_client_id = '89aeeab4d0a61f7'
+
+    imgur_url = 'https://api.imgur.com/3/image'
+    headers = {'authorization': 'Client-ID ' + imgur_client_id}
+    files = {'image': open(image_file, 'rb')}
+
+    response = requests.post(imgur_url, headers=headers, files=files)
+    img_url = response.json()['data']['link']
+    return img_url
+
 
 class ImageGenerator:
-
     def __init__(self):  # in main funtion
         self.image_url = []
         self.message_id = []
@@ -22,10 +48,9 @@ class ImageGenerator:
     def generate_image(self, model):
         # Generate image based on context
         if model == "stable diffusion":
-            # image = generate_diffuse(prompt)
             # diffustion, need to put it in the url link, fix it later
             print("diffusion")
-            image_url = "url"
+            image_url = generate_diffuse(self.prompt)
             message_id = "null"
             msg_hash = "null"
             trigger_id = "null"

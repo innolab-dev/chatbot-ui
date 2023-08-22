@@ -23,20 +23,14 @@ I want you to classify prompts into one of 6 categories:
     Can you write an email to sales@company.com inquiring about pricing for a custom order?
     
 4.  Document, database related
-    Any prompt that involves updating / deleting documents in a database, listing files in a database, searching and answering questions about files in a database
-    If start with something like "According to my database...", it should be this category
+    Any prompt that involves updating / deleting documents in a database, listing files in a database
+    
     Examples:
     What documents in the database relate to Project X?
     Please update the status for entry 12345 in the database to Completed
-    According to the database, what is the status of Project Y?
+    Please list out all the document I have in my database
     
-5.  Selling product
-    Any prompt that involves selling the product, or buying the product, or enquires about our company product
-    Examples:
-    I want to buy a blue model of the Acme Widget. Do you have this in stock?
-    Can you tell me more about the features of the Deluxe Gizmo? I'm interested in purchasing one.
-    
-6.  Question-answering
+5.  Question-answering
     Any prompt that is asking a question that requires a factual answer
     Or any casual talk
     If you think it is not Image-related or Code-related, classify it as this one
@@ -151,17 +145,12 @@ here is the email content:
 prompt_file_uploader_routing = """
 Please classify this user prompt into one of the following categories, and extract the relevant information from the prompt. Return the extracted information in JSON format:
 
-Search file and answer question - Return {"purpose": "search", "query": "search query"}
-
 Delete file - Return {"purpose": "delete", "file_id": "id"}
 
 List files - Return {"purpose": "list"}
 
 
 Examples:
-
-Prompt: What is the best language for AI according to the database?
-Ans: {"purpose": "search", "query": "What is the best language for AI?"}
 
 Prompt: Delete file 12345
 Ans: {"purpose": "delete", "file_id": "12345"}

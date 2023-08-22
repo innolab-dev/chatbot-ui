@@ -22,6 +22,7 @@ import { MemoizedReactMarkdown } from '../Markdown/MemoizedReactMarkdown';
 import rehypeMathjax from 'rehype-mathjax';
 import remarkGfm from 'remark-gfm';
 import remarkMath from 'remark-math';
+import ReactMarkdown from 'react-markdown';
 
 export interface Props {
   message: Message;
@@ -135,12 +136,17 @@ export const ChatMessage: FC<Props> = memo(
     let parsedMessageContent = message.content;
     let messageImage = 'NULL';
     try {
+      console.log("message.content", message.content)
       const messageData = JSON.parse(message.content);
+      console.log("JSON.parse(message.content)", JSON.parse(message.content))
       parsedMessageContent = messageData.text;
+      console.log("JSON.parse(message.content).text", JSON.parse(message.content).text)
+      console.log("!!!!!!!!!!!!!!!")
       messageImage = messageData.image;
     } catch (e) {
       // If parsing fails, assume that message.content is plain text
       parsedMessageContent = message.content;
+      console.log("?????????????????/")
     }
 
     return (
@@ -229,7 +235,7 @@ export const ChatMessage: FC<Props> = memo(
             ) : (
               <div className="flex flex-row">
                 <div className="prose dark:prose-invert flex-1">
-                  {parsedMessageContent}
+                  <ReactMarkdown>{parsedMessageContent}</ReactMarkdown>
                   {messageImage !== null && (
                     <img src={messageImage} alt="From server" />
                   )}

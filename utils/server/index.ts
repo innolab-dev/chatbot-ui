@@ -27,6 +27,8 @@ export class OpenAIError extends Error {
 const FLASK_URL = 'http://219.78.175.160:5000/chat'
 
 
+
+
 // connect to backend
 export const OpenAIStream = async (
   userEmail: string,
@@ -67,7 +69,7 @@ export const OpenAIStream = async (
         // Enqueue Flask text
         const text = data.text
         const image = data.image
-        console.log(text)
+        console.log("text", text)
         console.log(image)
         const encoder = new TextEncoder()
 

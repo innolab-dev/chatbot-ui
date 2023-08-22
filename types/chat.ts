@@ -1,6 +1,4 @@
 import { OpenAIModel } from './openai';
-import { ConversationBufferMemory} from 'langchain';
-
 
 export interface Message {
   role: Role;
@@ -30,5 +28,5 @@ export interface Conversation {
   prompt: string;
   temperature: number;
   folderId: string | null;
-  memory:ConversationBufferMemory
+  // memory:ConversationBufferMemory
 }

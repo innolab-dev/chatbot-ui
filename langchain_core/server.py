@@ -11,6 +11,7 @@ from llm import llm_davinci, codey
 from power_automate import send_email
 from memory import memory
 from Chromadb import database
+from email_class import email_class
 from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
@@ -46,11 +47,11 @@ def file_uploader():
         # redirect access
         data = request.args
     purpose = data.get('purpose')
-    print("purpose", purpose)
-    if purpose == "search":
-        query = data["query"]
-        response = database.search(query)
-    elif purpose == "delete":
+    # print("purpose", purpose)
+    # if purpose == "search": // move to ask in general Q&A part
+    #     query = data["query"]
+    #     response = database.search(query)
+    if purpose == "delete":
         id = data["id"]
         print("id: ", id)
         response = database.delete(id)
@@ -94,12 +95,14 @@ def chat():
         temperature = data.get('temperature')
         user_email = data.get('userEmail')
         print("email: ", user_email)
+        email_class.set_email(user_email)
         # print("id", data.get('conversationID'))
         # print("key", data.get('key'))
     else:
         query_string = request.query_string
         params = parse_qs(query_string)
         params = {k.decode(): v[0].decode() for k, v in params.items()}
+        email_class.set_email(params['userEmail'])
         prompt = params['Prompt']
         llm_model_selection = "gpt35"
         temperature = 0.5
@@ -130,14 +133,13 @@ def chat():
             red = json.loads(res)
             for i in red:
                 print(i)
-            return redirect(url_for('file_uploader', purpose=red.get("purpose"), query=red.get("query"), id=red.get("file_id")))
+            return redirect(url_for('file_uploader', purpose=red.get("purpose"), id=red.get("file_id")))
         else:
-            print("general answering")
+            print("general answering")  # life pal function include here
             # Run response generation code
             mem, mongo = memory(conversationID)
             response = generate_response(
                 prompt, mem, mongo, temperature, llm_model_selection)
-
     else:
         response = "I don't understand what you are saying"
     result = {

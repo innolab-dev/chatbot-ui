@@ -98,7 +98,6 @@ export const ChatInput = ({
   };
 
   const handleSend = () => {
-    console.log("HandleSend:", getUserEmail());
 
     if (messageIsStreaming) {
       return;
