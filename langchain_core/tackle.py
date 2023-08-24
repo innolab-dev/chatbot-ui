@@ -5,7 +5,7 @@ from langchain.chains import LLMMathChain
 from langchain.agents import AgentType
 from langchain.agents import initialize_agent
 from langchain.agents import Tool
-from Chromadb import database
+from Chromadb import DBManager
 from email_class import email_class
 # from power_automate import send_email
 from llm import llm_azure_gpt35, bison_chat, codey, llm_Vicuna
@@ -19,6 +19,7 @@ from pymongo import MongoClient
 
 
 def get_client_info(input):
+    # input is not used, just for the function to work
     # Replace the placeholder values with your actual MongoDB connection details
     client = MongoClient(
         "mongodb+srv://projectvpn39:kDir8fgavrwmXhUN@cluster0.bdqojht.mongodb.net/?retryWrites=true&w=majority")
@@ -31,12 +32,12 @@ def get_client_info(input):
     return client_info_str
 
 
-def get_products_info_according_to_name(input):
+def get_products_info_according_to_name(prdouct_name):
     client = MongoClient(
         "mongodb+srv://projectvpn39:kDir8fgavrwmXhUN@cluster0.bdqojht.mongodb.net/?retryWrites=true&w=majority")
     db = client["langchain"]
     collection = db["products"]
-    client_info = collection.find_one({"product": input})
+    client_info = collection.find_one({"product_name": prdouct_name})
     if client_info is not None:
         client_info_str = "\n".join(
             [f"- {k}: {v}" for k, v in client_info.items()])
@@ -45,13 +46,13 @@ def get_products_info_according_to_name(input):
     return client_info_str
 
 
-def get_products_info_according_to_category(input):
+def get_products_info_according_to_category(category):
     client = MongoClient(
         "mongodb+srv://projectvpn39:kDir8fgavrwmXhUN@cluster0.bdqojht.mongodb.net/?retryWrites=true&w=majority")
     db = client["langchain"]
     collection = db["products"]
     client_info = collection.find(
-        {"interest": input}).limit(3)
+        {"interest": category}).limit(3)
     product_info_str = ""
     for i in client_info:
         # product_info_str += f"\nProduct {i}:\n"
@@ -60,7 +61,7 @@ def get_products_info_according_to_category(input):
 
 
 llm_math_chain = LLMMathChain(llm=llm_azure_gpt35)
-toolss = load_tools(["wikipedia"], llm=llm_azure_gpt35)
+wiki_tools = load_tools(["wikipedia"], llm=llm_azure_gpt35)
 tools = [
     Tool(
         name="Calculator",
@@ -76,7 +77,7 @@ tools = [
     Tool(
         name="Document Database",
         description="Use for when you want to answer the question from the documents that uploaded by the user",
-        func=database.search,
+        func=DBManager.get_or_setup().search,
         # func=databasefunc("email").search,
     ),
     Tool(
@@ -86,22 +87,22 @@ tools = [
         # return_direct=True,  # help you to correct the prompt
     ),
     Tool(
-        name="Get Prudct information based on category",
+        name="Get Product information based on category",
         description="Our company have 5 category of item, please choose one of them, and I will give you the top 3 products in that category, and they are Beauty, Food, Health, Kid and Pet, Travel. Please input the exact word of category as input, like 'Health",
         func=get_products_info_according_to_category,
     ),
     Tool(
-        name="Get Prudct information based on product name",
-        description="You can search for a partical product name, and I will give you the information of that product, just need to make sure the product name need to be exactly the same as the one show in the tool above",
+        name="Get Product information based on product name",
+        description="You can search for a particular product name, and I will give you the information of that product, just need to make sure the product name need to be exactly the same as the one show in the tool above",
         func=get_products_info_according_to_name,
     ),
 ]
 
 
-tools.append(toolss[0])
-toolls = load_tools(["google-search"])
+tools.append(wiki_tools[0])
+google_tools = load_tools(["google-search"])
 # tools[0].description = "This tool allows you to search the web using the Google Search API. Useful for when you need to answer questions about current events"
-tools.append(toolls[0])
+tools.append(google_tools[0])
 
 
 # for google chat bison/ codey use, to prevent output paarse error
@@ -112,7 +113,8 @@ def _handle_error(error) -> str:
 def generate_response(prompt, memory, mogodb, temperature, llm_model_selection):
 
     mogodb.add_user_message(prompt)  # add user message to mongodb
-    if llm_model_selection == "gpt35":
+    print(llm_model_selection)
+    if llm_model_selection == "gpt35" or llm_model_selection == 'gpt4':
         llm = llm_azure_gpt35  # now default setting, will change it later
         llm.temperature = temperature
         agent_chain = initialize_agent(
@@ -132,7 +134,7 @@ def generate_response(prompt, memory, mogodb, temperature, llm_model_selection):
                                        verbose=True, memory=memory, handle_parsing_errors=_handle_error, max_iterations=2)
     response = agent_chain.run(input=prompt)
     mogodb.add_ai_message(response)  # add ai message to mongodb
-
+    response += "\n\nMessage generate by: " + llm_model_selection
     return response
 
 

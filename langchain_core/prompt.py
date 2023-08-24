@@ -1,5 +1,5 @@
 prompt_for_classfication = """
-I want you to classify prompts into one of 6 categories:
+I want you to classify prompts into one of 5 categories:
 
 1.  Image-related
     Any prompt that involves generating, modifying, or describing an image, pictures, photos

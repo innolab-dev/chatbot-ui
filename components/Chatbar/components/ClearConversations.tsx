@@ -4,6 +4,7 @@ import { FC, useState } from 'react';
 import { useTranslation } from 'next-i18next';
 
 import { SidebarButton } from '@/components/Sidebar/SidebarButton';
+import { getUserEmail } from '@/utils/data/cookies';
 
 interface Props {
   onClearConversations: () => void;
@@ -15,6 +16,24 @@ export const ClearConversations: FC<Props> = ({ onClearConversations }) => {
   const { t } = useTranslation('sidebar');
 
   const handleClearConversations = () => {
+    var userEmail = getUserEmail();
+
+    // Database: delete all conversation of a user
+    let data = new URLSearchParams();
+    let api = "http://219.78.175.160:7000/" + "delete-all-conversation";
+    data.append("email", userEmail);
+
+    fetch(api, { method: "post", body: data })
+          .then(res => {console.log(res.text())})
+          .then(data => {
+              // console.log(data);
+              // window.alert(data);
+              // if (data.indexOf("Created") != -1) {
+              //       props.setEnd(null);
+              // }
+          })
+          .catch(err => console.log(err));
+
     onClearConversations();
     setIsConfirming(false);
   };

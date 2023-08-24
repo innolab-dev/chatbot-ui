@@ -1,15 +1,14 @@
 import {
   IconArrowDown,
   IconBolt,
-  IconFileUpload,
   IconBrandGoogle,
+  IconFileUpload,
   IconPlayerStop,
   IconRepeat,
   IconSend,
 } from '@tabler/icons-react';
-
-
 import {
+  ChangeEvent,
   KeyboardEvent,
   MutableRefObject,
   useCallback,
@@ -17,10 +16,11 @@ import {
   useEffect,
   useRef,
   useState,
-  ChangeEvent,
 } from 'react';
 
 import { useTranslation } from 'next-i18next';
+
+import { getUserEmail } from '@/utils/data/cookies';
 
 import { Message } from '@/types/chat';
 import { Plugin } from '@/types/plugin';
@@ -30,10 +30,8 @@ import HomeContext from '@/pages/api/home/home.context';
 
 import { PluginSelect } from './PluginSelect';
 import { PromptList } from './PromptList';
+import Result from './Result';
 import { VariableModal } from './VariableModal';
-import Result from './Result'
-import { getUserEmail } from '@/utils/data/cookies';
-// import { FileUploader } from './FileUploader';
 
 interface Props {
   onSend: (message: Message, plugin: Plugin | null) => void;
@@ -71,7 +69,9 @@ export const ChatInput = ({
   const [plugin, setPlugin] = useState<Plugin | null>(null);
   const [file, setFile] = useState<File>();
   const inputRef = useRef<HTMLInputElement>(null);
-  const [status, setStatus] = useState<"initial" | "uploading" | "success" | "fail">("initial");
+  const [status, setStatus] = useState<
+    'initial' | 'uploading' | 'success' | 'fail'
+  >('initial');
 
   const promptListRef = useRef<HTMLUListElement | null>(null);
 
@@ -98,7 +98,6 @@ export const ChatInput = ({
   };
 
   const handleSend = () => {
-
     if (messageIsStreaming) {
       return;
     }
@@ -267,10 +266,9 @@ export const ChatInput = ({
     };
   }, []);
 
-  
   const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
-      setStatus("initial");
+      setStatus('initial');
       setFile(e.target.files['0']);
     }
   };
@@ -279,91 +277,47 @@ export const ChatInput = ({
     if (inputRef.current) {
       inputRef.current.click();
     }
-  }
+  };
 
-  // const handleUploadClick = async () => {
-
-  //   if (!file) {
-  //     return;
-  //   }
-  //   setStatus("uploading");
-    
-  //   // 👇 Uploading the file using the fetch API to the server
-  //   const formData = new FormData();
-  //   formData.append('file', file);
-
-    
-    
-  //   await fetch('http://219.78.175.160:5000/uploads', {
-  //       method: 'POST',
-  //       body: formData,
-        
-  //   })
-  //   .then((response) => response.json())
-  //   .then((data) => {
-  //     // Access the message from the response
-  //     const message: string = data.message;
-  //     console.log(message);
-  //     if (message == 'File uploaded successfully') {
-  //       setStatus("success");
-  //       setFile(undefined);
-  //       setTimeout(() => {
-  //         setStatus("initial");
-  //       }, 5000);
-        
-  //       console.log('Upload successfully');
-  //     } else {
-  //       setStatus("fail");
-  //       console.log('Failed to upload');
-  //     }
-  //   })
-  //   .catch((err) => console.error(err));
-
-  // };
-  
   const handleUploadClick = async () => {
-
     if (!file) {
       return;
     }
-    setStatus("uploading");
-    
+    setStatus('uploading');
+
     // 👇 Uploading the file using the fetch API to the server
     const formData = new FormData();
     formData.append('file', file);
     formData.append('email', getUserEmail());
-    
-    await fetch('http://219.78.175.160:1111/uploads', {
-        method: 'POST',
-        body: formData,
-        
-    })
-    .then((response) => response.json())
-    .then((data) => {
-      // Access the message from the response
-      const message: string = data.message;
-      console.log(message);
-      if (message == 'File uploaded successfully') {
-        setStatus("success");
-        setFile(undefined);
-        setTimeout(() => {
-          setStatus("initial");
-        }, 5000);
-        
-        console.log('Upload successfully');
-      } else {
-        setStatus("fail");
-        console.log('Failed to upload');
-      }
-    })
-    .catch((err) => console.error(err));
 
+    await fetch('http://219.78.175.160:5000/uploads', {
+      method: 'POST',
+      body: formData,
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        // Access the message from the response
+        const message: string = data.message;
+        console.log(message);
+        if (message == 'File uploaded successfully') {
+          setStatus('success');
+          setFile(undefined);
+          setTimeout(() => {
+            setStatus('initial');
+          }, 5000);
+
+          console.log('Upload successfully');
+        } else {
+          setStatus('fail');
+          console.log('Failed to upload');
+        }
+      })
+      .catch((err) => console.error(err));
   };
-
 
   const handleCancelUploadClick = () => {
     setFile(undefined);
-  }
+  };
 
   return (
     <div className="absolute bottom-0 left-0 w-full border-transparent bg-gradient-to-b from-transparent via-white to-white pt-6 dark:border-white/20 dark:via-[#343541] dark:to-[#343541] md:pt-2">
@@ -397,43 +351,48 @@ export const ChatInput = ({
             {plugin ? <IconBrandGoogle size={20} /> : <IconBolt size={20} />}
           </button>
 
-          
           <button
             className="absolute left-8 top-1.5 rounded-sm p-1 text-neutral-800 opacity-60 hover:bg-neutral-200 hover:text-neutral-900 dark:bg-opacity-50 dark:text-neutral-100 dark:hover:text-neutral-200"
             onClick={handleImportFileClick} // this will be the file upload button
           >
-          <IconFileUpload/>
+            <IconFileUpload />
           </button>
-          
+
           {/* Added a new button here: for file uploading */}
-          <input type="file" accept=".txt,.pdf,.docx,.csv,.pptx,.xlsx" ref={inputRef} onChange={handleFileChange} style={{display: 'none'}} />
+          <input
+            type="file"
+            accept=".txt,.pdf,.docx,.csv,.pptx,.xlsx"
+            ref={inputRef}
+            onChange={handleFileChange}
+            style={{ display: 'none' }}
+          />
 
-          {file && 
-          // for file name display
-          <div className='container mx-auto flex flex-col text-black'>
-            <p className='inline-block m-0 m-auto pre-wrap break-words text-black/50 dark:text-white/50'
-            >
-            {file.name}
-            </p>
+          {file && (
+            // for file name display
+            <div className="container mx-auto flex flex-col text-black">
+              <p className="inline-block m-0 m-auto pre-wrap break-words text-black/50 dark:text-white/50">
+                {file.name}
+              </p>
 
-            {/*for the two buttons  */}
-            <div className="container mx-auto flex flex-row pr-4 pl-4 items-center justify-center"
+              {/*for the two buttons  */}
+              <div className="container mx-auto flex flex-row pr-4 pl-4 items-center justify-center">
+                <button
+                  className="rounded-sm p-1  text-neutral-800 opacity-60 hover:bg-neutral-200 hover:text-neutral-900 dark:bg-opacity-50 dark:text-neutral-100 dark:hover:text-neutral-200"
+                  onClick={handleUploadClick}
                 >
-              <button className="rounded-sm p-1  text-neutral-800 opacity-60 hover:bg-neutral-200 hover:text-neutral-900 dark:bg-opacity-50 dark:text-neutral-100 dark:hover:text-neutral-200"
-                onClick={handleUploadClick}>
                   Upload a file
-              </button>
-              <button className="rounded-sm p-1  text-neutral-800 opacity-60 hover:bg-neutral-200 hover:text-neutral-900 dark:bg-opacity-50 dark:text-neutral-100 dark:hover:text-neutral-200"
-              onClick={handleCancelUploadClick}
-              >
-                Cancel
-              </button>
+                </button>
+                <button
+                  className="rounded-sm p-1  text-neutral-800 opacity-60 hover:bg-neutral-200 hover:text-neutral-900 dark:bg-opacity-50 dark:text-neutral-100 dark:hover:text-neutral-200"
+                  onClick={handleCancelUploadClick}
+                >
+                  Cancel
+                </button>
+              </div>
             </div>
-          </div>
-          }
+          )}
 
-
-          <Result status={status}/>
+          <Result status={status} />
 
           {/* <FileUploader/> */}
 

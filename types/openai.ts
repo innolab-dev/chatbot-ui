@@ -7,64 +7,38 @@ export interface OpenAIModel {
   tokenLimit: number;
 }
 
-// export enum OpenAIModelID {
-//   GPT_3_5 = 'gpt-3.5-turbo',
-//   GPT_3_5_16K = 'gpt-3.5-turbo-16k',
-//   GPT_3_5_AZ = 'gpt-35-turbo',
-//   GPT_3_5_16K_AZ = 'gpt-35-turbo-16k',
-//   GPT_4 = 'gpt-4',
-//   // GPT_4_32K = 'gpt-4-32k',
-//   GPT_4_AZ = 'gpt-4',
-//   Azure = 'Azure',
-//   }
   
 export enum OpenAIModelID {
-  Azure = 'Azure',
-  Vicuna = 'Vicuna'
+  Azure_gpt35 = 'gpt35',
+  Vicuna = 'Vicuna',
+  Azure_gpt4 = 'gpt4',
+  Chatbison = 'google-chatbison',
   }
 // in case the `DEFAULT_MODEL` environment variable is not set or set to an unsupported model
-export const fallbackModelID = OpenAIModelID.Azure;
+export const fallbackModelID = OpenAIModelID.Azure_gpt35;
 
 export const OpenAIModels: Record<OpenAIModelID, OpenAIModel> = {
-  // [OpenAIModelID.GPT_3_5]: {
-  // id: OpenAIModelID.GPT_3_5,
-  // name: 'GPT-3.5',
-  // maxLength: 12000,
-  // tokenLimit: 4096,
-  // },
-  // [OpenAIModelID.GPT_3_5_16K]: {
-  // id: OpenAIModelID.GPT_3_5_16K,
-  // name: 'GPT-3.5-16k',
-  // maxLength: 48000,
-  // tokenLimit: 16384,
-  // },
-  // [OpenAIModelID.GPT_3_5_AZ]: {
-  // id: OpenAIModelID.GPT_3_5_AZ,
-  // name: 'GPT-3.5',
-  // maxLength: 12000,
-  // tokenLimit: 4096,
-  // },
-  // [OpenAIModelID.GPT_3_5_16K_AZ]: {
-  // id: OpenAIModelID.GPT_3_5_16K_AZ,
-  // name: 'GPT-3.5-16k',
-  // maxLength: 48000,
-  // tokenLimit: 16384,
-  // },
-  // [OpenAIModelID.GPT_4]: {
-  // id: OpenAIModelID.GPT_4,
-  // name: 'GPT-4',
-  // maxLength: 24000,
-  // tokenLimit: 8192,
-  // },
-  [OpenAIModelID.Azure]: {
-  id: OpenAIModelID.Azure,
-  name: 'Azure',
+  [OpenAIModelID.Azure_gpt35]: {
+  id: OpenAIModelID.Azure_gpt35,
+  name: 'Azure_gpt35',
   maxLength: 96000,
   tokenLimit: 32768,
   },
   [OpenAIModelID.Vicuna]: {
     id: OpenAIModelID.Vicuna,
     name: 'Vicuna',
+    maxLength: 96000,
+    tokenLimit: 32768,
+    },
+  [OpenAIModelID.Azure_gpt4]: {
+  id: OpenAIModelID.Azure_gpt4,
+  name: 'Azure_gpt4',
+  maxLength: 96000,
+  tokenLimit: 32768,
+  },
+  [OpenAIModelID.Chatbison]: {
+    id: OpenAIModelID.Chatbison,
+    name: 'Chatbison',
     maxLength: 96000,
     tokenLimit: 32768,
     },

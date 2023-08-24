@@ -10,7 +10,7 @@ from urllib.parse import parse_qs
 from llm import llm_davinci, codey
 from power_automate import send_email
 from memory import memory
-from Chromadb import database
+from Chromadb import DBManager
 from email_class import email_class
 from flask_cors import CORS
 app = Flask(__name__)
@@ -26,14 +26,16 @@ generator = ImageGenerator()
 @app.route('/uploads', methods=['POST'])
 def upload_file():
     file = request.files['file']
+    email = request.form['email']
+    email_class.set_email(email)  # set email
     # Get the filename
     filename = file.filename
     folder = './uploads'
     # Save file
     app.config['UPLOAD_FOLDER'] = folder
     file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-    # database = databasefunc("email")
-    response = database.upload(folder + "/" + filename)
+    # Upload file to database
+    response = DBManager.get_or_setup().upload(folder + "/" + filename)
     response = {"message": "File uploaded successfully"}
     return response
 
@@ -47,16 +49,12 @@ def file_uploader():
         # redirect access
         data = request.args
     purpose = data.get('purpose')
-    # print("purpose", purpose)
-    # if purpose == "search": // move to ask in general Q&A part
-    #     query = data["query"]
-    #     response = database.search(query)
     if purpose == "delete":
         id = data["id"]
         print("id: ", id)
-        response = database.delete(id)
+        response = DBManager.get_or_setup().delete(id)
     elif purpose == "list":
-        response = database.list_documents()
+        response = DBManager.get_or_setup().list_documents()
     result = {
         'text': response,
         'image': 'NULL'
@@ -64,51 +62,26 @@ def file_uploader():
     return jsonify(result)
 
 
-# @app.route('/email-sender', methods=['POST'])
-# def email():
-#     if request.is_json:
-#         data = request.get_json()
-#     else:
-#         data = request.args
-#     prompt = data["messages"][-1]["content"]
-#     response = send_email(prompt)
-#     result = {
-#         'text': response,
-#         'image': 'NULL'
-#     }
-#     return jsonify(result)
-
-
 @app.route('/chat', methods=['POST'])
 def chat():
-    # response = "something problem just hold up"
-    # data = request.get_json()
-    if request.is_json:
+    if request.is_json:  # chatbot-ui
         data = request.get_json()
-        # print("systemPrompt", data.get('systemPrompt'))
-        # print("temperature", data.get('temperature'))
-        # print("messages", data.get('messages'))
-        # print("message", data.get('message'))
         prompt = data.get('message')['content']
         llm_model_selection = data["model"]['id']
         conversationID = data.get('conversationID')
         temperature = data.get('temperature')
         user_email = data.get('userEmail')
-        print("email: ", user_email)
-        email_class.set_email(user_email)
-        # print("id", data.get('conversationID'))
-        # print("key", data.get('key'))
-    else:
+        email_class.set_email(user_email)  # set email
+    else:  # teams
         query_string = request.query_string
         params = parse_qs(query_string)
         params = {k.decode(): v[0].decode() for k, v in params.items()}
-        email_class.set_email(params['userEmail'])
+        email_class.set_email(params['userEmail'])  # set email
         prompt = params['Prompt']
         llm_model_selection = "gpt35"
         temperature = 0.5
         conversationID = params['conversationID']
 
-    llm_model_selection = "gpt35"  # hard code for now
     image = 'NULL'
     s = llm_davinci(prompt_for_classfication.format(prompt=prompt))
     # Extract number
@@ -131,14 +104,12 @@ def chat():
             res = llm_davinci(prompt_file_uploader_routing +
                               f"Current Prompt = {prompt} Ans:")
             red = json.loads(res)
-            for i in red:
-                print(i)
             return redirect(url_for('file_uploader', purpose=red.get("purpose"), id=red.get("file_id")))
         else:
             print("general answering")  # life pal function include here
             # Run response generation code
             mem, mongo = memory(conversationID)
-            response = generate_response(
+            response = generate_response(  # tackle.py
                 prompt, mem, mongo, temperature, llm_model_selection)
     else:
         response = "I don't understand what you are saying"

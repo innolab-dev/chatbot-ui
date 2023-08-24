@@ -6,7 +6,7 @@ const Menu: React.FC = (): JSX.Element => {
     const [showDropDown, setShowDropDown] = useState<boolean>(false);
     const [selectLLMs, setSelectLLMs] = useState<string>("");
     const LLMs = () => {
-        return [["Buffer Memory", "http://localhost:7860/flow/a96c8cdb-412d-4a4a-ad7c-03be0f1a7ecf"], ["Email Automation", "https://www.facebook.com"], ["Image Generation","https://www.twitter.com"], ["Summarize a website", "https://www.instagram.com"]];
+        return [["Buffer Memory", "http://localhost:7860/flow/a96c8cdb-412d-4a4a-ad7c-03be0f1a7ecf"], ["Character Conversation", "http://localhost:7860/flow/ec0b78ff-c8ea-4759-8b55-65e94e28e3a4"], ["LLM Calculator","http://localhost:7860/flow/be4d3c33-034f-4752-bfca-96a6cf528992"], ["Summarize a website", "https://www.instagram.com"]];
     };
 
     /**

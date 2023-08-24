@@ -1,3 +1,4 @@
+from pymongo import MongoClient
 from llm import llm_davinci, llm_azure_gpt35, llm_Vicuna
 from langchain.vectorstores import Chroma
 from langchain.text_splitter import RecursiveCharacterTextSplitter
@@ -14,6 +15,7 @@ from langchain.document_loaders import UnstructuredPowerPointLoader
 from langchain.document_loaders import UnstructuredExcelLoader
 from langchain.document_loaders.csv_loader import CSVLoader
 from langchain.embeddings import HuggingFaceInstructEmbeddings
+from email_class import email_class
 
 """
 ### delete the db
@@ -89,6 +91,40 @@ get_embedding_from_api("hello") #the word "hello" here change to the word/files 
 """
 
 
+# function for id_map from mongodb
+def get_mongo_collection():
+    client = MongoClient(
+        "mongodb+srv://projectvpn39:kDir8fgavrwmXhUN@cluster0.bdqojht.mongodb.net/?retryWrites=true&w=majority")
+    db = client["langchain"]
+    return db["chroma_history"]
+
+
+def get_id_map():
+    collection = get_mongo_collection()
+    doc = collection.find_one({"email": email_class.get_email()})
+    return doc["id_map"] if doc else {}
+
+
+def insert_into_id_map(id, file):
+    collection = get_mongo_collection()
+    # Check if the email already exists in the database
+    email = email_class.get_email()
+    if collection.find_one({"email": email}):
+        # Update the existing id_map with the new id and file
+        collection.update_one(
+            {"email": email}, {"$set": {f"id_map.{id}": file}})
+    else:
+        # Create a new record with the email and id_map
+        collection.insert_one({"email": email, "id_map": {id: file}})
+
+
+def delete_from_id_map(id):
+    collection = get_mongo_collection()
+    # Remove the given id from the id_map of the provided email
+    collection.update_one({"email": e.get_email()}, {
+                          "$unset": {f"id_map.{id}": ""}})
+
+
 class DB:
     def __init__(self, persist_directory):
         # Create persist directory
@@ -107,9 +143,14 @@ class DB:
         self.retriever = self.db.as_retriever()
         self.qa_chain = RetrievalQA.from_chain_type(
             llm=self.llm, chain_type="stuff", retriever=self.retriever, return_source_documents=True)
-        self.doc_id_map = {}
+        self.doc_id_map = get_id_map()
 
     def upload(self, file_path):
+        # Check if file_path is already uploaded
+        if file_path in self.doc_id_map.values():
+            # return {"message": "File has already been uploaded"} # for nomally use, should be this one
+            # keep the same one as the front end received this one as the success message
+            return {"message": "File uploaded successfully"}
         file_type = file_path.split('.')[-1]
         if file_type == "txt":
             loader = TextLoader(file_path)
@@ -125,21 +166,23 @@ class DB:
             loader = UnstructuredExcelLoader(file_path)
         else:
             return "File type not supported"
-        # may be more here later
         parent_id = str(uuid.uuid4())
-        # child_ids = []
-
         for doc in loader.load():
             child_ids = self.db.add_documents([doc])
             doc.metadata["id"] = child_ids
 
-            self.doc_id_map[parent_id] = os.path.basename(file_path)
+            # self.doc_id_map[parent_id] = os.path.basename(file_path) # original one
+            # we directly update it in mongodb
+            insert_into_id_map(parent_id, os.path.basename(file_path))
         return {"message": "File uploaded successfully"}
 
     def delete(self, id):
-        message = f"The file of id {id}, file name of {self.doc_id_map[id]} is deleted successfully"
-        del self.doc_id_map[id]
-        return message
+        if id not in self.doc_id_map:
+            return f"No file with id {id} exists"
+        # del self.doc_id_map[id] # original one
+        # we directly update it in mongodb
+        delete_from_id_map(id)
+        return f"The file of id {id}, file name of {self.doc_id_map[id]} is deleted successfully"
 
     def search(self, query):
         result = self.qa_chain(query)
@@ -156,9 +199,27 @@ class DB:
             out += f"File name: {info}, id: {parent_id}\n"
         return out
 
+ # for setting up the correct database for each user
+# Make sure there's only one instance of the DatabaseManager class
 
-database = DB("database")
+
+class DatabaseManager:
+    _instance = None
+
+    def __new__(cls):  # instead of __init__, to make sure there's only one instance of the class
+        # Singleton pattern: return the existing instance if it exists, otherwise create a new one
+        if cls._instance is None:
+            cls._instance = super(DatabaseManager, cls).__new__(cls)
+            cls._instance.databases = {}  # To store DB instances for different users
+        return cls._instance
+
+    def get_or_setup(self):
+        # If there's no DB for this user, create a new one and return
+        user_email = email_class.get_email()
+        if user_email not in self.databases:
+            self.databases[user_email] = DB(user_email)
+        return self.databases[user_email]
 
 
-def databasefunc(email):
-    return DB(email)
+# Create a single instance of the DatabaseManager class
+DBManager = DatabaseManager()

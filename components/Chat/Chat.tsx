@@ -201,28 +201,33 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
                 value: updatedConversation,
               });
 
-              var userEmail = getUserEmail();
+              console.log("selectedConversation", selectedConversation);
+              // check if there is no any conversation existed
+              if (selectedConversation.name == "New Conversation" || selectedConversation.name == "新的聊天")
+              {
+                var userEmail = getUserEmail();
 
-              // Database: create new conversation
-              let data = new URLSearchParams();
-              let api = "http://219.78.175.160:7000/" + "new-conversation";
-              data.append("email", userEmail);
-              data.append("conversationID", updatedConversation.id);
-              data.append("conversationName", updatedConversation.name);
-              data.append("model", updatedConversation.model.name);
-              data.append("temperature", updatedConversation.temperature.toString());
-              data.append("systemMsg", updatedConversation.prompt);
+                // Database: create new conversation
+                let data = new URLSearchParams();
+                let api = "http://219.78.175.160:7000/" + "new-conversation";
+                data.append("email", userEmail);
+                data.append("conversationID", updatedConversation.id);
+                data.append("conversationName", updatedConversation.name);
+                data.append("model", updatedConversation.model.name);
+                data.append("temperature", updatedConversation.temperature.toString());
+                data.append("systemMsg", updatedConversation.prompt);
 
-              fetch(api, { method: "post", body: data })
-                    .then(res => {console.log(res.text())})
-                    .then(data => {
-                        // console.log(data);
-                        // window.alert(data);
-                        // if (data.indexOf("Created") != -1) {
-                        //       props.setEnd(null);
-                        // }
-                    })
-                    .catch(err => console.log(err));
+                fetch(api, { method: "post", body: data })
+                      .then(res => {console.log(res.text())})
+                      .then(data => {
+                          // console.log(data);
+                          // window.alert(data);
+                          // if (data.indexOf("Created") != -1) {
+                          //       props.setEnd(null);
+                          // }
+                      })
+                      .catch(err => console.log(err));
+              } 
 
             } else {
               const updatedMessages: Message[] =

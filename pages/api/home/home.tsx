@@ -226,8 +226,6 @@ const Home = ({
     
     var userEmail = getUserEmail();
 
-    console.log("New Conversation!!");
-
     // Database: create new conversation
     let data = new URLSearchParams();
     let api = "http://219.78.175.160:7000/" + "new-conversation";
