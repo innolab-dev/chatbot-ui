@@ -13,14 +13,14 @@ from memory import memory
 from Chromadb import DBManager
 from email_class import email_class
 from flask_cors import CORS
-app = Flask(__name__)
+app = Flask(__name__)  # build Application object
 CORS(app)
 
 
 # need to change the history declartion here later
 # memory, mongo = memory("test-session")
 # usage
-generator = ImageGenerator()
+generator = ImageGenerator()  # image class, but it is shared now
 
 
 @app.route('/uploads', methods=['POST'])
@@ -121,4 +121,4 @@ def chat():
 
 
 if __name__ == '__main__':
-    app.run(host="219.78.175.160")
+    app.run(host="localhost")  # deploy on server

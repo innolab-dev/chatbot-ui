@@ -154,7 +154,7 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
 
             // Database: update conversation name
             let data = new URLSearchParams();
-            let api = "http://219.78.175.160:7000/" + "update-conversation-name";
+            let api = "http://localhost:7000/" + "update-conversation-name";
             data.append("conversationID", updatedConversation.id);
             data.append("conversationName", customName);
         
@@ -209,7 +209,7 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
 
                 // Database: create new conversation
                 let data = new URLSearchParams();
-                let api = "http://219.78.175.160:7000/" + "new-conversation";
+                let api = "http://localhost:7000/" + "new-conversation";
                 data.append("email", userEmail);
                 data.append("conversationID", updatedConversation.id);
                 data.append("conversationName", updatedConversation.name);

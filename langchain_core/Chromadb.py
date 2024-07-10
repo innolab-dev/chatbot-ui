@@ -121,7 +121,7 @@ def insert_into_id_map(id, file):
 def delete_from_id_map(id):
     collection = get_mongo_collection()
     # Remove the given id from the id_map of the provided email
-    collection.update_one({"email": e.get_email()}, {
+    collection.update_one({"email": email_class.get_email()}, {
                           "$unset": {f"id_map.{id}": ""}})
 
 
@@ -171,7 +171,8 @@ class DB:
             child_ids = self.db.add_documents([doc])
             doc.metadata["id"] = child_ids
 
-            # self.doc_id_map[parent_id] = os.path.basename(file_path) # original one
+            self.doc_id_map[parent_id] = os.path.basename(
+                file_path)  # original one
             # we directly update it in mongodb
             insert_into_id_map(parent_id, os.path.basename(file_path))
         return {"message": "File uploaded successfully"}
@@ -179,10 +180,11 @@ class DB:
     def delete(self, id):
         if id not in self.doc_id_map:
             return f"No file with id {id} exists"
-        # del self.doc_id_map[id] # original one
+        name = self.doc_id_map[id]
+        del self.doc_id_map[id]  # original one
         # we directly update it in mongodb
         delete_from_id_map(id)
-        return f"The file of id {id}, file name of {self.doc_id_map[id]} is deleted successfully"
+        return f"The file of id {id}, file name of {name} is deleted successfully"
 
     def search(self, query):
         result = self.qa_chain(query)
@@ -197,6 +199,8 @@ class DB:
         out = ""
         for parent_id, info in self.doc_id_map.items():
             out += f"File name: {info}, id: {parent_id}\n"
+        if out == "":
+            out = "No file uploaded yet"
         return out
 
  # for setting up the correct database for each user

@@ -10,7 +10,7 @@ from email_class import email_class
 # from power_automate import send_email
 from llm import llm_azure_gpt35, bison_chat, codey, llm_Vicuna
 
-from llm import internaL_db
+# from llm import internaL_db
 from langchain import PromptTemplate, LLMChain
 
 from pymongo import MongoClient
@@ -107,6 +107,7 @@ tools.append(google_tools[0])
 
 # for google chat bison/ codey use, to prevent output paarse error
 def _handle_error(error) -> str:
+    print(str(error)[:1024])
     return str(error)[:1024]
 
 

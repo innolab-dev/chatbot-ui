@@ -1,3 +1,19 @@
+# logic flow:
+# 1) empty->do classification(repeatly)
+# 2) ask for model Use
+# 3) return the image Url
+# 4) making follow up, if it is needed
+# updated: just let all the task done by LLM, unless the user request in the prompt
+
+
+# updated logic flow
+# when new user prompt come, just do the classification for prompt and the model use
+# store it in the class
+# if it is a new request -> do the classification and return the url link
+# if ask for modification -> check the last one model is using mid-journey or not, 
+#   if yes -> do the modification and return the url link, if not -> return the not support message/ or just create a new one
+
+
 # image.py
 import requests
 from prompt import prompt_for_image_description, prompt_for_image_modified, prompt_use_in_image, Prompt_template
@@ -7,29 +23,29 @@ import json
 
 ####################
 # setting the diffusion model use for text to image
-import torch
-from diffusers import StableDiffusionPipeline
-pipe = StableDiffusionPipeline.from_pretrained(
-    "CompVis/stable-diffusion-v1-4", torch_dtype=torch.float16)
-pipe = pipe.to("cuda")
+# import torch
+# from diffusers import StableDiffusionPipeline
+# pipe = StableDiffusionPipeline.from_pretrained(
+#     "CompVis/stable-diffusion-v1-4", torch_dtype=torch.float16)
+# pipe = pipe.to("cuda")
 # generator = torch.Generator("cuda").manual_seed(1024)
 ####################
 
 
-def generate_diffuse(prompt):
-    image = pipe(prompt).images[0]
-    # Upload image to Imgur and get image url, using the tsd_innolab google account
-    image_file = 'prompt.png'
-    image.save(image_file)
-    imgur_client_id = '89aeeab4d0a61f7'
+# def generate_diffuse(prompt):
+#     image = pipe(prompt).images[0]
+#     # Upload image to Imgur and get image url, using the tsd_innolab google account
+#     image_file = 'prompt.png'
+#     image.save(image_file)
+#     imgur_client_id = '89aeeab4d0a61f7'
 
-    imgur_url = 'https://api.imgur.com/3/image'
-    headers = {'authorization': 'Client-ID ' + imgur_client_id}
-    files = {'image': open(image_file, 'rb')}
+#     imgur_url = 'https://api.imgur.com/3/image'
+#     headers = {'authorization': 'Client-ID ' + imgur_client_id}
+#     files = {'image': open(image_file, 'rb')}
 
-    response = requests.post(imgur_url, headers=headers, files=files)
-    img_url = response.json()['data']['link']
-    return img_url
+#     response = requests.post(imgur_url, headers=headers, files=files)
+#     img_url = response.json()['data']['link']
+#     return img_url
 
 
 class ImageGenerator:
@@ -67,7 +83,7 @@ class ImageGenerator:
         self.image_url.append(image_url)
 
     def get_image_url(self):
-        return self.image_url[-1]
+        return self.image_url[-1] #returns the last element of the list self
 
     def modify_image(self, mode, num):  # fourth steps
         # Modify saved image
@@ -124,16 +140,3 @@ def image_gen(msg, generator):
     return response, image_url
 
 
-# logic flow:
-# 1) empty->do classification(repeatly)
-# 2) ask for model Use
-# 3) return the image Url
-# 4) making follow up, if it is needed
-# updated: just let all the task done by LLM, unless the user request in the prompt
-
-
-# updated logic flow
-# when new user prompt come, just do the classification for prompt and the model use
-# store it in the class
-# if it is a new request -> do the classification and return the url link
-# if ask for modification -> check the last one model is using mid-journey or not, if yes -> do the modification and return the url link, if not -> return the not support message/ or just create a new one

@@ -56,11 +56,11 @@ embeddings = OpenAIEmbeddings(
     openai_api_type="azure",
     deployment="text-embedding-ada-002"
 )
-doc_db = Pinecone.from_existing_index('langchain-demo', embeddings)
+# doc_db = Pinecone.from_existing_index('langchain-demo', embeddings)
 
-internaL_db = RetrievalQA.from_chain_type(
-    llm=llm_azure_gpt35, chain_type="stuff", retriever=doc_db.as_retriever()
-)
+# internaL_db = RetrievalQA.from_chain_type(
+#     llm=llm_azure_gpt35, chain_type="stuff", retriever=doc_db.as_retriever()
+# )
 
 
 bison_chat = ChatVertexAI(model_name="chat-bison@001", max_output_tokens=512)

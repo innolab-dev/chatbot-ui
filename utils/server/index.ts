@@ -24,7 +24,7 @@ export class OpenAIError extends Error {
   }
 }
 // Flask endpoint 
-const FLASK_URL = 'http://219.78.175.160:5000/chat'
+const FLASK_URL = 'http://localhost:5000/chat'
 
 
 

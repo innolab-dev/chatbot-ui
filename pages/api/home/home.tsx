@@ -228,7 +228,7 @@ const Home = ({
 
     // Database: create new conversation
     let data = new URLSearchParams();
-    let api = "http://219.78.175.160:7000/" + "new-conversation";
+    let api = "http://localhost:7000/" + "new-conversation";
     data.append("email", userEmail);
     data.append("conversationID", newConversation.id);
     data.append("conversationName", newConversation.name);
@@ -394,7 +394,7 @@ const Home = ({
     let data = new URLSearchParams();
     data.append("email", getUserEmail());
 
-    let api = "http://219.78.175.160:7000/" + "load-conversations";
+    let api = "http://localhost:7000/" + "load-conversations";
     fetch(api, { method: "post", body: data })
         .then(res => {
                 var temp = res.text()

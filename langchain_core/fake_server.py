@@ -118,4 +118,4 @@ def teams_testing():
 
 
 if __name__ == '__main__':
-    app.run(host="219.78.175.160", port=1111)
+    app.run(host="localhost", port=1111)

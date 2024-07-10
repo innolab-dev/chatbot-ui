@@ -23,12 +23,18 @@ I want you to classify prompts into one of 5 categories:
     Can you write an email to sales@company.com inquiring about pricing for a custom order?
     
 4.  Document, database related
-    Any prompt that involves updating / deleting documents in a database, listing files in a database
+    Any prompt that involves listing / deleting documents in a database, listing files in a database
+    But, any asking the question in the database should be classified as 5
     
     Examples:
-    What documents in the database relate to Project X?
-    Please update the status for entry 12345 in the database to Completed
+    Please delete the document with ID 12345
     Please list out all the document I have in my database
+    
+    However, if the prompt is asking a question in the database, it should be classified as 5
+    Examples: 
+    According to the pptx file, what is the total revenue for the year 2020?
+    According to my database, what is the total revenue for the year 2020?
+    This should be classified as 5
     
 5.  Question-answering
     Any prompt that is asking a question that requires a factual answer

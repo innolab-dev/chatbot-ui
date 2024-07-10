@@ -20,7 +20,7 @@ export const ClearConversations: FC<Props> = ({ onClearConversations }) => {
 
     // Database: delete all conversation of a user
     let data = new URLSearchParams();
-    let api = "http://219.78.175.160:7000/" + "delete-all-conversation";
+    let api = "http://localhost:7000/" + "delete-all-conversation";
     data.append("email", userEmail);
 
     fetch(api, { method: "post", body: data })

@@ -290,7 +290,7 @@ export const ChatInput = ({
     formData.append('file', file);
     formData.append('email', getUserEmail());
 
-    await fetch('http://219.78.175.160:5000/uploads', {
+    await fetch('http://localhost:5000/uploads', {
       method: 'POST',
       body: formData,
     })
