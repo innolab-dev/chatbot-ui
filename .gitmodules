@@ -1,0 +1,4 @@
+
+[submodule "langchain_core/FastChat"]
+    path = langchain_core/FastChat
+    url = git@github.com:projectvpn39/FastChat.git
